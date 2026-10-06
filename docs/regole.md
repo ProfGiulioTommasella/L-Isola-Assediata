@@ -4,6 +4,10 @@ Regole de «L'Isola Assediata», decise con il docente il 6 ottobre 2026. I nume
 
 ## 0. Principi
 - Si gioca **da soli**, in laboratorio di informatica o a casa, su PC, tablet o LIM. Si mira e si spara toccando o cliccando; i dialoghi vanno avanti con un clic e si possono saltare.
+- **Stessi comandi su ogni dispositivo.** Il gioco non ha bisogno di sapere se è su PC, tablet o LIM: mouse, dito e penna della LIM funzionano allo stesso modo.
+  - *Schermo:* la scena si adatta alle dimensioni dello schermo e i pulsanti restano abbastanza grandi per un dito.
+  - *Mira:* il cannone mira nel punto toccato o cliccato e spara subito. Non segue il puntatore come in Scratch, perché col dito non c'è un puntatore che si muove.
+  - *Orientamento:* si gioca in orizzontale; se un tablet è tenuto in verticale, compare l'invito a ruotarlo.
 - Le quattro scuole si affrontano in **ordine fisso**: Fiandre → Roma → Firenze → Venezia.
 - Le domande vengono da `data/domande.json`: scelta multipla, vero/falso e abbinamento, mai risposte scritte. Le opzioni sono mescolate e dopo ogni risposta il mercante mostra la spiegazione.
 - Le domande seguono la verifica di classe e la presentazione usata in classe: non si chiede nulla che non sia stato spiegato.
