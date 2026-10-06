@@ -1,0 +1,666 @@
+{
+  "_nota": "Banca delle domande de L'Isola Assediata, per data/domande.json. Formato di data/domande-originali.json con tre modifiche: niente tipo 'aperta'; nuovo tipo 'abbinamento' (campo 'coppie'); 'spiegazione' mostrata dopo ogni risposta, giusta o sbagliata. 'verifica_classe' indica la domanda collegata della verifica (Compito A). Contenuti presi dalla presentazione usata in classe. Ordine dei livelli: Fiandre, Roma, Firenze, Venezia; scuola 'Generale' = concetti chiave da mescolare in tutti i livelli. Le opzioni vengono mescolate dal gioco.",
+  "domande": [
+    {
+      "id": "gen-01",
+      "scuola": "Generale",
+      "tipo": "multipla",
+      "domanda": "In quale periodo si colloca il Rinascimento musicale?",
+      "opzioni": {
+        "a": "circa 1450–1600",
+        "b": "circa 1000–1300",
+        "c": "circa 1600–1750",
+        "d": "circa 1750–1820"
+      },
+      "risposte_accettate": [
+        "a"
+      ],
+      "spiegazione": "Il Rinascimento musicale va dal 1450 circa al 1600. Prima c'è il Medioevo, dopo il Barocco.",
+      "verifica_classe": "1",
+      "verifica": "ok: data di inizio 1450, decisa da Giulio."
+    },
+    {
+      "id": "gen-02",
+      "scuola": "Generale",
+      "tipo": "multipla",
+      "domanda": "Quali erano i luoghi principali in cui si faceva musica nel Rinascimento?",
+      "opzioni": {
+        "a": "le chiese e le corti dei nobili",
+        "b": "le sale da concerto pubbliche",
+        "c": "i teatri dell'opera",
+        "d": "le scuole di musica"
+      },
+      "risposte_accettate": [
+        "a"
+      ],
+      "spiegazione": "Nelle chiese, dove prevaleva la polifonia sacra, e nelle corti dei signori, dove nascevano nuove forme profane. Teatri d'opera e sale da concerto pubbliche arriveranno dopo.",
+      "verifica_classe": "2",
+      "verifica": "ok (sostituisce la domanda aperta fir-1 originale)"
+    },
+    {
+      "id": "gen-03",
+      "scuola": "Generale",
+      "tipo": "vero_falso",
+      "domanda": "Le quattro grandi scuole musicali del Rinascimento sono la fiamminga, la romana, la veneziana e la fiorentina.",
+      "risposte_accettate": [
+        "vero"
+      ],
+      "spiegazione": "Vero: Fiandre, Roma, Venezia e Firenze, le quattro flotte che attaccano l'isola!",
+      "verifica_classe": "3",
+      "verifica": "ok"
+    },
+    {
+      "id": "gen-04",
+      "scuola": "Generale",
+      "tipo": "abbinamento",
+      "domanda": "Abbinate ogni scuola a un compositore o gruppo che la rappresenta.",
+      "coppie": [
+        {
+          "sinistra": "Fiandre",
+          "destra": "Josquin Desprès"
+        },
+        {
+          "sinistra": "Roma",
+          "destra": "Giovanni Pierluigi da Palestrina"
+        },
+        {
+          "sinistra": "Venezia",
+          "destra": "Adriano Willaert e Andrea Gabrieli"
+        },
+        {
+          "sinistra": "Firenze",
+          "destra": "Camerata de' Bardi"
+        }
+      ],
+      "spiegazione": "Sono i nomi da ricordare per ogni scuola.",
+      "verifica_classe": "4",
+      "verifica": "ok"
+    },
+    {
+      "id": "gen-05",
+      "scuola": "Generale",
+      "tipo": "abbinamento",
+      "domanda": "Abbinate ogni scuola alla sua caratteristica musicale.",
+      "coppie": [
+        {
+          "sinistra": "Fiandre",
+          "destra": "polifonia complessa e imitazione a canone"
+        },
+        {
+          "sinistra": "Roma",
+          "destra": "stile «a cappella», puro e armonioso"
+        },
+        {
+          "sinistra": "Venezia",
+          "destra": "due cori alternati"
+        },
+        {
+          "sinistra": "Firenze",
+          "destra": "madrigale"
+        }
+      ],
+      "spiegazione": "Ogni scuola ha la sua 'firma' musicale.",
+      "verifica_classe": "5",
+      "verifica": "ok: per Firenze solo il madrigale, deciso da Giulio (il melodramma è trattato nel Barocco)."
+    },
+    {
+      "id": "gen-06",
+      "scuola": "Generale",
+      "tipo": "multipla",
+      "domanda": "Quale di queste è una forma musicale del Rinascimento?",
+      "opzioni": {
+        "a": "madrigale",
+        "b": "lauda",
+        "c": "organum",
+        "d": "discantus"
+      },
+      "risposte_accettate": [
+        "a"
+      ],
+      "spiegazione": "Il madrigale è una forma del Rinascimento. Lauda, organum e discantus sono forme del Medioevo.",
+      "verifica_classe": "8",
+      "verifica": "ok: la lauda è trattata solo come forma medievale, deciso da Giulio."
+    },
+    {
+      "id": "fia-01",
+      "scuola": "Fiandre",
+      "tipo": "multipla",
+      "domanda": "Qual è la caratteristica musicale più tipica della scuola fiamminga?",
+      "opzioni": {
+        "a": "una polifonia complessa, con l'imitazione a canone",
+        "b": "due cori alternati, uno di fronte all'altro",
+        "c": "il madrigale, polifonia agile ed espressiva",
+        "d": "lo stile «a cappella», puro e armonioso"
+      },
+      "risposte_accettate": [
+        "a"
+      ],
+      "spiegazione": "I fiamminghi intrecciavano molte voci in composizioni molto complesse e amavano l'imitazione a canone. Le altre risposte appartengono a Venezia, Firenze e Roma.",
+      "verifica_classe": "5",
+      "verifica": "ok"
+    },
+    {
+      "id": "fia-02",
+      "scuola": "Fiandre",
+      "tipo": "vero_falso",
+      "domanda": "Nella polifonia più voci cantano insieme, ognuna con una melodia diversa.",
+      "risposte_accettate": [
+        "vero"
+      ],
+      "spiegazione": "Vero. È la polifonia, chiamata anche contrappunto: nelle Fiandre raggiunse livelli altissimi di complessità, con brani per molte voci.",
+      "verifica_classe": "5",
+      "verifica": "ok"
+    },
+    {
+      "id": "fia-03",
+      "scuola": "Fiandre",
+      "tipo": "multipla",
+      "domanda": "Un disegno musicale (la «proposta») passa da una voce all'altra (la «risposta»). Come si chiama questa forma, la più usata dai fiamminghi?",
+      "opzioni": {
+        "a": "imitazione a canone",
+        "b": "basso continuo",
+        "c": "due cori alternati",
+        "d": "madrigale"
+      },
+      "risposte_accettate": [
+        "a"
+      ],
+      "spiegazione": "È l'imitazione a canone: una voce propone un disegno musicale e le altre lo ripetono, come una risposta.",
+      "verifica_classe": "5, 8",
+      "verifica": "ok. I distrattori sono termini delle altre scuole, così il giocatore li ripassa."
+    },
+    {
+      "id": "fia-04",
+      "scuola": "Fiandre",
+      "tipo": "multipla",
+      "domanda": "Quale di questi compositori apparteneva alla scuola fiamminga?",
+      "opzioni": {
+        "a": "Josquin Desprès",
+        "b": "Giovanni Pierluigi da Palestrina",
+        "c": "Andrea Gabrieli"
+      },
+      "risposte_accettate": [
+        "a"
+      ],
+      "spiegazione": "Josquin Desprès è il più famoso dei fiamminghi. Palestrina è della scuola romana, Andrea Gabrieli di quella veneziana.",
+      "verifica_classe": "4",
+      "verifica": "ok"
+    },
+    {
+      "id": "fia-05",
+      "scuola": "Fiandre",
+      "tipo": "abbinamento",
+      "domanda": "Abbinate ogni compositore fiammingo alla frase giusta.",
+      "spiegazione": "Tre grandi nomi della scuola fiamminga, ognuno con la sua storia.",
+      "verifica_classe": "4",
+      "verifica": "ok",
+      "coppie": [
+        {
+          "sinistra": "Guillaume Dufay",
+          "destra": "famoso per le sue messe e i suoi mottetti"
+        },
+        {
+          "sinistra": "Josquin Desprès",
+          "destra": "lavorò anche a Milano, Roma e Ferrara"
+        },
+        {
+          "sinistra": "Clément Janequin",
+          "destra": "ebbe successo con la musica profana"
+        }
+      ]
+    },
+    {
+      "id": "fia-06",
+      "scuola": "Fiandre",
+      "tipo": "multipla",
+      "domanda": "Quale compositore della scuola fiamminga ebbe grande successo con la musica profana? È l'autore di «Le cris de Paris».",
+      "risposte_accettate": [
+        "a"
+      ],
+      "spiegazione": "Clément Janequin scrisse musica profana piena di vita: in «Le cris de Paris» le voci imitano le grida dei venditori per le strade di Parigi.",
+      "verifica_classe": "4, 9",
+      "verifica": "ok (Janequin come nella presentazione).",
+      "opzioni": {
+        "a": "Clément Janequin",
+        "b": "Guillaume Dufay",
+        "c": "Giovanni Pierluigi da Palestrina",
+        "d": "Andrea Gabrieli"
+      }
+    },
+    {
+      "id": "fia-07",
+      "scuola": "Fiandre",
+      "tipo": "vero_falso",
+      "domanda": "I musicisti fiamminghi lavoravano solo nelle Fiandre.",
+      "risposte_accettate": [
+        "falso"
+      ],
+      "spiegazione": "Falso. Lavoravano nelle chiese e nelle corti di tutta Europa: Josquin, per esempio, lavorò anche a Milano, Roma e Ferrara.",
+      "verifica_classe": "2",
+      "verifica": "ok: Josquin servì gli Sforza a Milano, la cappella papale a Roma, gli Este a Ferrara."
+    },
+    {
+      "id": "fia-09",
+      "scuola": "Fiandre",
+      "tipo": "vero_falso",
+      "domanda": "I maestri fiamminghi preferivano il genere sacro: messe polifoniche e mottetti.",
+      "risposte_accettate": [
+        "vero"
+      ],
+      "spiegazione": "Vero. Le loro forme preferite erano sacre: messe polifoniche e mottetti, cantati nelle chiese.",
+      "verifica_classe": "5, 8",
+      "verifica": "ok"
+    },
+    {
+      "id": "rom-01",
+      "scuola": "Roma",
+      "tipo": "multipla",
+      "domanda": "Chi fu il massimo rappresentante della scuola romana?",
+      "opzioni": {
+        "a": "Giovanni Pierluigi da Palestrina",
+        "b": "Josquin Desprès",
+        "c": "Andrea Gabrieli",
+        "d": "Clément Janequin"
+      },
+      "risposte_accettate": [
+        "a"
+      ],
+      "spiegazione": "Giovanni Pierluigi da Palestrina è il grande nome della scuola romana. Josquin e Janequin sono fiamminghi, Andrea Gabrieli è veneziano.",
+      "verifica_classe": "4",
+      "verifica": "ok (era rom-1 originale, ora a scelta multipla)"
+    },
+    {
+      "id": "rom-02",
+      "scuola": "Roma",
+      "tipo": "vero_falso",
+      "domanda": "Palestrina era soprannominato «imperator musicae», imperatore della musica.",
+      "risposte_accettate": [
+        "falso"
+      ],
+      "spiegazione": "Falso. Era detto «princeps musicae», cioè principe della musica.",
+      "verifica_classe": "4, 9",
+      "verifica": "ok (era rom-4 originale). Gli altri soprannomi sono inventati, come distrattori."
+    },
+    {
+      "id": "rom-03",
+      "scuola": "Roma",
+      "tipo": "multipla",
+      "domanda": "Palestrina partì dalla polifonia fiamminga. Che cosa ne fece?",
+      "opzioni": {
+        "a": "la adattò allo stile «a cappella», eliminando gli eccessi virtuosistici",
+        "b": "la rese ancora più complessa, con moltissime voci",
+        "c": "la divise tra due cori alternati, uno di fronte all'altro",
+        "d": "la abbandonò, per scrivere solo musica profana"
+      },
+      "risposte_accettate": [
+        "a"
+      ],
+      "spiegazione": "Palestrina usò la polifonia dei fiamminghi, ma la adattò allo stile «a cappella» e tolse gli eccessi virtuosistici. I due cori alternati sono invece di Venezia.",
+      "verifica_classe": "5",
+      "verifica": "ok. Sostituisce rom-2 originale ('copiare i fiamminghi')."
+    },
+    {
+      "id": "rom-04",
+      "scuola": "Roma",
+      "tipo": "multipla",
+      "domanda": "Nel suo modo di comporre, Palestrina seguì i suggerimenti:",
+      "opzioni": {
+        "a": "del Concilio di Trento",
+        "b": "della Camerata de' Bardi",
+        "c": "dei maestri di San Marco",
+        "d": "dello stampatore Ottaviano Petrucci"
+      },
+      "risposte_accettate": [
+        "a"
+      ],
+      "spiegazione": "Palestrina seguì i suggerimenti del Concilio di Trento: la musica sacra doveva essere pura, senza eccessi.",
+      "verifica_classe": "5, 9",
+      "verifica": "ok. La presentazione dice solo 'seguendo i suggerimenti del Concilio di Trento': non chiedo date né dettagli del Concilio."
+    },
+    {
+      "id": "rom-05",
+      "scuola": "Roma",
+      "tipo": "vero_falso",
+      "domanda": "La messa più famosa di Palestrina è la «Missa Papae Marcelli», la Messa per papa Marcello II.",
+      "risposte_accettate": [
+        "vero"
+      ],
+      "spiegazione": "Vero. Tra le messe di Palestrina, la «Missa Papae Marcelli» è la più famosa. In classe ne avete ascoltato il Kyrie.",
+      "verifica_classe": "4, 9",
+      "verifica": "ok"
+    },
+    {
+      "id": "rom-06",
+      "scuola": "Roma",
+      "tipo": "abbinamento",
+      "domanda": "Abbinate ogni elemento della scuola romana alla sua descrizione.",
+      "spiegazione": "Sono le parole chiave della scuola romana.",
+      "verifica_classe": "9",
+      "verifica": "ok",
+      "coppie": [
+        {
+          "sinistra": "Palestrina",
+          "destra": "detto «princeps musicae»"
+        },
+        {
+          "sinistra": "Concilio di Trento",
+          "destra": "i suoi suggerimenti guidarono Palestrina"
+        },
+        {
+          "sinistra": "Missa Papae Marcelli",
+          "destra": "la messa più famosa di Palestrina"
+        },
+        {
+          "sinistra": "stile «a cappella»",
+          "destra": "polifonia senza eccessi virtuosistici"
+        }
+      ]
+    },
+    {
+      "id": "rom-07",
+      "scuola": "Roma",
+      "tipo": "multipla",
+      "domanda": "Nel Kyrie di Palestrina le voci entrano tutte in momenti diversi. Che cosa riesce a ottenere, a differenza dei fiamminghi?",
+      "opzioni": {
+        "a": "un insieme puro e armonioso",
+        "b": "un effetto eco tra due cori",
+        "c": "una scena comica con versi di animali",
+        "d": "una sola melodia accompagnata da accordi"
+      },
+      "risposte_accettate": [
+        "a"
+      ],
+      "spiegazione": "Anche se le entrate delle voci sono tutte diverse, Palestrina mantiene un insieme puro e armonioso. Le altre risposte richiamano Orlando di Lasso, Banchieri e Venezia.",
+      "verifica_classe": "5",
+      "verifica": "ok"
+    },
+    {
+      "id": "rom-08",
+      "scuola": "Roma",
+      "tipo": "vero_falso",
+      "domanda": "Palestrina rese la polifonia fiamminga ancora più complessa e virtuosistica.",
+      "risposte_accettate": [
+        "falso"
+      ],
+      "spiegazione": "Falso. Palestrina fece il contrario: eliminò gli eccessi virtuosistici e scelse uno stile puro e armonioso.",
+      "verifica_classe": "5",
+      "verifica": "ok"
+    },
+    {
+      "id": "fir-01",
+      "scuola": "Firenze",
+      "tipo": "multipla",
+      "domanda": "Che tipo di musica prevale a Firenze nel Cinquecento?",
+      "opzioni": {
+        "a": "la musica polifonica vocale e profana",
+        "b": "la musica sacra in stile «a cappella»",
+        "c": "la musica per due cori alternati",
+        "d": "le messe polifoniche e i mottetti"
+      },
+      "risposte_accettate": [
+        "a"
+      ],
+      "spiegazione": "A Firenze prevale la musica polifonica vocale e profana, cioè non legata alla Chiesa. Lo stile a cappella è di Roma, i due cori alternati di Venezia, messe e mottetti dei fiamminghi.",
+      "verifica_classe": "5",
+      "verifica": "ok (sostituisce fir-2 originale, 'sacro o profano')"
+    },
+    {
+      "id": "fir-02",
+      "scuola": "Firenze",
+      "tipo": "vero_falso",
+      "domanda": "A Firenze la musica profana si divideva in «popolare» e «colta».",
+      "risposte_accettate": [
+        "vero"
+      ],
+      "spiegazione": "Vero. Accanto alla musica popolare c'era quella colta, che trovò la sua forma nel madrigale.",
+      "verifica_classe": "5",
+      "verifica": "ok"
+    },
+    {
+      "id": "fir-03",
+      "scuola": "Firenze",
+      "tipo": "multipla",
+      "domanda": "In quale forma si concretizza la musica profana colta di Firenze?",
+      "opzioni": {
+        "a": "il madrigale",
+        "b": "il mottetto",
+        "c": "la lauda",
+        "d": "l'organum"
+      },
+      "risposte_accettate": [
+        "a"
+      ],
+      "spiegazione": "Nel madrigale. Il mottetto è una forma sacra amata dai fiamminghi; lauda e organum sono forme del Medioevo.",
+      "verifica_classe": "5, 8",
+      "verifica": "ok (sostituisce fir-3 originale: niente melodramma tra le opzioni)"
+    },
+    {
+      "id": "fir-04",
+      "scuola": "Firenze",
+      "tipo": "abbinamento",
+      "domanda": "Abbinate ogni elemento della scuola fiorentina alla sua descrizione.",
+      "spiegazione": "Sono le parole chiave della scuola fiorentina.",
+      "verifica_classe": "5",
+      "verifica": "ok",
+      "coppie": [
+        {
+          "sinistra": "madrigale",
+          "destra": "polifonia agile ed espressiva"
+        },
+        {
+          "sinistra": "madrigale dialogico",
+          "destra": "storie o situazioni comiche"
+        },
+        {
+          "sinistra": "Camerata de' Bardi",
+          "destra": "gruppo di musicisti e letterati fiorentini"
+        },
+        {
+          "sinistra": "tragedie greche",
+          "destra": "i temi che la Camerata voleva far rivivere"
+        }
+      ]
+    },
+    {
+      "id": "fir-05",
+      "scuola": "Firenze",
+      "tipo": "multipla",
+      "domanda": "Che cos'era la Camerata de' Bardi?",
+      "opzioni": {
+        "a": "un gruppo di musicisti e letterati fiorentini",
+        "b": "il coro della Basilica di San Marco",
+        "c": "la cappella musicale del Papa",
+        "d": "una scuola di musica nelle Fiandre"
+      },
+      "risposte_accettate": [
+        "a"
+      ],
+      "spiegazione": "La Camerata de' Bardi era un gruppo di musicisti e letterati di Firenze, che si riuniva per discutere di musica e cultura.",
+      "verifica_classe": "4",
+      "verifica": "ok (sostituisce fir-4 originale)"
+    },
+    {
+      "id": "fir-06",
+      "scuola": "Firenze",
+      "tipo": "multipla",
+      "domanda": "La Camerata de' Bardi voleva far rivivere, con narrazioni musicali accompagnate:",
+      "opzioni": {
+        "a": "le tragedie greche",
+        "b": "la mitologia nordica",
+        "c": "i testi sacri",
+        "d": "le grida dei venditori di Parigi"
+      },
+      "risposte_accettate": [
+        "a"
+      ],
+      "spiegazione": "Le tragedie greche: i temi venivano presi dal mondo classico.",
+      "verifica_classe": "8",
+      "verifica": "ok. Le prime tre opzioni sono le stesse della verifica."
+    },
+    {
+      "id": "fir-07",
+      "scuola": "Firenze",
+      "tipo": "vero_falso",
+      "domanda": "Il madrigale dialogico raccontava storie o situazioni comiche.",
+      "risposte_accettate": [
+        "vero"
+      ],
+      "spiegazione": "Vero. Per esempio, nel «Contrappunto bestiale alla mente» di Banchieri si racconta una festa di carnevale con versi di animali.",
+      "verifica_classe": "9",
+      "verifica": "ok"
+    },
+    {
+      "id": "fir-08",
+      "scuola": "Firenze",
+      "tipo": "multipla",
+      "domanda": "Nel «Contrappunto bestiale alla mente» di Banchieri cantano quattro animali. Quale di questi NON c'è?",
+      "opzioni": {
+        "a": "il lupo",
+        "b": "il cane",
+        "c": "la civetta",
+        "d": "il cucù"
+      },
+      "risposte_accettate": [
+        "a"
+      ],
+      "spiegazione": "Il lupo non c'è. Gli animali sono un cane, un gatto, un cucù e una civetta, e il basso intanto canta una frase seria in latino.",
+      "verifica_classe": "9",
+      "verifica": "ok: è la stessa domanda della presentazione, legata all'ascolto in classe."
+    },
+    {
+      "id": "ven-01",
+      "scuola": "Venezia",
+      "tipo": "multipla",
+      "domanda": "La scuola veneziana nasce all'inizio del Cinquecento grazie a un maestro fiammingo. Chi era?",
+      "opzioni": {
+        "a": "Adriano Willaert",
+        "b": "Josquin Desprès",
+        "c": "Giovanni Pierluigi da Palestrina",
+        "d": "Adriano Banchieri"
+      },
+      "risposte_accettate": [
+        "a"
+      ],
+      "spiegazione": "Era Adriano Willaert, un fiammingo arrivato a Venezia: un altro segno di quanto i maestri delle Fiandre fossero richiesti in Italia.",
+      "verifica_classe": "4",
+      "verifica": "ok"
+    },
+    {
+      "id": "ven-02",
+      "scuola": "Venezia",
+      "tipo": "abbinamento",
+      "domanda": "Abbinate ogni elemento della scuola veneziana alla sua descrizione.",
+      "spiegazione": "Sono le parole chiave della scuola veneziana.",
+      "verifica_classe": "4",
+      "verifica": "ok (come nella presentazione; sostituisce ven-1 e ven-2 originali)",
+      "coppie": [
+        {
+          "sinistra": "Adriano Willaert",
+          "destra": "maestro fiammingo da cui nasce la scuola"
+        },
+        {
+          "sinistra": "Andrea Gabrieli",
+          "destra": "il discepolo più importante di Willaert"
+        },
+        {
+          "sinistra": "due cantorie di San Marco",
+          "destra": "composizioni per due cori alternati"
+        },
+        {
+          "sinistra": "organo",
+          "destra": "una sola melodia accompagnata da accordi"
+        }
+      ]
+    },
+    {
+      "id": "ven-03",
+      "scuola": "Venezia",
+      "tipo": "vero_falso",
+      "domanda": "La Basilica di San Marco era l'unica chiesa dell'epoca con due cantorie, una di fronte all'altra.",
+      "risposte_accettate": [
+        "vero"
+      ],
+      "spiegazione": "Vero. Per questo la musica sacra di Venezia diventò diversa da quella di Roma.",
+      "verifica_classe": "7",
+      "verifica": "ok (riprende ven-4 originale, 'quante cantorie')"
+    },
+    {
+      "id": "ven-04",
+      "scuola": "Venezia",
+      "tipo": "multipla",
+      "domanda": "Le due cantorie di San Marco spinsero gli organisti della basilica a creare:",
+      "opzioni": {
+        "a": "composizioni per due cori alternati",
+        "b": "composizioni per una sola voce",
+        "c": "madrigali dialogici con versi di animali",
+        "d": "messe in stile «a cappella», senza strumenti"
+      },
+      "risposte_accettate": [
+        "a"
+      ],
+      "spiegazione": "Composizioni per due cori alternati: un coro canta, l'altro gli risponde dalla parte opposta della chiesa.",
+      "verifica_classe": "5, 7",
+      "verifica": "ok. Uso 'due cori alternati' come nella presentazione, non 'cori spezzati'."
+    },
+    {
+      "id": "ven-05",
+      "scuola": "Venezia",
+      "tipo": "vero_falso",
+      "domanda": "A Venezia la musica sacra era uguale a quella della scuola romana.",
+      "risposte_accettate": [
+        "falso"
+      ],
+      "spiegazione": "Falso. A Venezia la musica sacra si differenziò da quella romana proprio grazie alle due cantorie di San Marco e al grande uso dell'organo.",
+      "verifica_classe": "7",
+      "verifica": "ok"
+    },
+    {
+      "id": "ven-06",
+      "scuola": "Venezia",
+      "tipo": "multipla",
+      "domanda": "Il grande uso dell'organo a Venezia portò una novità fondamentale. Quale?",
+      "opzioni": {
+        "a": "al posto della polifonia, una sola linea melodica accompagnata da accordi",
+        "b": "una polifonia ancora più complessa, con molte voci",
+        "c": "la musica cantata senza alcuno strumento",
+        "d": "l'imitazione a canone tra le voci"
+      },
+      "risposte_accettate": [
+        "a"
+      ],
+      "spiegazione": "Al posto della polifonia si comincia a usare una sola linea melodica, accompagnata dagli accordi degli strumenti.",
+      "verifica_classe": "6, 7",
+      "verifica": "ok"
+    },
+    {
+      "id": "ven-07",
+      "scuola": "Venezia",
+      "tipo": "vero_falso",
+      "domanda": "Gli accordi sono più suoni emessi contemporaneamente dagli strumenti.",
+      "risposte_accettate": [
+        "vero"
+      ],
+      "spiegazione": "Vero. Un accordo è formato da più suoni suonati nello stesso momento.",
+      "verifica_classe": "6",
+      "verifica": "ok"
+    },
+    {
+      "id": "ven-08",
+      "scuola": "Venezia",
+      "tipo": "multipla",
+      "domanda": "Che cos'è il basso continuo?",
+      "opzioni": {
+        "a": "un accompagnamento a base di accordi, con la melodia affidata alla voce",
+        "b": "una voce che ripete la melodia appena cantata da un'altra",
+        "c": "un coro che risponde a un altro coro",
+        "d": "una voce grave che canta da sola, senza strumenti"
+      },
+      "risposte_accettate": [
+        "a"
+      ],
+      "spiegazione": "Il basso continuo è un accompagnamento a base di accordi: la melodia la canta la voce, gli strumenti la sostengono.",
+      "verifica_classe": "6",
+      "verifica": "ok"
+    }
+  ]
+}
