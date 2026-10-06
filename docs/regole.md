@@ -15,7 +15,7 @@ Regole de «L'Isola Assediata», decise con il docente il 6 ottobre 2026. I nume
   - *Pulsante "?":* sempre visibile in un angolo, accanto al contatore dei colpi rimasti; mette in pausa e mostra di nuovo le istruzioni.
   - La scritta dice "Tocca" o "Clicca" in base al primo comando usato (dito o mouse).
 - Le quattro scuole si affrontano in **ordine fisso**: Fiandre → Roma → Firenze → Venezia.
-- Le domande vengono da `data/domande.json`: scelta multipla, vero/falso e abbinamento, mai risposte scritte. Le opzioni sono mescolate e dopo ogni risposta il mercante mostra la spiegazione.
+- Le domande vengono da `data/domande.json`: scelta multipla, vero/falso e abbinamento, mai risposte scritte. Le opzioni sono mescolate e dopo ogni risposta l'abitante dell'isola mostra la spiegazione.
 - Le domande seguono la verifica di classe e la presentazione usata in classe: non si chiede nulla che non sia stato spiegato.
 
 ## 1. Due punteggi separati
@@ -23,7 +23,12 @@ Regole de «L'Isola Assediata», decise con il docente il 6 ottobre 2026. I nume
 - **Valore in combattimento.** Conta le navi affondate e lo stato del forte. Dà al Capitano un grado, ma non decide se l'isola è salva.
 
 ## 2. Com'è fatto un livello
-1. **Il mercante.** Fa 4 domande: 3 sulla scuola e 1 generale, estratte a caso dalla banca.
+1. **L'abitante dell'isola.** Un personaggio senza nome fa 4 domande: 3 sulla scuola e 1 generale, estratte a caso dalla banca. Con le risposte giuste l'isola prospera: livello dopo livello il personaggio sale di condizione sociale e l'ambiente dietro di lui diventa più ricco.
+   - Livello 1, Fiandre: un contadino, in una capanna.
+   - Livello 2, Roma: un artigiano, nella sua bottega.
+   - Livello 3, Firenze: un mercante, nel suo magazzino al porto.
+   - Livello 4, Venezia: un ricco mercante, nel salone del suo palazzo.
+   - Alla fine il Re accoglie il Capitano nella sala del trono.
 2. **Le munizioni.** Ogni livello ha una dotazione base, alla quale ogni risposta giusta aggiunge colpi. Una risposta sbagliata non aggiunge nulla.
 3. **La battaglia, come in Scratch.** Le navi arrivano senza sosta. La battaglia finisce quando i colpi sono esauriti (vittoria, se il forte regge) o quando il forte è distrutto (sconfitta, con la torre in fiamme sulla mappa). Si prosegue comunque al livello successivo.
 
