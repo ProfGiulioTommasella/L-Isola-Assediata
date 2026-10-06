@@ -8,6 +8,12 @@ Regole de «L'Isola Assediata», decise con il docente il 6 ottobre 2026. I nume
   - *Schermo:* la scena si adatta alle dimensioni dello schermo e i pulsanti restano abbastanza grandi per un dito.
   - *Mira:* il cannone mira nel punto toccato o cliccato e spara subito. Non segue il puntatore come in Scratch, perché col dito non c'è un puntatore che si muove.
   - *Orientamento:* si gioca in orizzontale; se un tablet è tenuto in verticale, compare l'invito a ruotarlo.
+- **Aiuti per ricordare come si spara**, pensati per chi ha poca familiarità con il computer:
+  - *Colpi di prova:* prima della prima battaglia ci sono tre barili in mare e una mano animata con la scritta "Tocca il mare per sparare". I colpi di prova non contano; la flotta arriva quando il giocatore ha colpito almeno un barile.
+  - *Promemoria:* all'inizio di ogni battaglia la mano e la scritta ricompaiono per qualche secondo.
+  - *Aiuto se ci si blocca:* se il giocatore non spara per 5 secondi mentre le navi avanzano, la mano ricompare.
+  - *Pulsante "?":* sempre visibile in un angolo, accanto al contatore dei colpi rimasti; mette in pausa e mostra di nuovo le istruzioni.
+  - La scritta dice "Tocca" o "Clicca" in base al primo comando usato (dito o mouse).
 - Le quattro scuole si affrontano in **ordine fisso**: Fiandre → Roma → Firenze → Venezia.
 - Le domande vengono da `data/domande.json`: scelta multipla, vero/falso e abbinamento, mai risposte scritte. Le opzioni sono mescolate e dopo ogni risposta il mercante mostra la spiegazione.
 - Le domande seguono la verifica di classe e la presentazione usata in classe: non si chiede nulla che non sia stato spiegato.
