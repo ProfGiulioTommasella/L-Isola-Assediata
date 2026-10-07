@@ -175,5 +175,26 @@
       "esci": "Esci"
     },
     "avviso_allenamento": "Modalità allenamento: il punteggio non viene salvato."
+  },
+  "interfaccia": {
+    "_nota": "Scritte di pulsanti e indicazioni. Nel gioco 'Toccate' diventa 'Cliccate' se si usa il mouse.",
+    "sottotitolo": "Un gioco sulla musica del Rinascimento",
+    "inizia": "Inizia",
+    "area_docente": "Area docente",
+    "avanti": "Avanti",
+    "salta": "Salta",
+    "conferma": "Conferma",
+    "vero": "Vero",
+    "falso": "Falso",
+    "colpi": "Colpi",
+    "record": "Partite giocate: {partite} · Miglior risultato: {migliore} risposte giuste su 16",
+    "mappa_indicazione": "Toccate la torre {torre} per difenderla.",
+    "mappa_stato": "Risposte giuste: {giuste} · Punti di battaglia: {punti} · Grado: {grado}",
+    "abbinamento_istruzioni": "Toccate una voce a sinistra e poi quella giusta a destra.",
+    "risposta_giusta": "La risposta giusta era:",
+    "abbinamenti_giusti": "Gli abbinamenti giusti erano:",
+    "come_si_gioca": "Come si gioca",
+    "riprendi": "Riprendi",
+    "ruota": "Ruotate il tablet in orizzontale per giocare."
   }
 }

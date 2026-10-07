@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>L'Isola Assediata</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/stile.css">
+</head>
+<body>
+  <!-- Il palco è sempre 1920x1080: viene ridimensionato per stare nello schermo. -->
+  <div id="palco">
+    <canvas id="tela" width="1920" height="1080"></canvas>
+    <div id="ui"></div>
+    <div id="comandi">
+      <button id="pulsante-audio" class="tondo" aria-label="Audio">🔊</button>
+    </div>
+  </div>
+
+  <div id="ruota">
+    <div>📱↻</div>
+    <p id="ruota-testo">Ruotate il tablet in orizzontale per giocare.</p>
+  </div>
+
+  <!-- Copia del diario di bordo usata solo per la stampa. -->
+  <div id="stampa"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/utili.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/grafica.js"></script>
+  <script src="js/battaglia.js"></script>
+  <script src="js/gioco.js"></script>
+</body>
+</html>
