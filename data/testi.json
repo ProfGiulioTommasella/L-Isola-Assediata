@@ -1,0 +1,164 @@
+{
+  "_nota": "Testi di gioco approvati da Giulio (2026-10-07). Ci si rivolge al giocatore col 'voi', senza forme al maschile o al femminile. Segnaposto inseriti dal gioco: {nome}, {colpi}, {giuste}, {navi}, {punti}, {grado}. Ogni testo è una lista di battute, mostrate una alla volta.",
+  "inizio": {
+    "intro": [
+      "L'Isola è assediata! Le flotte di quattro grandi scuole musicali del Rinascimento stanno arrivando: Fiandre, Roma, Firenze e Venezia.",
+      "Il Re vi ha chiamato a difendere il forte. Gli abitanti dell'isola vi procureranno le munizioni, ma solo se dimostrerete di conoscere i nemici."
+    ],
+    "chiedi_nome": "Inserite pure il vostro nome:"
+  },
+  "livelli": [
+    {
+      "livello": 1,
+      "scuola": "fiandre",
+      "personaggio": "contadino",
+      "ambiente": "capanna",
+      "arrivo": [
+        "Salute a voi, Capitano {nome}! Siamo onorati di avervi al comando delle nostre difese.",
+        "So che cercate munizioni per la battaglia che vi attende. Sono merce preziosa e qui in campagna ne abbiamo poche. Ma se risponderete bene, faremo il possibile per procurarvele.",
+        "La flotta delle Fiandre è già all'orizzonte. Vediamo quanto conoscete i nostri primi avversari."
+      ],
+      "prima_della_battaglia": [
+        "Abbiamo fatto il possibile: avete {colpi} colpi. Ora sta a voi usarli bene.",
+        "Il nostro cannone non è precisissimo: mirate con cura!"
+      ]
+    },
+    {
+      "livello": 2,
+      "scuola": "roma",
+      "personaggio": "artigiano",
+      "ambiente": "bottega",
+      "arrivo": [
+        "Eccovi di nuovo, Capitano! Grazie a voi ho potuto aprire la mia bottega.",
+        "Spero che il forte abbia retto all'assalto. La flotta dello Stato Pontificio si avvicina, e vi serviranno più munizioni per il prossimo scontro."
+      ],
+      "prima_della_battaglia": [
+        "Avete {colpi} colpi. Abbiamo migliorato il cannone, ma le navi romane sono più veloci. Buona battaglia!"
+      ]
+    },
+    {
+      "livello": 3,
+      "scuola": "firenze",
+      "personaggio": "mercante",
+      "ambiente": "porto",
+      "arrivo": [
+        "Che gioia vedervi tornare, Capitano! Come vedete, facendo affari con voi il paese e i commerci prosperano!",
+        "Le navi del Granducato di Toscana, guidate da Firenze, si avvicinano. Sono ancora più veloci, ma i nostri uomini si sono allenati a ricaricare il cannone più in fretta."
+      ],
+      "prima_della_battaglia": [
+        "Avete {colpi} colpi. Buona battaglia!"
+      ]
+    },
+    {
+      "livello": 4,
+      "scuola": "venezia",
+      "personaggio": "ricco mercante",
+      "ambiente": "palazzo",
+      "arrivo": [
+        "Finalmente siete qui, Capitano! Guardate il mio palazzo: tutto questo lo dobbiamo a voi.",
+        "Ma ora le cose si fanno serie. Affronterete i veneziani, i più abili nella guerra per mare. Hanno le navi più veloci di tutti, e attaccheranno di notte."
+      ],
+      "prima_della_battaglia": [
+        "Avete {colpi} colpi. È l'ultima battaglia e il nemico è agguerrito. Le difese sono al massimo: ora tocca a voi!"
+      ]
+    }
+  ],
+  "domande": {
+    "_nota": "Dopo ogni risposta si mostra una di queste frasi (a caso), seguita dalla 'spiegazione' della domanda in data/domande.json.",
+    "giusta": [
+      "Perfetto!",
+      "Esatto!",
+      "Proprio così!"
+    ],
+    "sbagliata": [
+      "Non proprio…",
+      "Hmm, non era così.",
+      "Quasi, ma no."
+    ],
+    "fine": "Avete risposto bene a {giuste} domande su 4."
+  },
+  "aiuti_sparo": {
+    "colpi_di_prova": "Ecco tre barili in mare. Toccate il mare per sparare e colpitene almeno uno! (col mouse: Cliccate)",
+    "barile_colpito": "Ottimo colpo! Ora preparatevi: arriva la flotta.",
+    "inizio_battaglia": "Toccate il mare per sparare!",
+    "inattivo_5_secondi": "Le navi si avvicinano: toccate il mare per sparare!",
+    "pulsante_aiuto": "Toccate (o cliccate) il punto del mare dove volete colpire. Il cannone spara subito. Ogni nave che supera la linea di difesa danneggia il forte. La battaglia finisce quando finiscono i colpi."
+  },
+  "fine_battaglia": {
+    "vittoria": "Il forte ha retto! Avete affondato {navi} navi.",
+    "sconfitta": "Il forte è caduto… Ma la guerra non è finita: avanti con la prossima scuola!"
+  },
+  "finale": {
+    "apertura": "Salute a voi, Capitano {nome}. Sono il Re dell'Isola che vi ha ingaggiato.",
+    "esiti": [
+      {
+        "da": 0,
+        "a": 7,
+        "titolo": "Isola perduta",
+        "testo": "Avete risposto bene a {giuste} domande su 16: non basta per salvare la nostra isola. Raccogliete più informazioni sui nostri nemici e tornate ad affrontarli. Vi attendo con ansia!"
+      },
+      {
+        "da": 8,
+        "a": 11,
+        "titolo": "Discreto",
+        "testo": "Avete risposto bene a {giuste} domande su 16: avete difeso discretamente la mia isola. Ripassate le informazioni sui nostri nemici e saprete fare ancora meglio."
+      },
+      {
+        "da": 12,
+        "a": 15,
+        "titolo": "Ottimo",
+        "testo": "Avete risposto bene a {giuste} domande su 16: avete difeso ottimamente la mia isola! Se risponderete bene a tutte e 16, diventerete il nostro Campione dell'Isola."
+      },
+      {
+        "da": 16,
+        "a": 16,
+        "titolo": "Campione",
+        "testo": "Onore a voi, Campione dell'Isola! Avete risposto bene a tutte le 16 domande: i nemici non hanno segreti per voi. Tornate presto a farci visita, qui sarete sempre a casa!"
+      }
+    ],
+    "commento_battaglia": "E in battaglia avete guadagnato {punti} punti: il vostro grado è {grado}!",
+    "gradi": [
+      "Mozzo",
+      "Nostromo",
+      "Capitano",
+      "Ammiraglio"
+    ],
+    "chiusura": "Volete ricominciare? Ogni partita ha domande nuove."
+  },
+  "riepilogo": {
+    "titolo": "Il vostro diario di bordo",
+    "etichette": {
+      "nome": "Nome",
+      "data": "Data",
+      "giuste": "Risposte giuste",
+      "grado": "Grado",
+      "punti": "punti",
+      "migliore": "Miglior risultato",
+      "partite": "Partite giocate"
+    },
+    "da_ripassare": "Da ripassare prima della verifica",
+    "voce_ripasso": {
+      "domanda": "Domanda",
+      "risposta_giusta": "Risposta giusta",
+      "spiegazione": "Perché"
+    },
+    "pulsanti": {
+      "scarica": "Scarica",
+      "stampa": "Stampa",
+      "ricomincia": "Ricomincia"
+    }
+  },
+  "docente": {
+    "titolo": "Area docente",
+    "parola_d_ordine": "Parola d'ordine:",
+    "entra": "Entra",
+    "errore": "Parola d'ordine sbagliata.",
+    "menu": {
+      "livello": "Gioca un livello a scelta",
+      "domande": "Vedi tutte le domande",
+      "allenamento": "Allenamento (senza punteggio)",
+      "esci": "Esci"
+    },
+    "avviso_allenamento": "Modalità allenamento: il punteggio non viene salvato."
+  }
+}
