@@ -101,6 +101,18 @@ class Battaglia {
   }
 
   // ---------- Comandi ----------
+  // Angolo della canna per puntare verso (x, y): la canna guarda a sinistra.
+  mira(x, y) {
+    let a = Math.atan2(y - CANNONE.y, x - CANNONE.x) - Math.PI;
+    if (a < -Math.PI) a += Math.PI * 2;
+    return a;
+  }
+
+  punta(x, y) {
+    if (this.pausa || this.finita || x > LINEA_DIFESA + 30) return;
+    this.angolo = this.mira(x, Math.max(y, ORIZZONTE + 15));
+  }
+
   tocco(x, y) {
     if (this.pausa || this.finita) return;
     if (y < ORIZZONTE + 15 || x > LINEA_DIFESA + 30) return;
@@ -115,8 +127,7 @@ class Battaglia {
 
     // il cannone "non è precisissimo"
     const tx = x + Utili.caso(-28, 28), ty = y + Utili.caso(-10, 10);
-    this.angolo = Math.atan2(ty - CANNONE.y, tx - CANNONE.x) - Math.PI;
-    if (this.angolo < -Math.PI) this.angolo += Math.PI * 2;
+    this.angolo = this.mira(tx, ty);
     const bx = CANNONE.x + Math.cos(this.angolo) * -125, by = CANNONE.y + Math.sin(this.angolo) * -125;
     const dist = Math.hypot(tx - bx, ty - by);
     this.palle.push({ x0: bx, y0: by, tx, ty, p: 0, durata: 0.25 + dist / 4000, arco: dist * 0.1 });
@@ -211,6 +222,13 @@ class Battaglia {
         bar.colpito = true;
         this.effetti.push({ tipo: 'esplosione', x: bar.x, y: bar.y - 15, s: bar.s, p: 0, durata: 0.8 });
         Audio_.esplosione();
+        // l'addestramento finisce quando sono stati colpiti tutti e tre i barili
+        const restanti = this.barili.filter((r) => !r.colpito);
+        if (restanti.length) {
+          this.messaggio(Utili.riempi(this.o.testi.aiuti_sparo.barile_mancano, { barili: restanti.length }));
+          this.manoPos = [restanti[0].x, restanti[0].y - 20];
+          return;
+        }
         this.messaggio(this.o.testi.aiuti_sparo.barile_colpito);
         this.stato = 'attesa';
         setTimeout(() => { if (!this.finita) this.iniziaFlotta(); }, 2200);
