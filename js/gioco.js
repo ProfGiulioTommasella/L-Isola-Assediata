@@ -369,6 +369,7 @@ function mostraDomanda(q, risultato, poi) {
 // ---------- Battaglia ----------
 function battaglia(i) {
   pulisci();
+  Audio_.suona('battaglia');   // ferma la musica del livello; in battaglia suona solo il brano "battaglia", se c'è
   const cfg = CONFIG.livelli[i];
   const prova = !P.provaFatta;
   P.provaFatta = true;

@@ -52,7 +52,8 @@ const CONFIG = {
   impronta: '099766da',
 
   // Musica di sottofondo per livello: brani ascoltati in classe, in registrazioni libere.
-  // Esempio: fiandre: 'audio/fiandre.mp3'. Se manca, il livello è senza musica. Crediti in audio/CREDITI.md.
+  // Esempio: fiandre: 'audio/fiandre.mp3'. Se manca, il livello è senza musica.
+  // In battaglia la musica del livello si ferma; suona 'battaglia', se indicato. Crediti in audio/CREDITI.md.
   musica: {
     fiandre: 'audio/fiandre.mp3',   // Josquin, Kyrie della Missa Pange lingua
     roma: 'audio/roma.mp3',         // Palestrina, Kyrie della Missa Papae Marcelli
