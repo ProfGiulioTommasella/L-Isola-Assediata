@@ -1,0 +1,7 @@
+{
+  "_nota": "Immagini definitive già pronte: nome usato dal gioco → file. Se un nome manca, il gioco usa un disegno provvisorio. Nomi possibili: inizio, mappa, re, scena-<scuola>, battaglia-<scuola>, nave-<scuola>-<piccola|media|grande>, relitto-<scuola>-<tipo>, forte-0…forte-3, cannone, lucchetto.",
+  "scena-fiandre": "immagini/scene/fiandre.jpg",
+  "scena-roma": "immagini/scene/roma.jpg",
+  "scena-firenze": "immagini/scene/firenze.jpg",
+  "scena-venezia": "immagini/scene/venezia.jpg"
+}
