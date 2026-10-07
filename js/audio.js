@@ -1,10 +1,11 @@
-// Effetti sonori generati dal gioco stesso (niente file, niente diritti da gestire).
-// La musica di sottofondo si elenca in CONFIG.musica (js/config.js).
+// Effetti sonori: quelli del prototipo Scratch (audio/effetti/), con suoni sintetici di riserva
+// finché i file non sono caricati. La musica di sottofondo si elenca in CONFIG.musica (js/config.js).
 const Audio_ = {
   ctx: null,
   master: null,
   attivo: Utili.leggi('audio', true),
   musica: null,
+  effetti: {},
 
   // I browser permettono l'audio solo dopo il primo tocco o clic.
   sblocca() {
@@ -15,6 +16,32 @@ const Audio_ = {
     this.master = this.ctx.createGain();
     this.master.gain.value = this.attivo ? 0.8 : 0;
     this.master.connect(this.ctx.destination);
+    this.caricaEffetti();
+  },
+
+  caricaEffetti() {
+    ['sparo', 'colpo', 'fuoco', 'tonfo', 'inceppato', 'campana', 'forte', 'corno', 'vittoria', 'trombe', 'lucchetto']
+      .forEach((nome) => {
+        fetch('audio/effetti/' + nome + '.mp3')
+          .then((r) => (r.ok ? r.arrayBuffer() : Promise.reject()))
+          .then((dati) => this.ctx.decodeAudioData(dati))
+          .then((buf) => { this.effetti[nome] = buf; })
+          .catch(() => {});
+      });
+  },
+
+  // Suona un effetto caricato; restituisce false se non è (ancora) disponibile.
+  file(nome, volume) {
+    const buf = this.effetti[nome];
+    if (!this.ctx || !buf) return false;
+    const s = this.ctx.createBufferSource();
+    s.buffer = buf;
+    const g = this.ctx.createGain();
+    g.gain.value = volume || 1;
+    s.connect(g);
+    g.connect(this.master);
+    s.start();
+    return true;
   },
 
   cambia() {
@@ -82,10 +109,13 @@ const Audio_ = {
     o.stop(t + durata + 0.05);
   },
 
-  sparo() { this.botto(0.7, 1800, 0.9, 120); },
-  esplosione() { this.botto(1.2, 900, 0.8, 70); },
+  sparo() { if (!this.file('sparo')) this.botto(0.7, 1800, 0.9, 120); },
+  esplosione() {
+    if (this.file('colpo')) this.file('fuoco', 0.6);
+    else this.botto(1.2, 900, 0.8, 70);
+  },
   tonfo() {
-    if (!this.ctx) return;
+    if (!this.ctx || this.file('tonfo')) return;
     const s = this.rumore(0.6);
     const f = this.ctx.createBiquadFilter();
     f.type = 'bandpass';
@@ -95,19 +125,31 @@ const Audio_ = {
     f.connect(this.inviluppo(0.5, 0.01, 0.6));
     s.start();
   },
-  colpoForte() { this.botto(0.9, 500, 0.9, 55); },
+  colpoForte() {
+    this.file('campana', 0.7);
+    if (!this.file('forte')) this.botto(0.9, 500, 0.9, 55);
+  },
   clic() { this.nota(880, 0, 0.06, 'square', 0.05); },
+  inceppato() { if (!this.file('inceppato')) this.clic(); },
   giusta() { this.nota(660, 0, 0.18, 'triangle', 0.25); this.nota(990, 0.12, 0.3, 'triangle', 0.25); },
   sbagliata() { this.nota(300, 0, 0.2, 'triangle', 0.2); this.nota(220, 0.15, 0.35, 'triangle', 0.2); },
-  lucchetto() { this.nota(1500, 0, 0.05, 'square', 0.08); this.nota(900, 0.08, 0.08, 'square', 0.08); },
+  lucchetto() {
+    if (this.file('lucchetto')) return;
+    this.nota(1500, 0, 0.05, 'square', 0.08);
+    this.nota(900, 0.08, 0.08, 'square', 0.08);
+  },
   corno() {
+    if (this.file('corno')) return;
     this.nota(196, 0, 0.6, 'sawtooth', 0.12);
     this.nota(294, 0.55, 1.0, 'sawtooth', 0.12);
   },
   fanfara() {
+    if (this.file('vittoria')) return;
     [[392, 0], [523, 0.18], [659, 0.36], [784, 0.54], [659, 0.9], [784, 1.08]].forEach(([f, t]) =>
       this.nota(f, t, 0.3, 'square', 0.08));
   },
+  // trombe per l'arrivo nella sala del Re
+  trombe() { if (!this.file('trombe', 0.8)) this.fanfara(); },
 
   // Musica di sottofondo, se il file esiste. Se manca non succede nulla.
   suona(nome) {

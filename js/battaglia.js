@@ -116,7 +116,7 @@ class Battaglia {
   tocco(x, y) {
     if (this.pausa || this.finita) return;
     if (y < ORIZZONTE + 15 || x > LINEA_DIFESA + 30) return;
-    if (this.t < this.pronto) { Audio_.clic(); return; }
+    if (this.t < this.pronto) { Audio_.inceppato(); return; }
     if (this.stato === 'battaglia' && this.colpi <= 0) return;
 
     if (this.stato === 'battaglia') this.colpi--;

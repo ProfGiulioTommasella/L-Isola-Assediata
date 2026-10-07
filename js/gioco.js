@@ -179,7 +179,10 @@ function mappa() {
     disegna: (c, t) => Grafica.mappa(c, stati, prossima.scuola, t),
     tocco: (x, y) => {
       const [tx, ty] = Grafica.POSIZIONI_TORRI[prossima.scuola];
-      if (Math.hypot(x - tx, y - (ty - 50)) < 130) { Audio_.clic(); livello(P.livello); }
+      if (Math.hypot(x - tx, y - (ty - 50)) < 130) { Audio_.clic(); livello(P.livello); return; }
+      // le altre torri sono chiuse
+      const chiusa = Object.values(Grafica.POSIZIONI_TORRI).some(([ax, ay]) => Math.hypot(x - ax, y - (ay - 50)) < 130);
+      if (chiusa) Audio_.lucchetto();
     },
   };
   ui.append(el('div', { class: 'indicazione' }, adatta(Utili.riempi(I().mappa_indicazione, { torre: prossima.torre }))));
@@ -392,7 +395,7 @@ function finale() {
   const f = G.testi.finale;
   const v = valori();
   const esito = f.esiti.find((e) => v.giuste >= e.da && v.giuste <= e.a);
-  Audio_.fanfara();
+  Audio_.trombe();
   dialogo([f.apertura, esito.testo, f.commento_battaglia, f.chiusura].map((r) => Utili.riempi(r, v)), {
     sfondo: (c, t) => Grafica.salaDelRe(c, t), poi: diario,
   });

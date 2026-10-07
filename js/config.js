@@ -59,6 +59,7 @@ const CONFIG = {
     roma: 'audio/roma.mp3',         // Palestrina, Kyrie della Missa Papae Marcelli
     firenze: 'audio/firenze.mp3',   // Isaac, Kyrie della Missa Carminum
     venezia: 'audio/venezia.mp3',   // Giovanni Gabrieli, In ecclesiis
+    battaglia: 'audio/battaglia.mp3',   // «Enemy Ship Approaching», per tutte le battaglie
   },
 
   // Colori delle flotte, usati finché non ci sono le immagini definitive delle navi.
