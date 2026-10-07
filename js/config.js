@@ -52,8 +52,13 @@ const CONFIG = {
   impronta: '099766da',
 
   // Musica di sottofondo per livello: brani ascoltati in classe, in registrazioni libere.
-  // Esempio: fiandre: 'audio/fiandre.mp3'. Se manca, il livello è senza musica.
-  musica: {},
+  // Esempio: fiandre: 'audio/fiandre.mp3'. Se manca, il livello è senza musica. Crediti in audio/CREDITI.md.
+  musica: {
+    fiandre: 'audio/fiandre.mp3',   // Josquin, Kyrie della Missa Pange lingua
+    roma: 'audio/roma.mp3',         // Palestrina, Kyrie della Missa Papae Marcelli
+    firenze: 'audio/firenze.mp3',   // Isaac, Kyrie della Missa Carminum
+    venezia: 'audio/venezia.mp3',   // Giovanni Gabrieli, In ecclesiis
+  },
 
   // Colori delle flotte, usati finché non ci sono le immagini definitive delle navi.
   flotte: {
