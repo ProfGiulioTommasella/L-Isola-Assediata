@@ -29,8 +29,8 @@ Presi dal prototipo Scratch del docente e convertiti in MP3 mono a 96 kbps.
 | campana.mp3 | Ship Bell | libreria suoni di Scratch (CC BY-SA 2.0) |
 | forte.mp3 | Boom Cloud | libreria suoni di Scratch (CC BY-SA 2.0) |
 | vittoria.mp3 | Win | libreria suoni di Scratch (CC BY-SA 2.0) |
-| colpo.mp3 | 131554__shaynecantly__price-rock-crash | Freesound, suono n. 131554 di shaynecantly (licenza da verificare) |
-| fuoco.mp3 | fire-burning-with-rumble-without-crackle | caricato dal docente in Scratch (fonte da verificare) |
-| corno.mp3 | Corno battaglia | caricato dal docente in Scratch (fonte da verificare) |
-| trombe.mp3 | trombe medievali | caricato dal docente in Scratch (fonte da verificare) |
-| lucchetto.mp3 | chiuso lucchetto | caricato dal docente in Scratch (fonte da verificare) |
+| colpo.mp3 | 131554__shaynecantly__price-rock-crash | Freesound, suono n. 131554 di shaynecantly (libero da usare, confermato dal docente) |
+| fuoco.mp3 | fire-burning-with-rumble-without-crackle | caricato dal docente in Scratch, libero da usare (confermato dal docente) |
+| corno.mp3 | Corno battaglia | caricato dal docente in Scratch, libero da usare (confermato dal docente) |
+| trombe.mp3 | trombe medievali | caricato dal docente in Scratch, libero da usare (confermato dal docente) |
+| lucchetto.mp3 | chiuso lucchetto | caricato dal docente in Scratch, libero da usare (confermato dal docente) |
