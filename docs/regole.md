@@ -49,7 +49,7 @@ Regole de «L'Isola Assediata», decise con il docente il 6 ottobre 2026. I nume
 - Ogni nave affondata vale punti in base alla velocità: nave **piccola e veloce** 5, **media** 3, **grande e lenta** 2. Il prototipo calcolava già questi punti nella variabile `hits` senza usarli.
 - Ogni scuola ha le sue navi tipiche del periodo (i nomi non compaiono nel gioco):
   - *Fiandre:* caravella, urca, caracca;
-  - *Roma:* fregata, galea, galea capitana;
+  - *Roma:* tre galee di dimensioni diverse (galeotta, galea, galea capitana);
   - *Firenze:* brigantino, galea, galeone;
   - *Venezia:* brigantino, galea sottile, galeazza.
 - Bonus per lo stato del forte a fine battaglia: integro +20, danneggiato +10, molto danneggiato +5, distrutto 0.
