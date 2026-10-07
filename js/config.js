@@ -3,25 +3,25 @@ const CONFIG = {
   livelli: [
     {
       scuola: 'fiandre', nome: 'Fiandre', torre: 'delle Fiandre',
-      base: 16, perGiusta: 4, resistenza: 100, ricarica: 2.0,
+      base: 12, perGiusta: 3, resistenza: 80, ricarica: 1.8,
       velocita: 1.0, intervallo: 9.0, notte: false,
       domandeScuola: 'Fiandre',
     },
     {
       scuola: 'roma', nome: 'Roma', torre: 'di Roma',
-      base: 32, perGiusta: 8, resistenza: 200, ricarica: 2.0,
+      base: 16, perGiusta: 4, resistenza: 100, ricarica: 1.6,
       velocita: 1.15, intervallo: 8.0, notte: false,
       domandeScuola: 'Roma',
     },
     {
       scuola: 'firenze', nome: 'Firenze', torre: 'di Firenze',
-      base: 56, perGiusta: 14, resistenza: 350, ricarica: 1.9,
+      base: 20, perGiusta: 5, resistenza: 120, ricarica: 1.5,
       velocita: 1.3, intervallo: 7.5, notte: false,
       domandeScuola: 'Firenze',
     },
     {
       scuola: 'venezia', nome: 'Venezia', torre: 'di Venezia',
-      base: 64, perGiusta: 14, resistenza: 500, ricarica: 1.6,
+      base: 24, perGiusta: 6, resistenza: 150, ricarica: 1.4,
       velocita: 1.45, intervallo: 7.0, notte: true,
       domandeScuola: 'Venezia',
     },
@@ -42,7 +42,7 @@ const CONFIG = {
 
   gradi: ['Mozzo', 'Nostromo', 'Capitano', 'Ammiraglio'],
   // Il grado dipende da quanti punti si hanno rispetto a un riferimento che cresce a ogni battaglia.
-  riferimentoPunti: [45, 90, 160, 190],
+  riferimentoPunti: [45, 55, 65, 75],
   sogliaGradi: [0.25, 0.5, 0.75],
 
   // Finali del Re: risposte giuste minime per ogni fascia (vedi testi.json).

@@ -18,6 +18,7 @@ async function avvia() {
   window.addEventListener('resize', adattaPalco);
   document.addEventListener('pointerdown', () => Audio_.sblocca(), { capture: true });
   tela.addEventListener('pointerdown', toccoTela);
+  tela.addEventListener('pointermove', puntaTela);
   palco.addEventListener('pointerdown', (e) => { if (G.mouse == null) G.mouse = e.pointerType === 'mouse'; }, { capture: true });
   const audio = document.getElementById('pulsante-audio');
   audio.textContent = Audio_.attivo ? '🔊' : '🔇';
@@ -58,11 +59,18 @@ function ciclo(ora) {
   requestAnimationFrame(ciclo);
 }
 
-function toccoTela(e) {
+function puntoTela(e) {
   const r = tela.getBoundingClientRect();
-  const x = (e.clientX - r.left) * W / r.width;
-  const y = (e.clientY - r.top) * H / r.height;
-  if (G.scena && G.scena.tocco) G.scena.tocco(x, y);
+  return [(e.clientX - r.left) * W / r.width, (e.clientY - r.top) * H / r.height];
+}
+
+function toccoTela(e) {
+  if (G.scena && G.scena.tocco) G.scena.tocco(...puntoTela(e));
+}
+
+// Col mouse il cannone segue il puntatore anche senza cliccare.
+function puntaTela(e) {
+  if (G.scena && G.scena.punta) G.scena.punta(...puntoTela(e));
 }
 
 // "Toccate" diventa "Cliccate" per chi usa il mouse.
@@ -374,7 +382,7 @@ function battaglia(i) {
       if (i < CONFIG.livelli.length - 1) { P.livello = i + 1; mappa(); } else finale();
     },
   });
-  G.scena = { disegna: (c) => b.disegna(c), aggiorna: (dt) => b.aggiorna(dt), tocco: (x, y) => b.tocco(x, y) };
+  G.scena = { disegna: (c) => b.disegna(c), aggiorna: (dt) => b.aggiorna(dt), tocco: (x, y) => b.tocco(x, y), punta: (x, y) => b.punta(x, y) };
 }
 
 // ---------- Finale del Re ----------

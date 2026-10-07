@@ -1,5 +1,5 @@
 {
-  "_nota": "Testi di gioco approvati da Giulio (2026-10-07). Ci si rivolge al giocatore col 'voi', senza forme al maschile o al femminile. Segnaposto inseriti dal gioco: {nome}, {colpi}, {giuste}, {navi}, {punti}, {grado}. Ogni testo è una lista di battute, mostrate una alla volta. Livelli 2-4: dopo la prima battuta di 'arrivo' si mostrano 'commento_battaglia' (secondo l'esito della battaglia precedente) e 'grado_attuale' (grado e punti accumulati finora), poi le altre battute di 'arrivo'.",
+  "_nota": "Testi di gioco approvati da Giulio (2026-10-07). Ci si rivolge al giocatore col 'voi', senza forme al maschile o al femminile. Segnaposto inseriti dal gioco: {nome}, {colpi}, {giuste}, {navi}, {punti}, {grado}, {barili}. Ogni testo è una lista di battute, mostrate una alla volta. Livelli 2-4: dopo la prima battuta di 'arrivo' si mostrano 'commento_battaglia' (secondo l'esito della battaglia precedente) e 'grado_attuale' (grado e punti accumulati finora), poi le altre battute di 'arrivo'.",
   "inizio": {
     "intro": [
       "L'Isola è assediata! Le flotte di quattro grandi scuole musicali del Rinascimento stanno arrivando: Fiandre, Roma, Firenze e Venezia.",
@@ -93,8 +93,9 @@
     "fine": "Avete risposto bene a {giuste} domande su 4."
   },
   "aiuti_sparo": {
-    "colpi_di_prova": "Ecco tre barili in mare. Toccate il mare per sparare e colpitene almeno uno! (col mouse: Cliccate)",
-    "barile_colpito": "Ottimo colpo! Ora preparatevi: arriva la flotta.",
+    "colpi_di_prova": "Addestramento: ecco tre barili in mare. Toccate il mare per sparare e colpiteli tutti e tre! (col mouse: Cliccate)",
+    "barile_mancano": "Colpito! Barili rimasti: {barili}.",
+    "barile_colpito": "Ottimo, tutti e tre! Ora preparatevi: arriva la flotta.",
     "inizio_battaglia": "Toccate il mare per sparare!",
     "inattivo_5_secondi": "Le navi si avvicinano: toccate il mare per sparare!",
     "pulsante_aiuto": "Toccate (o cliccate) il punto del mare dove volete colpire. Il cannone spara subito. Ogni nave che supera la linea di difesa danneggia il forte. La battaglia finisce quando finiscono i colpi."

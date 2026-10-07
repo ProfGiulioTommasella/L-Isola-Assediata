@@ -9,7 +9,7 @@ Regole de «L'Isola Assediata», decise con il docente il 6 ottobre 2026. I nume
   - *Mira:* il cannone mira nel punto toccato o cliccato e spara subito. Non segue il puntatore come in Scratch, perché col dito non c'è un puntatore che si muove.
   - *Orientamento:* si gioca in orizzontale; se un tablet è tenuto in verticale, compare l'invito a ruotarlo.
 - **Aiuti per ricordare come si spara**, pensati per chi ha poca familiarità con il computer:
-  - *Colpi di prova:* prima della prima battaglia ci sono tre barili in mare e una mano animata con la scritta "Tocca il mare per sparare". I colpi di prova non contano; la flotta arriva quando il giocatore ha colpito almeno un barile.
+  - *Colpi di prova:* prima della prima battaglia ci sono tre barili in mare e una mano animata con la scritta "Tocca il mare per sparare". I colpi di prova non contano; è un addestramento: la flotta arriva quando il giocatore ha colpito tutti e tre i barili. Col mouse il cannone segue sempre il puntatore.
   - *Promemoria:* all'inizio di ogni battaglia la mano e la scritta ricompaiono per qualche secondo.
   - *Aiuto se ci si blocca:* se il giocatore non spara per 5 secondi mentre le navi avanzano, la mano ricompare.
   - *Pulsante "?":* sempre visibile in un angolo, accanto al contatore dei colpi rimasti; mette in pausa e mostra di nuovo le istruzioni.
@@ -32,14 +32,14 @@ Regole de «L'Isola Assediata», decise con il docente il 6 ottobre 2026. I nume
 2. **Le munizioni.** Ogni livello ha una dotazione base, alla quale ogni risposta giusta aggiunge colpi. Una risposta sbagliata non aggiunge nulla.
 3. **La battaglia, come in Scratch.** Le navi arrivano senza sosta. La battaglia finisce quando i colpi sono esauriti (vittoria, se il forte regge) o quando il forte è distrutto (sconfitta, con la torre in fiamme sulla mappa). Si prosegue comunque al livello successivo.
 
-**Munizioni**, ricavate dai valori del prototipo: un colpo per munizione, stessi tempi di ricarica.
+**Munizioni**, un colpo per munizione. Ridotte il 7 ottobre 2026 dopo la prima prova, perché le battaglie erano troppo lunghe: ora durano da mezzo minuto a poco più di un minuto. La ricarica si accorcia un po' a ogni livello.
 
 | Livello | Base (tutto sbagliato) | + per risposta giusta | Colpi (min–max) | Durata della battaglia | Resistenza del forte |
 |---|---|---|---|---|---|
-| 1 Fiandre | 16 | +4 | 16–32 | da 30 s a 1 min | 100 |
-| 2 Roma | 32 | +8 | 32–64 | da 1 a 2 min | 200 |
-| 3 Firenze | 56 | +14 | 56–112 | da 1 min 45 s a 3 min 30 s | 350 |
-| 4 Venezia | 64 | +14 | 64–120 | da 1 min 40 s a 3 min | 500 |
+| 1 Fiandre | 12 | +3 | 12–24 | da 20 a 45 s circa | 80 |
+| 2 Roma | 16 | +4 | 16–32 | da 25 a 50 s circa | 100 |
+| 3 Firenze | 20 | +5 | 20–40 | da 30 s a 1 min circa | 120 |
+| 4 Venezia | 24 | +6 | 24–48 | da 35 s a 1 min 10 s circa | 150 |
 
 **Perché queste munizioni:**
 - Chi sbaglia tutto ha comunque metà dei colpi: la battaglia è più breve e frutta meno punti, ma non è persa in partenza.
