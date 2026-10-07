@@ -287,10 +287,10 @@
       "tipo": "multipla",
       "domanda": "Palestrina partì dalla polifonia fiamminga. Che cosa ne fece?",
       "opzioni": {
-        "a": "la adattò allo stile «a cappella», eliminando gli eccessi virtuosistici",
-        "b": "la rese ancora più complessa, con moltissime voci",
-        "c": "la divise tra due cori alternati, uno di fronte all'altro",
-        "d": "la abbandonò, per scrivere solo musica profana"
+        "a": "la adattò allo stile «a cappella», senza eccessi virtuosistici",
+        "b": "la rese ancora più complessa e virtuosistica, con moltissime voci",
+        "c": "la divise tra due cori alternati, posti uno di fronte all'altro",
+        "d": "la abbandonò del tutto, per scrivere soltanto musica profana"
       },
       "risposte_accettate": [
         "a"
@@ -464,20 +464,14 @@
     {
       "id": "fir-05",
       "scuola": "Firenze",
-      "tipo": "multipla",
-      "domanda": "Che cos'era la Camerata de' Bardi?",
-      "opzioni": {
-        "a": "un gruppo di musicisti e letterati fiorentini",
-        "b": "il coro della Basilica di San Marco",
-        "c": "la cappella musicale del Papa",
-        "d": "una scuola di musica nelle Fiandre"
-      },
+      "tipo": "vero_falso",
+      "domanda": "La Camerata de' Bardi era il coro della Basilica di San Marco.",
       "risposte_accettate": [
-        "a"
+        "falso"
       ],
-      "spiegazione": "La Camerata de' Bardi era un gruppo di musicisti e letterati di Firenze, che si riuniva per discutere di musica e cultura.",
+      "spiegazione": "Falso. La Camerata de' Bardi era un gruppo di musicisti e letterati di Firenze, che si riuniva per discutere di musica e cultura. San Marco è la basilica della scuola veneziana.",
       "verifica_classe": "4",
-      "verifica": "ok (sostituisce fir-4 originale)"
+      "verifica": "ok (2026-10-07: da scelta multipla a vero/falso, per avere 4 multiple e 3 vero/falso come nelle altre scuole)"
     },
     {
       "id": "fir-06",
@@ -620,7 +614,7 @@
       "tipo": "multipla",
       "domanda": "Il grande uso dell'organo a Venezia portò una novità fondamentale. Quale?",
       "opzioni": {
-        "a": "al posto della polifonia, una sola linea melodica accompagnata da accordi",
+        "a": "una sola melodia accompagnata da accordi",
         "b": "una polifonia ancora più complessa, con molte voci",
         "c": "la musica cantata senza alcuno strumento",
         "d": "l'imitazione a canone tra le voci"
@@ -650,7 +644,7 @@
       "tipo": "multipla",
       "domanda": "Che cos'è il basso continuo?",
       "opzioni": {
-        "a": "un accompagnamento a base di accordi, con la melodia affidata alla voce",
+        "a": "un accompagnamento di accordi che sostiene la voce",
         "b": "una voce che ripete la melodia appena cantata da un'altra",
         "c": "un coro che risponde a un altro coro",
         "d": "una voce grave che canta da sola, senza strumenti"
