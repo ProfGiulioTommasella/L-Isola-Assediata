@@ -49,6 +49,7 @@ Regole de «L'Isola Assediata», decise con il docente il 6 ottobre 2026. I nume
 - Ogni nave affondata vale punti in base alla velocità: **brigantino** (veloce) 5, **galea** 3, **galeone** (lento) 2. Il prototipo calcolava già questi punti nella variabile `hits` senza usarli.
 - Bonus per lo stato del forte a fine battaglia: integro +20, danneggiato +10, molto danneggiato +5, distrutto 0.
 - **Gradi** in base al totale delle 4 battaglie: Mozzo, Nostromo, Capitano, Ammiraglio. Le soglie si fissano dopo le prime prove di gioco.
+- **Il grado cresce durante la partita.** Dal livello 2, l'abitante che vi accoglie commenta com'è andata l'ultima battaglia (forte retto o caduto) e vi dice il grado raggiunto con i punti accumulati fino a quel momento. Servono quindi soglie anche dopo la 1ª, la 2ª e la 3ª battaglia. Nel racconto restate sempre «Capitano», il titolo che vi ha dato il Re.
 
 ## 4. Fine partita: il Re giudica il Sapere
 Le fasce ricalcano il prototipo, dove l'isola era salva con circa metà delle risposte giuste.

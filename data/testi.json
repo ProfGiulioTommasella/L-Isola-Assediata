@@ -1,5 +1,5 @@
 {
-  "_nota": "Testi di gioco approvati da Giulio (2026-10-07). Ci si rivolge al giocatore col 'voi', senza forme al maschile o al femminile. Segnaposto inseriti dal gioco: {nome}, {colpi}, {giuste}, {navi}, {punti}, {grado}. Ogni testo è una lista di battute, mostrate una alla volta.",
+  "_nota": "Testi di gioco approvati da Giulio (2026-10-07). Ci si rivolge al giocatore col 'voi', senza forme al maschile o al femminile. Segnaposto inseriti dal gioco: {nome}, {colpi}, {giuste}, {navi}, {punti}, {grado}. Ogni testo è una lista di battute, mostrate una alla volta. Livelli 2-4: dopo la prima battuta di 'arrivo' si mostrano 'commento_battaglia' (secondo l'esito della battaglia precedente) e 'grado_attuale' (grado e punti accumulati finora), poi le altre battute di 'arrivo'.",
   "inizio": {
     "intro": [
       "L'Isola è assediata! Le flotte di quattro grandi scuole musicali del Rinascimento stanno arrivando: Fiandre, Roma, Firenze e Venezia.",
@@ -30,8 +30,13 @@
       "ambiente": "bottega",
       "arrivo": [
         "Eccovi di nuovo, Capitano! Grazie a voi ho potuto aprire la mia bottega.",
-        "Spero che il forte abbia retto all'assalto. La flotta dello Stato Pontificio si avvicina, e vi serviranno più munizioni per il prossimo scontro."
+        "La flotta dello Stato Pontificio si avvicina, e vi serviranno più munizioni per il prossimo scontro."
       ],
+      "commento_battaglia": {
+        "forte_retto": "Ho saputo che il forte ha retto: in tutta l'isola si parla di voi!",
+        "forte_caduto": "Ho saputo che il forte è caduto… Ma non ci arrendiamo: con il vostro aiuto lo ricostruiremo."
+      },
+      "grado_attuale": "Il vostro grado ora è {grado}: avete già {punti} punti di battaglia.",
       "prima_della_battaglia": [
         "Avete {colpi} colpi. Abbiamo migliorato il cannone, ma le navi romane sono più veloci. Buona battaglia!"
       ]
@@ -45,6 +50,11 @@
         "Che gioia vedervi tornare, Capitano! Come vedete, facendo affari con voi il paese e i commerci prosperano!",
         "Le navi del Granducato di Toscana, guidate da Firenze, si avvicinano. Sono ancora più veloci, ma i nostri uomini si sono allenati a ricaricare il cannone più in fretta."
       ],
+      "commento_battaglia": {
+        "forte_retto": "Le navi romane non sono passate: ormai siete una leggenda!",
+        "forte_caduto": "Le navi romane hanno colpito duro, ma il forte è già stato riparato."
+      },
+      "grado_attuale": "Il vostro grado ora è {grado}: avete già {punti} punti di battaglia.",
       "prima_della_battaglia": [
         "Avete {colpi} colpi. Buona battaglia!"
       ]
@@ -58,6 +68,11 @@
         "Finalmente siete qui, Capitano! Guardate il mio palazzo: tutto questo lo dobbiamo a voi.",
         "Ma ora le cose si fanno serie. Affronterete i veneziani, i più abili nella guerra per mare. Hanno le navi più veloci di tutti, e attaccheranno di notte."
       ],
+      "commento_battaglia": {
+        "forte_retto": "Anche i fiorentini sono stati respinti: il nemico comincia ad avere paura di voi!",
+        "forte_caduto": "I fiorentini ci hanno messo in difficoltà, ma l'isola resiste ancora."
+      },
+      "grado_attuale": "Il vostro grado ora è {grado}: avete già {punti} punti di battaglia.",
       "prima_della_battaglia": [
         "Avete {colpi} colpi. È l'ultima battaglia e il nemico è agguerrito. Le difese sono al massimo: ora tocca a voi!"
       ]
