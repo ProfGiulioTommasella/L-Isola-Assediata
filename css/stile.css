@@ -72,6 +72,10 @@ button:disabled { cursor: default; }
   padding: 0;
 }
 #comandi { position: absolute; right: 24px; top: 24px; z-index: 20; }
+#firma {
+  position: absolute; left: 18px; bottom: 10px; z-index: 25; pointer-events: none;
+  font-size: 22px; font-style: italic; color: #fff4d6; opacity: 0.8; text-shadow: 0 1px 4px #000;
+}
 #banner {
   position: absolute; left: 50%; top: 0; transform: translateX(-50%); z-index: 15;
   background: #7a1f1a; color: #fff; font-size: 26px; padding: 6px 26px; border-radius: 0 0 12px 12px;
