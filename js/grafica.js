@@ -259,7 +259,7 @@ const Grafica = {
     }
     if (img) {
       const h = larghezza * img.height / img.width;
-      ctx.drawImage(img, -larghezza / 2, -h * 0.85, larghezza, h);
+      ctx.drawImage(img, -larghezza / 2, -h * 0.96, larghezza, h);   // lo scafo è tagliato alla linea di galleggiamento
     } else {
       this.naveDisegnata(ctx, scuola, ARMAMENTO[scuola][tipo], larghezza, t);
     }

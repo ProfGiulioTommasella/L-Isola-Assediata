@@ -3,5 +3,11 @@
   "scena-fiandre": "immagini/scene/fiandre.jpg",
   "scena-roma": "immagini/scene/roma.jpg",
   "scena-firenze": "immagini/scene/firenze.jpg",
-  "scena-venezia": "immagini/scene/venezia.jpg"
+  "scena-venezia": "immagini/scene/venezia.jpg",
+  "nave-fiandre-piccola": "immagini/sprite/nave-fiandre-piccola.webp",
+  "nave-fiandre-media": "immagini/sprite/nave-fiandre-media.webp",
+  "nave-fiandre-grande": "immagini/sprite/nave-fiandre-grande.webp",
+  "relitto-fiandre-piccola": "immagini/sprite/relitto-fiandre-piccola.webp",
+  "relitto-fiandre-media": "immagini/sprite/relitto-fiandre-media.webp",
+  "relitto-fiandre-grande": "immagini/sprite/relitto-fiandre-grande.webp"
 }
