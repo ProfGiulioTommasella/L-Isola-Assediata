@@ -15,5 +15,11 @@
   "nave-roma-grande": "immagini/sprite/nave-roma-grande.webp",
   "relitto-roma-piccola": "immagini/sprite/relitto-roma-piccola.webp",
   "relitto-roma-media": "immagini/sprite/relitto-roma-media.webp",
-  "relitto-roma-grande": "immagini/sprite/relitto-roma-grande.webp"
+  "relitto-roma-grande": "immagini/sprite/relitto-roma-grande.webp",
+  "nave-firenze-piccola": "immagini/sprite/nave-firenze-piccola.webp",
+  "nave-firenze-media": "immagini/sprite/nave-firenze-media.webp",
+  "nave-firenze-grande": "immagini/sprite/nave-firenze-grande.webp",
+  "relitto-firenze-piccola": "immagini/sprite/relitto-firenze-piccola.webp",
+  "relitto-firenze-media": "immagini/sprite/relitto-firenze-media.webp",
+  "relitto-firenze-grande": "immagini/sprite/relitto-firenze-grande.webp"
 }
