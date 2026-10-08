@@ -9,5 +9,11 @@
   "nave-fiandre-grande": "immagini/sprite/nave-fiandre-grande.webp",
   "relitto-fiandre-piccola": "immagini/sprite/relitto-fiandre-piccola.webp",
   "relitto-fiandre-media": "immagini/sprite/relitto-fiandre-media.webp",
-  "relitto-fiandre-grande": "immagini/sprite/relitto-fiandre-grande.webp"
+  "relitto-fiandre-grande": "immagini/sprite/relitto-fiandre-grande.webp",
+  "nave-roma-piccola": "immagini/sprite/nave-roma-piccola.webp",
+  "nave-roma-media": "immagini/sprite/nave-roma-media.webp",
+  "nave-roma-grande": "immagini/sprite/nave-roma-grande.webp",
+  "relitto-roma-piccola": "immagini/sprite/relitto-roma-piccola.webp",
+  "relitto-roma-media": "immagini/sprite/relitto-roma-media.webp",
+  "relitto-roma-grande": "immagini/sprite/relitto-roma-grande.webp"
 }
