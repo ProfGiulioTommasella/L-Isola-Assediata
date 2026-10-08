@@ -430,6 +430,9 @@ function diario() {
         el('p', {}, el('strong', {}, r.voce_ripasso.domanda + ' '), `(${s.scuola}) ${s.domanda}`),
         el('p', {}, el('strong', {}, r.voce_ripasso.risposta_giusta + ': '), s.risposta),
         el('p', {}, el('strong', {}, r.voce_ripasso.spiegazione + ': '), s.spiegazione))),
+      // la firma va anche nel diario scaricato e stampato, che non usa il foglio di stile del gioco
+      el('p', { style: 'font-style: italic; font-size: 0.8em; text-align: right; margin-top: 1.5em;' },
+        "L'Isola Assediata · by prof. Giulio Tommasella"),
     );
     if (P.allenamento) div.prepend(el('p', { class: 'avviso' }, G.testi.docente.avviso_allenamento));
     return div;
