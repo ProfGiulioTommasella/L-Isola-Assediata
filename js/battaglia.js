@@ -106,7 +106,7 @@ class Battaglia {
   mira(x, y) {
     let a = Math.atan2(y - CANNONE.y, x - CANNONE.x) - Math.PI;
     if (a < -Math.PI) a += Math.PI * 2;
-    return a;
+    return Math.max(a, -0.6);   // la canna non si abbassa oltre: la palla arriva comunque al bersaglio
   }
 
   punta(x, y) {
@@ -129,7 +129,7 @@ class Battaglia {
     // il cannone "non è precisissimo"
     const tx = x + Utili.caso(-28, 28), ty = y + Utili.caso(-10, 10);
     this.angolo = this.mira(tx, ty);
-    const bx = CANNONE.x + Math.cos(this.angolo) * -125, by = CANNONE.y + Math.sin(this.angolo) * -125;
+    const bx = CANNONE.x + Math.cos(this.angolo) * -BOCCA, by = CANNONE.y + Math.sin(this.angolo) * -BOCCA;
     const dist = Math.hypot(tx - bx, ty - by);
     this.palle.push({ x0: bx, y0: by, tx, ty, p: 0, durata: 0.25 + dist / 4000, arco: dist * 0.1 });
     this.effetti.push({ tipo: 'vampata', p: 0, durata: 0.4, angolo: this.angolo });
