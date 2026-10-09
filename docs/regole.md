@@ -9,7 +9,7 @@ Regole de «L'Isola Assediata», decise con il docente il 6 ottobre 2026. I nume
   - *Mira:* il cannone mira nel punto toccato o cliccato e spara subito. Non segue il puntatore come in Scratch, perché col dito non c'è un puntatore che si muove.
   - *Orientamento:* si gioca in orizzontale; se un tablet è tenuto in verticale, compare l'invito a ruotarlo.
 - **Aiuti per ricordare come si spara**, pensati per chi ha poca familiarità con il computer:
-  - *Colpi di prova:* prima della prima battaglia ci sono tre barili in mare e una mano animata con la scritta "Tocca il mare per sparare". I colpi di prova non contano; è un addestramento: la flotta arriva quando il giocatore ha colpito tutti e tre i barili. Col mouse il cannone segue sempre il puntatore.
+  - *Colpi di prova:* prima della prima battaglia ci sono tre barili in mare e una mano animata con la scritta "Tocca il mare per sparare". I colpi di prova non contano; è un addestramento: la flotta arriva quando il giocatore ha colpito tutti e tre i barili. I barili sono fermi fino al primo colpo; poi la corrente sposta gli altri due, per abituarsi a mirare a bersagli che si muovono. Col mouse il cannone segue sempre il puntatore.
   - *Promemoria:* all'inizio di ogni battaglia la mano e la scritta ricompaiono per qualche secondo.
   - *Aiuto se ci si blocca:* se il giocatore non spara per 5 secondi mentre le navi avanzano, la mano ricompare.
   - *Pulsante "?":* sempre visibile in un angolo, accanto al contatore dei colpi rimasti; mette in pausa e mostra di nuovo le istruzioni.

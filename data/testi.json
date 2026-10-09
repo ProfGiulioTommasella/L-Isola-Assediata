@@ -94,6 +94,7 @@
   },
   "aiuti_sparo": {
     "colpi_di_prova": "Addestramento: ecco tre barili in mare. Toccate il mare per sparare e colpiteli tutti e tre! (col mouse: Cliccate)",
+    "barili_in_movimento": "Colpito! Ora la corrente sposta gli altri barili: mirate un po' più avanti, come farete con le navi.",
     "barile_mancano": "Colpito! Barili rimasti: {barili}.",
     "barile_colpito": "Ottimo, tutti e tre! Ora preparatevi: arriva la flotta.",
     "inizio_battaglia": "Toccate il mare per sparare!",
