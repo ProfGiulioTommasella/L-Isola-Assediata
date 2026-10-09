@@ -25,7 +25,8 @@ class Battaglia {
     this.manoPos = [700, 700];
     this.stato = o.prova ? 'prova' : 'battaglia';
     this.timer = CONFIG.navi.map((n) => n.ritardo);
-    this.barili = o.prova ? [[420, 640, 0.9], [760, 820, 1.05], [1020, 540, 0.8]].map(([x, y, s]) => ({ x, y, s, colpito: false })) : [];
+    this.barili = o.prova ? [[420, 640, 0.9], [760, 820, 1.05], [1020, 540, 0.8]].map(([x, y, s]) => ({ x, y, x0: x, y0: y, s, colpito: false, fase: Utili.caso(0, 6.28) })) : [];
+    this.corrente = null;   // istante in cui la corrente comincia a spostare i barili
     this.creaHud();
     if (o.prova) {
       this.messaggio(this.o.adatta(this.o.testi.aiuti_sparo.colpi_di_prova));
@@ -145,6 +146,7 @@ class Battaglia {
     this.scossa = Math.max(0, this.scossa - dt);
 
     if (this.stato === 'battaglia' && this.fineTra == null) this.arrivoNavi();
+    if (this.corrente != null) this.bariliALaDeriva();
 
     for (const n of this.navi) {
       if (n.stato === 'naviga') {
@@ -190,6 +192,18 @@ class Battaglia {
     this.aggiornaHud();
   }
 
+  // I barili oscillano avanti e indietro, con un'ampiezza che cresce piano piano.
+  bariliALaDeriva() {
+    const dt = this.t - this.corrente;
+    const ampiezza = 130 * Math.min(1, dt / 1.5);
+    const restanti = this.barili.filter((r) => !r.colpito);
+    for (const r of restanti) {
+      r.x = r.x0 + ampiezza * Math.sin(dt * 1.4 + r.fase) - ampiezza * Math.sin(r.fase) * Math.max(0, 1 - dt / 1.5);
+      r.y = r.y0 + ampiezza * 0.2 * Math.sin(dt * 0.9 + r.fase);
+    }
+    if (restanti.length && this.stato === 'prova') this.manoPos = [restanti[0].x, restanti[0].y - 20];
+  }
+
   arrivoNavi() {
     CONFIG.navi.forEach((tipo, i) => {
       if (this.t < this.timer[i]) return;
@@ -225,7 +239,14 @@ class Battaglia {
         // l'addestramento finisce quando sono stati colpiti tutti e tre i barili
         const restanti = this.barili.filter((r) => !r.colpito);
         if (restanti.length) {
-          this.messaggio(Utili.riempi(this.o.testi.aiuti_sparo.barile_mancano, { barili: restanti.length }));
+          // dopo il primo colpo la corrente sposta gli altri barili, come poi si muoveranno le navi
+          const primo = this.corrente == null;
+          if (primo) {
+            this.corrente = this.t;
+            restanti.forEach((r) => { r.x0 = r.x; r.y0 = r.y; });
+          }
+          const testi = this.o.testi.aiuti_sparo;
+          this.messaggio(primo ? testi.barili_in_movimento : Utili.riempi(testi.barile_mancano, { barili: restanti.length }));
           this.manoPos = [restanti[0].x, restanti[0].y - 20];
           return;
         }
