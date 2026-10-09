@@ -27,5 +27,9 @@
   "nave-venezia-grande": "immagini/sprite/nave-venezia-grande.webp",
   "relitto-venezia-piccola": "immagini/sprite/relitto-venezia-piccola.webp",
   "relitto-venezia-media": "immagini/sprite/relitto-venezia-media.webp",
-  "relitto-venezia-grande": "immagini/sprite/relitto-venezia-grande.webp"
+  "relitto-venezia-grande": "immagini/sprite/relitto-venezia-grande.webp",
+  "forte-0": "immagini/sprite/forte-0.webp",
+  "forte-1": "immagini/sprite/forte-1.webp",
+  "forte-2": "immagini/sprite/forte-2.webp",
+  "forte-3": "immagini/sprite/forte-3.webp"
 }

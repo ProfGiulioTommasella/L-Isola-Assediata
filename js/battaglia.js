@@ -314,7 +314,8 @@ class Battaglia {
       ctx.restore();
     }
     Grafica.forte(ctx, this.statoForte, this.scossa > 0);
-    if (this.statoForte >= 2) Grafica.fiamme(ctx, FORTE.x + 40, FORTE.y - 120, 60, t, 1);
+    // il disegno definitivo del forte ha già fuoco e fumo
+    if (this.statoForte >= 2 && !Utili.immagini['forte-' + this.statoForte]) Grafica.fiamme(ctx, FORTE.x + 40, FORTE.y - 120, 60, t, 1);
     Grafica.cannone(ctx, this.angolo, this.rinculo);
     for (const b of this.palle) {
       const x = b.x0 + (b.tx - b.x0) * b.p;
