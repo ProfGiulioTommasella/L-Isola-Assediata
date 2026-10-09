@@ -1,5 +1,5 @@
 {
-  "_nota": "Immagini definitive già pronte: nome usato dal gioco → file. Se un nome manca, il gioco usa un disegno provvisorio. Nomi possibili: inizio, mappa, re, scena-<scuola>, battaglia-<scuola>, nave-<scuola>-<piccola|media|grande>, relitto-<scuola>-<tipo>, forte-0…forte-3, cannone, lucchetto.",
+  "_nota": "Immagini definitive già pronte: nome usato dal gioco → file. Se un nome manca, il gioco usa un disegno provvisorio. Nomi possibili: inizio, mappa, re, scena-<scuola>, battaglia-<scuola>, nave-<scuola>-<piccola|media|grande>, relitto-<scuola>-<tipo>, forte-0…forte-3, cannone-canna, cannone-affusto, lucchetto.",
   "scena-fiandre": "immagini/scene/fiandre.jpg",
   "scena-roma": "immagini/scene/roma.jpg",
   "scena-firenze": "immagini/scene/firenze.jpg",
@@ -27,5 +27,11 @@
   "nave-venezia-grande": "immagini/sprite/nave-venezia-grande.webp",
   "relitto-venezia-piccola": "immagini/sprite/relitto-venezia-piccola.webp",
   "relitto-venezia-media": "immagini/sprite/relitto-venezia-media.webp",
-  "relitto-venezia-grande": "immagini/sprite/relitto-venezia-grande.webp"
+  "relitto-venezia-grande": "immagini/sprite/relitto-venezia-grande.webp",
+  "forte-0": "immagini/sprite/forte-0.webp",
+  "forte-1": "immagini/sprite/forte-1.webp",
+  "forte-2": "immagini/sprite/forte-2.webp",
+  "forte-3": "immagini/sprite/forte-3.webp",
+  "cannone-canna": "immagini/sprite/cannone-canna.webp",
+  "cannone-affusto": "immagini/sprite/cannone-affusto.webp"
 }
