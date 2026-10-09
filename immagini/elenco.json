@@ -21,5 +21,11 @@
   "nave-firenze-grande": "immagini/sprite/nave-firenze-grande.webp",
   "relitto-firenze-piccola": "immagini/sprite/relitto-firenze-piccola.webp",
   "relitto-firenze-media": "immagini/sprite/relitto-firenze-media.webp",
-  "relitto-firenze-grande": "immagini/sprite/relitto-firenze-grande.webp"
+  "relitto-firenze-grande": "immagini/sprite/relitto-firenze-grande.webp",
+  "nave-venezia-piccola": "immagini/sprite/nave-venezia-piccola.webp",
+  "nave-venezia-media": "immagini/sprite/nave-venezia-media.webp",
+  "nave-venezia-grande": "immagini/sprite/nave-venezia-grande.webp",
+  "relitto-venezia-piccola": "immagini/sprite/relitto-venezia-piccola.webp",
+  "relitto-venezia-media": "immagini/sprite/relitto-venezia-media.webp",
+  "relitto-venezia-grande": "immagini/sprite/relitto-venezia-grande.webp"
 }
