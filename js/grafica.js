@@ -7,6 +7,12 @@ const LINEA_DIFESA = 1290;      // la nave che arriva qui danneggia il forte
 const FORTE = { x: 1660, y: 585 };     // base del forte, sulla rupe
 const CANNONE = { x: 1480, y: 492 };   // perno del cannone
 const BOCCA = 100;                      // distanza della bocca dal perno
+// Dove poggiano forte e cannone. Senza immagine di sfondo valgono i numeri qui sopra (rupe disegnata);
+// ogni sfondo dipinto ha la sua scogliera, quindi le sue posizioni (misurate sull'immagine).
+const RUPE_DISEGNATA = { forte: [FORTE.x, FORTE.y], cannone: [CANNONE.x, CANNONE.y] };
+const RUPI_DIPINTE = {
+  fiandre: { forte: [1700, 410], cannone: [1548, 352] },
+};
 const CANNONE_IMMAGINE = { px: 320, py: 265, scala: BOCCA / 295, inclinazione: 0.2633 };   // vedi cannone()
 
 const PALETTE = {
@@ -41,7 +47,14 @@ const Grafica = {
   },
 
   // ---------- Battaglia ----------
+  posizionaRupe(scuola) {
+    const r = (Utili.immagini['battaglia-' + scuola] && RUPI_DIPINTE[scuola]) || RUPE_DISEGNATA;
+    [FORTE.x, FORTE.y] = r.forte;
+    [CANNONE.x, CANNONE.y] = r.cannone;
+  },
+
   sfondoBattaglia(ctx, scuola, t) {
+    this.posizionaRupe(scuola);
     if (this.immagineSfondo(ctx, 'battaglia-' + scuola)) return;
     const p = PALETTE[scuola];
     ctx.fillStyle = this.sfumatura(ctx, 0, ORIZZONTE, p.cielo);
