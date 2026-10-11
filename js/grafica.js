@@ -4,8 +4,16 @@ const W = 1920, H = 1080;
 const ORIZZONTE = 330;          // linea dell'orizzonte nelle battaglie
 const MARE_ALTO = 430, MARE_BASSO = 960;   // corsie delle navi
 const LINEA_DIFESA = 1290;      // la nave che arriva qui danneggia il forte
-const FORTE = { x: 1590, y: 585 };     // base del forte, sulla rupe
-const CANNONE = { x: 1395, y: 600 };   // perno del cannone
+const FORTE = { x: 1660, y: 585 };     // base del forte, sulla rupe
+const CANNONE = { x: 1480, y: 492 };   // perno del cannone
+const BOCCA = 100;                      // distanza della bocca dal perno
+// Dove poggiano forte e cannone. Senza immagine di sfondo valgono i numeri qui sopra (rupe disegnata);
+// ogni sfondo dipinto ha la sua scogliera, quindi le sue posizioni (misurate sull'immagine).
+const RUPE_DISEGNATA = { forte: [FORTE.x, FORTE.y], cannone: [CANNONE.x, CANNONE.y] };
+const RUPI_DIPINTE = {
+  fiandre: { forte: [1700, 410], cannone: [1548, 352] },
+};
+const CANNONE_IMMAGINE = { px: 320, py: 265, scala: BOCCA / 295, inclinazione: 0.2633 };   // vedi cannone()
 
 const PALETTE = {
   fiandre: { cielo: ['#7fb8e0', '#d8eef8'], mare: ['#3a8ba3', '#1c566a'], costa: '#7aa35a', luce: 'rgba(255,240,200,0.25)' },
@@ -39,7 +47,14 @@ const Grafica = {
   },
 
   // ---------- Battaglia ----------
+  posizionaRupe(scuola) {
+    const r = (Utili.immagini['battaglia-' + scuola] && RUPI_DIPINTE[scuola]) || RUPE_DISEGNATA;
+    [FORTE.x, FORTE.y] = r.forte;
+    [CANNONE.x, CANNONE.y] = r.cannone;
+  },
+
   sfondoBattaglia(ctx, scuola, t) {
+    this.posizionaRupe(scuola);
     if (this.immagineSfondo(ctx, 'battaglia-' + scuola)) return;
     const p = PALETTE[scuola];
     ctx.fillStyle = this.sfumatura(ctx, 0, ORIZZONTE, p.cielo);
@@ -213,12 +228,21 @@ const Grafica = {
   },
 
   cannone(ctx, angolo, rinculo) {
-    const img = Utili.immagini.cannone;
+    const canna = Utili.immagini['cannone-canna'], affusto = Utili.immagini['cannone-affusto'];
     ctx.save();
     ctx.translate(CANNONE.x, CANNONE.y);
-    if (img) {
+    if (canna && affusto) {
+      // le due immagini hanno la stessa tela: il perno della canna è in (px, py),
+      // la bocca è a BOCCA px dal perno e nel disegno la canna è già alzata di 'inclinazione'
+      const { px, py, scala, inclinazione } = CANNONE_IMMAGINE;
+      const w = canna.width * scala, h = canna.height * scala;
+      ctx.save();
       ctx.rotate(angolo);
-      ctx.drawImage(img, -130 + rinculo * 20, -70, 180, 180 * img.height / img.width);
+      ctx.translate(rinculo * 18, 0);
+      ctx.rotate(-inclinazione);
+      ctx.drawImage(canna, -px * scala, -py * scala, w, h);
+      ctx.restore();
+      ctx.drawImage(affusto, -px * scala, -py * scala, w, h);
       ctx.restore();
       return;
     }
@@ -445,9 +469,9 @@ const Grafica = {
     ctx.rotate(angolo);
     ctx.globalAlpha = 1 - p;
     ctx.fillStyle = '#ffd25a';
-    ctx.beginPath(); ctx.arc(-125, 0, 26 + 20 * p, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.arc(-BOCCA, 0, 26 + 20 * p, 0, Math.PI * 2); ctx.fill();
     ctx.fillStyle = 'rgba(230,230,230,0.7)';
-    ctx.beginPath(); ctx.arc(-150 - 40 * p, -10 * p, 22 + 30 * p, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.arc(-BOCCA - 25 - 40 * p, -10 * p, 22 + 30 * p, 0, Math.PI * 2); ctx.fill();
     ctx.restore();
   },
 
