@@ -34,5 +34,7 @@
   "forte-3": "immagini/sprite/forte-3.webp",
   "cannone-canna": "immagini/sprite/cannone-canna.webp",
   "cannone-affusto": "immagini/sprite/cannone-affusto.webp",
-  "battaglia-fiandre": "immagini/sfondi/battaglia-fiandre.jpg"
+  "battaglia-fiandre": "immagini/sfondi/battaglia-fiandre.jpg",
+  "battaglia-roma": "immagini/sfondi/battaglia-roma.jpg",
+  "battaglia-firenze": "immagini/sfondi/battaglia-firenze.jpg"
 }
