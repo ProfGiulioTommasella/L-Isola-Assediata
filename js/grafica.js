@@ -12,6 +12,7 @@ const BOCCA = 100;                      // distanza della bocca dal perno
 const RUPE_DISEGNATA = { forte: [FORTE.x, FORTE.y], cannone: [CANNONE.x, CANNONE.y] };
 const RUPI_DIPINTE = {
   fiandre: { forte: [1700, 410], cannone: [1548, 352] },
+  roma: { forte: [1730, 450], cannone: [1578, 408] },
 };
 const CANNONE_IMMAGINE = { px: 320, py: 265, scala: BOCCA / 295, inclinazione: 0.2633 };   // vedi cannone()
 
