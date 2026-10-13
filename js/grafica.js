@@ -505,7 +505,10 @@ const Grafica = {
   },
 
   // ---------- Mappa ----------
-  POSIZIONI_TORRI: { fiandre: [960, 250], roma: [640, 720], firenze: [1290, 670], venezia: [1400, 290] },
+  // base di ogni torre: sulla mappa disegnata dal codice e su quella dipinta (misurate sull'immagine)
+  TORRI_DISEGNATE: { fiandre: [960, 250], roma: [640, 720], firenze: [1290, 670], venezia: [1400, 290] },
+  TORRI_DIPINTE: { fiandre: [899, 190], roma: [487, 755], firenze: [1414, 790], venezia: [1513, 340] },
+  get POSIZIONI_TORRI() { return Utili.immagini.mappa ? this.TORRI_DIPINTE : this.TORRI_DISEGNATE; },
 
   mappa(ctx, stati, prossima, t) {
     if (!this.immagineSfondo(ctx, 'mappa')) {
@@ -578,23 +581,24 @@ const Grafica = {
       ctx.strokeStyle = '#4a3a2a'; ctx.lineWidth = 3;
       ctx.beginPath(); ctx.moveTo(x, y - 104); ctx.lineTo(x, y - 142); ctx.stroke();
     }
+    const k = Utili.immagini.mappa ? 0.65 : 1;   // le torri dipinte sono più piccole
     if (evidenziata) {
       ctx.save();
       ctx.strokeStyle = '#ffe28a';
       ctx.lineWidth = 8;
       ctx.globalAlpha = 0.5 + 0.5 * Math.sin(t * 4);
-      ctx.beginPath(); ctx.arc(x, y - 55, 95, 0, Math.PI * 2); ctx.stroke();
+      ctx.beginPath(); ctx.arc(x, y - 55 * k, 95 * k, 0, Math.PI * 2); ctx.stroke();
       ctx.restore();
     }
-    if (stato === 'caduta') this.fiamme(ctx, x, y - 90, 70, t, 1);
+    if (stato === 'caduta') this.fiamme(ctx, x, y - 75 * k, 90 * k, t, 1);
     if (stato === 'difesa' || stato === 'caduta') {
       const img = Utili.immagini.lucchetto;
-      if (img) ctx.drawImage(img, x - 30, y - 40, 60, 60);
+      if (img) ctx.drawImage(img, x - 30 * k, y - 40 * k, 60 * k, 60 * k);
       else {
         ctx.fillStyle = '#3a3a3a';
-        ctx.fillRect(x - 22, y - 30, 44, 34);
-        ctx.strokeStyle = '#3a3a3a'; ctx.lineWidth = 7;
-        ctx.beginPath(); ctx.arc(x, y - 30, 14, Math.PI, 0); ctx.stroke();
+        ctx.fillRect(x - 22 * k, y - 30 * k, 44 * k, 34 * k);
+        ctx.strokeStyle = '#3a3a3a'; ctx.lineWidth = 7 * k;
+        ctx.beginPath(); ctx.arc(x, y - 30 * k, 14 * k, Math.PI, 0); ctx.stroke();
       }
     }
   },
