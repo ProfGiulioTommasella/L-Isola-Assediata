@@ -416,9 +416,28 @@ const Grafica = {
     }
   },
 
+  // Disegna un effetto dipinto con la base (o il centro) in (x, y); false se l'immagine manca.
+  effetto(ctx, nome, x, y, largo, alto = 0, ancora = 0.5) {
+    const img = Utili.immagini['effetto-' + nome];
+    if (!img) return false;
+    const h = alto || largo * img.height / img.width;
+    ctx.drawImage(img, x - largo / 2, y - h * ancora, largo, h);
+    return true;
+  },
+
   fiamme(ctx, x, y, dim, t, forza) {
     ctx.save();
-    ctx.globalAlpha = Math.max(0, forza);
+    ctx.globalAlpha = Math.max(0, Math.min(1, forza));
+    const largo = dim * 1.5;
+    // due strati di fuoco sfasati per far tremolare le fiamme
+    if (Utili.immagini['effetto-fiamme']) {
+      const alto = largo * 1.16;
+      this.effetto(ctx, 'fiamme', x, y + dim * 0.1, largo, alto * (1 + 0.07 * Math.sin(t * 9)), 1);
+      ctx.globalAlpha *= 0.45 + 0.25 * Math.sin(t * 13 + 1);
+      this.effetto(ctx, 'fiamme', x + dim * 0.05, y + dim * 0.1, -largo, alto * (1 + 0.07 * Math.sin(t * 11 + 2)), 1);
+      ctx.restore();
+      return;
+    }
     for (let i = 0; i < 7; i++) {
       const fx = x + Math.sin(i * 2.1) * dim * 0.4;
       const fh = dim * (0.5 + 0.35 * Math.sin(t * 12 + i * 1.7));
@@ -437,6 +456,7 @@ const Grafica = {
   },
 
   palla(ctx, x, y, r) {
+    if (this.effetto(ctx, 'palla', x, y, r * 2.2)) return;
     ctx.fillStyle = '#1d1d1d';
     ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill();
     ctx.fillStyle = 'rgba(255,255,255,0.35)';
@@ -446,6 +466,13 @@ const Grafica = {
   spruzzo(ctx, x, y, s, p) {
     ctx.save();
     ctx.globalAlpha = 1 - p;
+    if (Utili.immagini['effetto-spruzzo']) {
+      // la colonna d'acqua sale in fretta e poi ricade
+      const largo = 110 * s, alto = 160 * s * (0.35 + 0.65 * Math.sin(Math.min(1, p * 1.6) * Math.PI / 2));
+      this.effetto(ctx, 'spruzzo', x, y + 8 * s, largo * (1 + 0.3 * p), alto, 1);
+      ctx.restore();
+      return;
+    }
     ctx.fillStyle = '#e6f3f8';
     for (let i = -3; i <= 3; i++) {
       const h = (60 - Math.abs(i) * 12) * s * Math.sin(p * Math.PI);
@@ -457,6 +484,7 @@ const Grafica = {
   esplosione(ctx, x, y, s, p) {
     ctx.save();
     ctx.globalAlpha = 1 - p;
+    if (this.effetto(ctx, 'esplosione', x, y, (100 + 100 * p) * s)) { ctx.restore(); return; }
     ctx.fillStyle = '#ffcf4a';
     ctx.beginPath(); ctx.arc(x, y, (20 + 50 * p) * s, 0, Math.PI * 2); ctx.fill();
     ctx.fillStyle = '#f0602a';
@@ -471,6 +499,9 @@ const Grafica = {
     ctx.translate(CANNONE.x, CANNONE.y);
     ctx.rotate(angolo);
     ctx.globalAlpha = 1 - p;
+    const largo = 150 + 50 * p;
+    // la vampata dipinta ha la bocca del cannone sul lato destro
+    if (this.effetto(ctx, 'vampata', -BOCCA - largo / 2 + 6, -16, largo)) { ctx.restore(); return; }
     ctx.fillStyle = '#ffd25a';
     ctx.beginPath(); ctx.arc(-BOCCA, 0, 26 + 20 * p, 0, Math.PI * 2); ctx.fill();
     ctx.fillStyle = 'rgba(230,230,230,0.7)';
@@ -482,6 +513,7 @@ const Grafica = {
     ctx.save();
     ctx.translate(x, y + Math.sin(t * 2 + x) * 4);
     ctx.scale(s, s);
+    if (this.effetto(ctx, 'barile', 0, -14, 96)) { ctx.restore(); return; }
     ctx.fillStyle = '#8a5a2b';
     ctx.beginPath(); ctx.ellipse(0, -16, 42, 24, 0, 0, Math.PI * 2); ctx.fill();
     ctx.strokeStyle = '#3b3b3b'; ctx.lineWidth = 5;
