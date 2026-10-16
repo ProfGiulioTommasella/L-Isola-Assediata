@@ -660,7 +660,8 @@ const Grafica = {
       if (fuoco) {
         // fiamme e fumo che escono dalla cima della torre, con un leggero tremolio
         const w = 78 * k, h = w * fuoco.height / fuoco.width * (1 + 0.05 * Math.sin(t * 9));
-        ctx.drawImage(fuoco, x - w / 2, y - 62 * k - h, w, h);
+        // la base delle fiamme dipinte è spostata a sinistra nel disegno: la riallineo al centro della cima
+        ctx.drawImage(fuoco, x - w / 2 + w * 0.08 + 4 * k, y - 62 * k - h, w, h);
       } else this.fiamme(ctx, x, y - 75 * k, 90 * k, t, 1);
     }
     // il lucchetto chiude solo le torri non ancora combattute (non la prossima, che è aperta)
