@@ -634,11 +634,12 @@ const Grafica = {
       const fuoco = Utili.immagini['fuoco-torre'];
       if (fuoco) {
         // fiamme e fumo che escono dalla cima della torre, con un leggero tremolio
-        const w = 150 * k, h = w * fuoco.height / fuoco.width * (1 + 0.05 * Math.sin(t * 9));
+        const w = 78 * k, h = w * fuoco.height / fuoco.width * (1 + 0.05 * Math.sin(t * 9));
         ctx.drawImage(fuoco, x - w / 2, y - 62 * k - h, w, h);
       } else this.fiamme(ctx, x, y - 75 * k, 90 * k, t, 1);
     }
-    if (stato === 'difesa' || stato === 'caduta') {
+    // il lucchetto chiude solo le torri non ancora combattute (non la prossima, che è aperta)
+    if (stato === 'libera' && !evidenziata) {
       const img = Utili.immagini.lucchetto;
       if (img) {
         const w = 50 * k, h = w * img.height / img.width;
