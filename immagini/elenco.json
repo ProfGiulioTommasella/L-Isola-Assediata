@@ -1,5 +1,5 @@
 {
-  "_nota": "Immagini definitive già pronte: nome usato dal gioco → file. Se un nome manca, il gioco usa un disegno provvisorio. Nomi possibili: inizio, mappa, re, scena-<scuola>, battaglia-<scuola>, nave-<scuola>-<piccola|media|grande>, relitto-<scuola>-<tipo>, forte-0…forte-3, cannone-canna, cannone-affusto, lucchetto.",
+  "_nota": "Immagini definitive già pronte: nome usato dal gioco → file. Se un nome manca, il gioco usa un disegno provvisorio. Nomi possibili: inizio, mappa, re, scena-<scuola>, battaglia-<scuola>, nave-<scuola>-<piccola|media|grande>, relitto-<scuola>-<tipo>, forte-0…forte-3, cannone-canna, cannone-affusto, effetto-<palla|vampata|esplosione|spruzzo|fiamme|barile>, lucchetto, mano, fuoco-torre.",
   "scena-fiandre": "immagini/scene/fiandre.jpg",
   "scena-roma": "immagini/scene/roma.jpg",
   "scena-firenze": "immagini/scene/firenze.jpg",
@@ -38,5 +38,16 @@
   "battaglia-roma": "immagini/sfondi/battaglia-roma.jpg",
   "battaglia-firenze": "immagini/sfondi/battaglia-firenze.jpg",
   "battaglia-venezia": "immagini/sfondi/battaglia-venezia.jpg",
-  "mappa": "immagini/sfondi/mappa.jpg"
+  "mappa": "immagini/sfondi/mappa.jpg",
+  "re": "immagini/sfondi/re.jpg",
+  "inizio": "immagini/sfondi/inizio.jpg",
+  "effetto-palla": "immagini/sprite/effetto-palla.webp",
+  "effetto-vampata": "immagini/sprite/effetto-vampata.webp",
+  "effetto-esplosione": "immagini/sprite/effetto-esplosione.webp",
+  "effetto-spruzzo": "immagini/sprite/effetto-spruzzo.webp",
+  "effetto-fiamme": "immagini/sprite/effetto-fiamme.webp",
+  "effetto-barile": "immagini/sprite/effetto-barile.webp",
+  "mano": "immagini/sprite/mano.webp",
+  "lucchetto": "immagini/sprite/lucchetto.webp",
+  "fuoco-torre": "immagini/sprite/fuoco-torre.webp"
 }
