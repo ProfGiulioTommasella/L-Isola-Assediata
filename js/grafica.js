@@ -513,7 +513,32 @@ const Grafica = {
     ctx.save();
     ctx.translate(x, y + Math.sin(t * 2 + x) * 4);
     ctx.scale(s, s);
-    if (this.effetto(ctx, 'barile', 0, -14, 96)) { ctx.restore(); return; }
+    if (Utili.immagini['effetto-barile']) {
+      // il barile galleggia: la parte sotto il pelo dell'acqua non si vede, attorno c'è un po' di schiuma
+      const pelo = 2, onda = (u) => pelo + Math.sin(u * 0.12 + t * 3) * 2;
+      ctx.save();
+      ctx.beginPath(); ctx.moveTo(-60, -60);
+      for (let u = -60; u <= 60; u += 6) ctx.lineTo(u, onda(u));
+      ctx.lineTo(60, -60); ctx.closePath(); ctx.clip();
+      ctx.rotate(Math.sin(t * 1.7 + x) * 0.04);
+      this.effetto(ctx, 'barile', 0, -10, 96);
+      ctx.restore();
+      // velo d'acqua sul bordo immerso e anello di schiuma
+      ctx.fillStyle = 'rgba(30,90,130,0.35)';
+      ctx.beginPath(); ctx.ellipse(0, pelo + 2, 50, 6, 0, 0, Math.PI * 2); ctx.fill();
+      // sottile linea di schiuma che segue l'onda, più qualche riflesso chiaro
+      ctx.strokeStyle = 'rgba(235,248,255,0.55)'; ctx.lineWidth = 2;
+      ctx.beginPath();
+      for (let u = -50; u <= 50; u += 5) ctx[u === -50 ? 'moveTo' : 'lineTo'](u, onda(u) + 1);
+      ctx.stroke();
+      ctx.strokeStyle = 'rgba(235,248,255,0.3)'; ctx.lineWidth = 1.5;
+      for (let i = 0; i < 4; i++) {
+        const u = -58 + i * 34 + Math.sin(t * 1.3 + i) * 4;
+        ctx.beginPath(); ctx.moveTo(u, pelo + 7 + (i % 2) * 3); ctx.lineTo(u + 14, pelo + 7 + (i % 2) * 3); ctx.stroke();
+      }
+      ctx.restore();
+      return;
+    }
     ctx.fillStyle = '#8a5a2b';
     ctx.beginPath(); ctx.ellipse(0, -16, 42, 24, 0, 0, Math.PI * 2); ctx.fill();
     ctx.strokeStyle = '#3b3b3b'; ctx.lineWidth = 5;
@@ -634,11 +659,13 @@ const Grafica = {
       const fuoco = Utili.immagini['fuoco-torre'];
       if (fuoco) {
         // fiamme e fumo che escono dalla cima della torre, con un leggero tremolio
-        const w = 150 * k, h = w * fuoco.height / fuoco.width * (1 + 0.05 * Math.sin(t * 9));
-        ctx.drawImage(fuoco, x - w / 2, y - 62 * k - h, w, h);
+        const w = 78 * k, h = w * fuoco.height / fuoco.width * (1 + 0.05 * Math.sin(t * 9));
+        // la base delle fiamme dipinte è spostata a sinistra nel disegno: la riallineo al centro della cima
+        ctx.drawImage(fuoco, x - w / 2 + w * 0.08 + 4 * k, y - 62 * k - h, w, h);
       } else this.fiamme(ctx, x, y - 75 * k, 90 * k, t, 1);
     }
-    if (stato === 'difesa' || stato === 'caduta') {
+    // il lucchetto chiude solo le torri non ancora combattute (non la prossima, che è aperta)
+    if (stato === 'libera' && !evidenziata) {
       const img = Utili.immagini.lucchetto;
       if (img) {
         const w = 50 * k, h = w * img.height / img.width;
