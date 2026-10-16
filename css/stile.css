@@ -85,10 +85,13 @@ button:disabled { cursor: default; }
 .pergamena {
   position: absolute;
   background: var(--carta);
-  border: 4px solid var(--carta-bordo);
-  border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), inset 0 0 40px rgba(160, 120, 60, 0.35);
-  padding: 40px 48px;
+  /* pergamena dipinta divisa in 9 pezzi: i rotoli in alto e in basso restano interi, il foglio si allunga */
+  border: solid transparent;
+  border-width: 55px 45px 68px;
+  border-image: url('../immagini/sprite/pergamena.webp') 110 90 135 fill / 55px 45px 68px stretch;
+  background-clip: padding-box;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.45));
+  padding: 16px 30px 8px;
   color: var(--inchiostro);
 }
 .pergamena.dialogo { left: 60px; bottom: 70px; width: 820px; min-height: 360px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; }

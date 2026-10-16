@@ -529,6 +529,14 @@ const Grafica = {
     ctx.globalAlpha = 0.95;
     ctx.fillStyle = 'rgba(255,255,255,0.5)';
     ctx.beginPath(); ctx.arc(x, y, 18 + (dy < 5 ? 14 : 0), 0, Math.PI * 2); ctx.fill();
+    const img = Utili.immagini.mano;
+    if (img) {
+      // la punta dell'indice è nell'angolo in basso a sinistra; la mano batte lungo la direzione del dito
+      const w = 130, h = w * img.height / img.width;
+      ctx.drawImage(img, x - w * 0.05 + dy * 0.55, y - h * 0.96 - dy * 0.85, w, h);
+      ctx.restore();
+      return;
+    }
     ctx.font = '110px serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'bottom';
@@ -622,10 +630,20 @@ const Grafica = {
       ctx.beginPath(); ctx.arc(x, y - 55 * k, 95 * k, 0, Math.PI * 2); ctx.stroke();
       ctx.restore();
     }
-    if (stato === 'caduta') this.fiamme(ctx, x, y - 75 * k, 90 * k, t, 1);
+    if (stato === 'caduta') {
+      const fuoco = Utili.immagini['fuoco-torre'];
+      if (fuoco) {
+        // fiamme e fumo che escono dalla cima della torre, con un leggero tremolio
+        const w = 150 * k, h = w * fuoco.height / fuoco.width * (1 + 0.05 * Math.sin(t * 9));
+        ctx.drawImage(fuoco, x - w / 2, y - 62 * k - h, w, h);
+      } else this.fiamme(ctx, x, y - 75 * k, 90 * k, t, 1);
+    }
     if (stato === 'difesa' || stato === 'caduta') {
       const img = Utili.immagini.lucchetto;
-      if (img) ctx.drawImage(img, x - 30 * k, y - 40 * k, 60 * k, 60 * k);
+      if (img) {
+        const w = 50 * k, h = w * img.height / img.width;
+        ctx.drawImage(img, x - w / 2, y + 22 * k - h, w, h);
+      }
       else {
         ctx.fillStyle = '#3a3a3a';
         ctx.fillRect(x - 22 * k, y - 30 * k, 44 * k, 34 * k);
