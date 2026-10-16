@@ -312,12 +312,12 @@ const Grafica = {
     ctx.restore();
     if (stato === 'fuoco') this.fiamme(ctx, x, y - larghezza * 0.25, larghezza * 0.45, t, 1);
     else if (stato === 'affonda') {
-      // le fiamme restano dritte ma seguono il ponte che si inclina e scende, e spariscono sotto il pelo dell'acqua
-      const r = progresso * 0.35, alto = larghezza * 0.25;
-      const fx = x + Math.sin(r) * alto, fy = y + progresso * larghezza * 0.55 - Math.cos(r) * alto;
+      // le fiamme si inclinano e scendono con il ponte, e spariscono sotto il pelo dell'acqua
       ctx.save();
       ctx.beginPath(); ctx.rect(x - larghezza * 2, y - larghezza * 3, larghezza * 4, larghezza * 3 + 4); ctx.clip();
-      this.fiamme(ctx, fx, fy, larghezza * 0.45, t, 1 - progresso * 0.6);
+      ctx.translate(x, y + progresso * larghezza * 0.55);
+      ctx.rotate(progresso * 0.35);
+      this.fiamme(ctx, 0, -larghezza * 0.25, larghezza * 0.45, t, 1 - progresso * 0.6);
       ctx.restore();
     }
   },
