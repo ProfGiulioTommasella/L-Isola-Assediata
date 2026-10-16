@@ -155,15 +155,34 @@ const Grafica = {
   },
 
   lineaDifesa(ctx, t) {
-    // Boe che segnano la linea di difesa.
-    for (let y = MARE_ALTO - 30; y < H; y += 70) {
+    // Una cima con galleggianti di sughero segna il limite oltre il quale le navi colpiscono il forte.
+    const punti = [];
+    for (let y = MARE_ALTO - 30; y < H + 40; y += 70) {
       const s = 0.6 + 0.4 * (y - MARE_ALTO) / (MARE_BASSO - MARE_ALTO);
-      const dy = Math.sin(t * 2 + y) * 3;
-      ctx.fillStyle = '#c8372d';
-      ctx.beginPath(); ctx.arc(LINEA_DIFESA, y + dy, 9 * s, 0, Math.PI * 2); ctx.fill();
-      ctx.fillStyle = '#fff';
-      ctx.fillRect(LINEA_DIFESA - 9 * s, y + dy - 2, 18 * s, 4);
+      punti.push([LINEA_DIFESA + Math.sin(t * 1.3 + y * 0.05) * 3, y + Math.sin(t * 2 + y) * 3, s]);
     }
+    ctx.save();
+    ctx.lineCap = 'round';
+    // la cima, che pesca un poco tra un galleggiante e l'altro
+    for (let i = 1; i < punti.length; i++) {
+      const [x0, y0, s0] = punti[i - 1], [x1, y1, s1] = punti[i];
+      ctx.strokeStyle = 'rgba(60,40,22,0.75)'; ctx.lineWidth = 2.2 * s1;
+      ctx.beginPath(); ctx.moveTo(x0, y0); ctx.quadraticCurveTo((x0 + x1) / 2 + 7 * s1, (y0 + y1) / 2, x1, y1); ctx.stroke();
+    }
+    for (const [x, y, s] of punti) {
+      // riflesso scuro nell'acqua, galleggiante di sughero, luce in alto e schiuma ai lati
+      ctx.fillStyle = 'rgba(10,40,70,0.25)';
+      ctx.beginPath(); ctx.ellipse(x, y + 4 * s, 15 * s, 4 * s, 0, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = '#9a6a38';
+      ctx.beginPath(); ctx.ellipse(x, y, 12 * s, 7 * s, 0, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = '#c99a5e';
+      ctx.beginPath(); ctx.ellipse(x - 2 * s, y - 2.5 * s, 7 * s, 3 * s, 0, 0, Math.PI * 2); ctx.fill();
+      ctx.strokeStyle = 'rgba(50,32,16,0.8)'; ctx.lineWidth = 1.5 * s;
+      ctx.beginPath(); ctx.ellipse(x, y, 12 * s, 7 * s, 0, 0, Math.PI * 2); ctx.stroke();
+      ctx.strokeStyle = 'rgba(240,250,255,0.6)'; ctx.lineWidth = 1.6 * s;
+      ctx.beginPath(); ctx.ellipse(x, y + 3 * s, 15 * s, 4 * s, 0, 0.15, Math.PI - 0.15); ctx.stroke();
+    }
+    ctx.restore();
   },
 
   forte(ctx, stato, scossa) {
@@ -291,8 +310,15 @@ const Grafica = {
       this.naveDisegnata(ctx, scuola, ARMAMENTO[scuola][tipo], larghezza, t);
     }
     ctx.restore();
-    if (stato === 'fuoco' || stato === 'affonda') {
-      this.fiamme(ctx, x, y - larghezza * 0.25, larghezza * 0.45, t, stato === 'affonda' ? 1 - progresso : 1);
+    if (stato === 'fuoco') this.fiamme(ctx, x, y - larghezza * 0.25, larghezza * 0.45, t, 1);
+    else if (stato === 'affonda') {
+      // le fiamme restano dritte ma seguono il ponte che si inclina e scende, e spariscono sotto il pelo dell'acqua
+      const r = progresso * 0.35, alto = larghezza * 0.25;
+      const fx = x + Math.sin(r) * alto, fy = y + progresso * larghezza * 0.55 - Math.cos(r) * alto;
+      ctx.save();
+      ctx.beginPath(); ctx.rect(x - larghezza * 2, y - larghezza * 3, larghezza * 4, larghezza * 3 + 4); ctx.clip();
+      this.fiamme(ctx, fx, fy, larghezza * 0.45, t, 1 - progresso * 0.6);
+      ctx.restore();
     }
   },
 
