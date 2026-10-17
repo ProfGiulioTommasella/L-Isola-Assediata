@@ -31,16 +31,23 @@ const Audio_ = {
   },
 
   // Suona un effetto caricato; restituisce false se non è (ancora) disponibile.
-  file(nome, volume) {
+  // ritardo: secondi prima di partire; sfuma: secondi di dissolvenza finale.
+  file(nome, volume, ritardo = 0, sfuma = 0) {
     const buf = this.effetti[nome];
     if (!this.ctx || !buf) return false;
     const s = this.ctx.createBufferSource();
     s.buffer = buf;
     const g = this.ctx.createGain();
-    g.gain.value = volume || 1;
+    const v = volume || 1, inizio = this.ctx.currentTime + ritardo;
+    g.gain.value = v;
+    if (sfuma) {
+      const fine = inizio + buf.duration;
+      g.gain.setValueAtTime(v, Math.max(inizio, fine - sfuma));
+      g.gain.linearRampToValueAtTime(0.0001, fine);
+    }
     s.connect(g);
     g.connect(this.master);
-    s.start();
+    s.start(inizio);
     return true;
   },
 
@@ -111,7 +118,7 @@ const Audio_ = {
 
   sparo() { if (!this.file('sparo')) this.botto(0.7, 1800, 0.9, 120); },
   esplosione() {
-    if (this.file('colpo')) this.file('fuoco', 0.6);
+    if (this.file('colpo', 0.85)) this.file('fuoco', 1, 0.12, 0.8);   // l'incendio (dal progetto Scratch) parte subito dopo il colpo
     else this.botto(1.2, 900, 0.8, 70);
   },
   tonfo() {

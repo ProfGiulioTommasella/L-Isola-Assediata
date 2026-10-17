@@ -367,14 +367,14 @@ const Grafica = {
       this.naveDisegnata(ctx, scuola, ARMAMENTO[scuola][tipo], larghezza, t);
     }
     ctx.restore();
-    if (stato === 'fuoco') this.fiamme(ctx, x, y - larghezza * 0.25, larghezza * 0.45, t, 1);
+    if (stato === 'fuoco') this.fiamme(ctx, x, y - larghezza * 0.12, larghezza * 0.38, t, 1);   // il fuoco parte dal ponte
     else if (stato === 'affonda') {
       // le fiamme si inclinano e scendono con il ponte, e spariscono sotto il pelo dell'acqua
       ctx.save();
       ctx.beginPath(); ctx.rect(x - larghezza * 2, y - larghezza * 3, larghezza * 4, larghezza * 3 + 4); ctx.clip();
       ctx.translate(x, y + progresso * larghezza * 0.55);
       ctx.rotate(progresso * 0.35);
-      this.fiamme(ctx, 0, -larghezza * 0.25, larghezza * 0.45, t, 1 - progresso * 0.6);
+      this.fiamme(ctx, 0, -larghezza * 0.12, larghezza * 0.38, t, 1 - progresso * 0.6);
       ctx.restore();
     }
   },
