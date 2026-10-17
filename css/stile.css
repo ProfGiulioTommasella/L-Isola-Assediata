@@ -183,10 +183,16 @@ input {
 .barra { width: 260px; height: 28px; background: #5b4a35; border-radius: 8px; overflow: hidden; }
 .barra-riempimento { height: 100%; transition: width 0.3s; }
 .ricarica {
-  position: absolute; left: 1130px; top: 540px; font-size: 30px; font-weight: 700; color: #fff4d6;
-  text-shadow: 0 2px 6px #000; opacity: 0; transition: opacity 0.2s; pointer-events: none;
+  position: absolute; left: 1495px; top: 492px; width: 180px; font-size: 26px; font-weight: 700; color: #fff4d6;
+  text-align: center; text-shadow: 0 2px 6px #000; opacity: 0; transition: opacity 0.2s; pointer-events: none;
 }
 .ricarica.visibile { opacity: 1; }
+.ricarica-barra {
+  height: 16px; margin-top: 4px; background: rgba(40, 28, 16, 0.75); border: 2px solid #e8d3a0;
+  border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+.ricarica-riempimento { height: 100%; width: 0; background: #e0a030; }
+.ricarica.carico .ricarica-riempimento { background: #5aa04a; }
 .fumetto {
   position: absolute; left: 50%; top: 130px; transform: translateX(-50%); max-width: 1300px;
   font-size: 40px; font-weight: 700; text-align: center;

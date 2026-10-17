@@ -377,7 +377,7 @@ function battaglia(i) {
   const prova = !P.provaFatta;
   P.provaFatta = true;
   const b = new Battaglia({
-    livello: cfg, colpi: P.colpi, prova, testi: G.testi, adatta, ui,
+    livello: cfg, colpi: P.colpi, prova, primaBattaglia: i === 0, testi: G.testi, adatta, ui,
     alTermine: (esito) => {
       b.chiudi();
       P.esiti[i] = esito;

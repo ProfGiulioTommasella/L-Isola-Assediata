@@ -1,6 +1,6 @@
 // La battaglia: le navi arrivano da sinistra, il cannone sul forte spara dove si tocca.
 class Battaglia {
-  // opzioni: { livello, colpi, prova, testi, adatta, ui, alTermine }
+  // opzioni: { livello, colpi, prova, primaBattaglia, testi, adatta, ui, alTermine }
   constructor(o) {
     this.o = o;
     this.liv = o.livello;
@@ -50,8 +50,11 @@ class Battaglia {
     this.timer = CONFIG.navi.map((n) => this.t + n.ritardo);
     this.ultimoSparo = this.t;
     this.messaggio(this.o.adatta(this.o.testi.aiuti_sparo.inizio_battaglia), 3);
-    this.manoPos = [650, 720];
-    this.manoFino = this.t + 3;
+    // La mano indica il mare solo all'inizio della prima battaglia; poi compare se il giocatore resta fermo.
+    if (this.o.primaBattaglia) {
+      this.manoPos = [650, 720];
+      this.manoFino = this.t + 3;
+    }
     Audio_.corno();
   }
 
@@ -61,7 +64,9 @@ class Battaglia {
     this.hudColpi = el('span', { class: 'valore' });
     this.hudPunti = el('span', { class: 'valore' });
     this.hudForte = el('div', { class: 'barra-riempimento' });
-    this.hudRicarica = el('div', { class: 'ricarica' }, 'Ricarica…');
+    this.hudRicaricaBarra = el('div', { class: 'ricarica-riempimento' });
+    this.hudRicaricaTesto = el('span', {}, 'Pronto!');
+    this.hudRicarica = el('div', { class: 'ricarica' }, this.hudRicaricaTesto, el('div', { class: 'ricarica-barra' }, this.hudRicaricaBarra));
     this.fumetto = el('div', { class: 'fumetto nascosto' });
     this.hud = el('div', { class: 'hud' },
       el('div', { class: 'hud-box' }, el('span', { class: 'icona-palla' }), 'Colpi: ', this.hudColpi),
@@ -78,7 +83,12 @@ class Battaglia {
     this.hudPunti.textContent = this.punti;
     this.hudForte.style.width = (100 * this.forte / this.resistenza) + '%';
     this.hudForte.style.background = this.statoForte >= 2 ? '#c8372d' : this.statoForte === 1 ? '#e0a030' : '#5aa04a';
-    this.hudRicarica.classList.toggle('visibile', this.t < this.pronto && !this.finita);
+    // Barra di ricarica: si riempie dallo sparo fino a quando il cannone è di nuovo carico.
+    const carico = this.t >= this.pronto ? 1 : 1 - (this.pronto - this.t) / this.liv.ricarica;
+    this.hudRicaricaBarra.style.width = (100 * carico) + '%';
+    this.hudRicarica.classList.toggle('carico', carico >= 1);
+    this.hudRicaricaTesto.textContent = carico >= 1 ? 'Pronto!' : 'Ricarica…';
+    this.hudRicarica.classList.toggle('visibile', !this.finita);
   }
 
   messaggio(testo, secondi) {
