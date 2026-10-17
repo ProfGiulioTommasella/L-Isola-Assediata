@@ -1,5 +1,5 @@
 {
-  "_nota": "Immagini definitive già pronte: nome usato dal gioco → file. Se un nome manca, il gioco usa un disegno provvisorio. Nomi possibili: inizio, mappa, re, scena-<scuola>, battaglia-<scuola>, nave-<scuola>-<piccola|media|grande>, relitto-<scuola>-<tipo>, forte-0…forte-3, cannone-canna, cannone-affusto, cannone-canna-intera, batteria-muro, batteria-artiglieri, effetto-<palla|vampata|esplosione|spruzzo|fiamme|barile>, lucchetto, mano, fuoco-torre.",
+  "_nota": "Immagini definitive già pronte: nome usato dal gioco → file. Se un nome manca, il gioco usa un disegno provvisorio. Nomi possibili: inizio, mappa, re, scena-<scuola>, battaglia-<scuola>, nave-<scuola>-<piccola|media|grande>, relitto-<scuola>-<tipo>, forte-0…forte-3, cannone-canna, cannone-affusto, cannone-canna-intera, batteria-muro, batteria-artiglieri, effetto-<palla|vampata|esplosione|spruzzo|fiamme|barile>, tronco-sbarramento, lucchetto, mano, fuoco-torre.",
   "scena-fiandre": "immagini/scene/fiandre.jpg",
   "scena-roma": "immagini/scene/roma.jpg",
   "scena-firenze": "immagini/scene/firenze.jpg",
@@ -52,5 +52,6 @@
   "fuoco-torre": "immagini/sprite/fuoco-torre.webp",
   "cannone-canna-intera": "immagini/sprite/cannone-canna-intera.webp",
   "batteria-muro": "immagini/sprite/batteria-muro.webp",
-  "batteria-artiglieri": "immagini/sprite/batteria-artiglieri.webp"
+  "batteria-artiglieri": "immagini/sprite/batteria-artiglieri.webp",
+  "tronco-sbarramento": "immagini/sprite/tronco-sbarramento.webp"
 }
