@@ -9,6 +9,78 @@
     "Venezia": "威尼斯"
   },
   "domande": {
+    "gen-01": {
+      "domanda": "音乐上的文艺复兴时期在哪个年代？",
+      "opzioni": {
+        "a": "约1450–1600年",
+        "b": "约1000–1300年",
+        "c": "约1600–1750年",
+        "d": "约1750–1820年"
+      },
+      "spiegazione": "音乐上的文艺复兴时期大约从1450年到1600年。在它之前是中世纪，在它之后是巴洛克时期。",
+      "revisione": "bozza"
+    },
+    "gen-02": {
+      "domanda": "文艺复兴时期，人们主要在哪些地方演奏音乐？",
+      "opzioni": {
+        "a": "教堂和贵族的宫廷",
+        "b": "公共音乐厅",
+        "c": "歌剧院",
+        "d": "音乐学校"
+      },
+      "spiegazione": "在教堂里，以宗教复调音乐为主；在领主的宫廷里，诞生了新的世俗音乐形式。歌剧院和公共音乐厅要到后来才出现。",
+      "revisione": "bozza"
+    },
+    "gen-03": {
+      "domanda": "文艺复兴时期的四大音乐乐派是：佛兰德乐派、罗马乐派、威尼斯乐派和佛罗伦萨乐派。",
+      "spiegazione": "正确：佛兰德、罗马、威尼斯和佛罗伦萨，正是进攻小岛的四支舰队！",
+      "revisione": "bozza"
+    },
+    "gen-04": {
+      "domanda": "把每个乐派和代表它的作曲家或团体连起来。",
+      "coppie_sinistra": [
+        "佛兰德",
+        "罗马",
+        "威尼斯",
+        "佛罗伦萨"
+      ],
+      "coppie_destra": [
+        "若斯坎·德普雷",
+        "帕莱斯特里纳",
+        "维拉尔特和安德烈亚·加布里埃利",
+        "巴尔迪卡梅拉塔"
+      ],
+      "spiegazione": "这些是每个乐派需要记住的名字。",
+      "revisione": "bozza"
+    },
+    "gen-05": {
+      "domanda": "把每个乐派和它的音乐特点连起来。",
+      "coppie_sinistra": [
+        "佛兰德",
+        "罗马",
+        "威尼斯",
+        "佛罗伦萨"
+      ],
+      "coppie_destra": [
+        "复杂的复调音乐和«imitazione a canone»（卡农式模仿）",
+        "«a cappella»（无伴奏合唱）风格，纯净而和谐",
+        "两个合唱团轮流演唱",
+        "«madrigale»（牧歌）"
+      ],
+      "spiegazione": "每个乐派都有自己的音乐“签名”。",
+      "revisione": "bozza"
+    },
+    "gen-06": {
+      "domanda": "下面哪一种是文艺复兴时期的音乐形式？",
+      "opzioni": {
+        "a": "牧歌",
+        "b": "劳达赞歌",
+        "c": "奥尔加农",
+        "d": "迪斯康特"
+      },
+      "spiegazione": "牧歌是文艺复兴时期的形式。劳达赞歌、奥尔加农和迪斯康特都是中世纪的形式。",
+      "revisione": "bozza"
+    },
     "fia-01": {
       "domanda": "佛兰德乐派最典型的音乐特点是什么？",
       "opzioni": {
@@ -81,6 +153,234 @@
       "domanda": "佛兰德大师们更喜欢宗教音乐（«sacra»）：复调弥撒曲和经文歌。",
       "spiegazione": "正确。他们最喜欢的形式是宗教音乐：复调弥撒曲和经文歌，在教堂里演唱。",
       "revisione": "bozza"
+    },
+    "rom-01": {
+      "domanda": "谁是罗马乐派最重要的代表人物？",
+      "opzioni": {
+        "a": "帕莱斯特里纳",
+        "b": "若斯坎·德普雷",
+        "c": "安德烈亚·加布里埃利",
+        "d": "雅内坎"
+      },
+      "spiegazione": "帕莱斯特里纳是罗马乐派的大师。若斯坎和雅内坎是佛兰德人，安德烈亚·加布里埃利是威尼斯人。",
+      "revisione": "bozza"
+    },
+    "rom-02": {
+      "domanda": "帕莱斯特里纳被称为«imperator musicae»，即“音乐皇帝”。",
+      "spiegazione": "错误。他被称为«princeps musicae»，即“音乐王子”。",
+      "revisione": "bozza"
+    },
+    "rom-03": {
+      "domanda": "帕莱斯特里纳以佛兰德复调音乐为基础。他是怎样处理它的？",
+      "opzioni": {
+        "a": "把它改成«a cappella»（无伴奏合唱）风格，去掉过分炫技的部分",
+        "b": "让它变得更加复杂、更加炫技，加入非常多的声部",
+        "c": "把它分给两个面对面、轮流演唱的合唱团",
+        "d": "完全放弃它，只写世俗音乐"
+      },
+      "spiegazione": "帕莱斯特里纳运用了佛兰德人的复调音乐，但把它改成«a cappella»风格，并去掉了过分炫技的部分。两个轮流演唱的合唱团则属于威尼斯。",
+      "revisione": "bozza"
+    },
+    "rom-04": {
+      "domanda": "在作曲方式上，帕莱斯特里纳遵循了谁的建议？",
+      "opzioni": {
+        "a": "特伦托会议",
+        "b": "巴尔迪卡梅拉塔",
+        "c": "圣马可教堂的乐师们",
+        "d": "印刷商奥塔维亚诺·佩特鲁奇"
+      },
+      "spiegazione": "帕莱斯特里纳遵循了特伦托会议的建议：宗教音乐应该纯净，不能过分。",
+      "revisione": "bozza"
+    },
+    "rom-05": {
+      "domanda": "帕莱斯特里纳最著名的弥撒曲是«Missa Papae Marcelli»，即为教皇马尔切路斯二世写的《马尔切路斯教皇弥撒》。",
+      "spiegazione": "正确。在帕莱斯特里纳的弥撒曲中，«Missa Papae Marcelli»最为著名。课堂上听过其中的《垂怜经》（Kyrie）。",
+      "revisione": "bozza"
+    },
+    "rom-06": {
+      "domanda": "把罗马乐派的每个要素和它的描述连起来。",
+      "coppie_sinistra": [
+        "帕莱斯特里纳",
+        "特伦托会议",
+        "《马尔切路斯教皇弥撒》",
+        "«a cappella»风格"
+      ],
+      "coppie_destra": [
+        "被称为«princeps musicae»（音乐王子）",
+        "它的建议指导了帕莱斯特里纳",
+        "帕莱斯特里纳最著名的弥撒曲",
+        "没有过分炫技的复调音乐"
+      ],
+      "spiegazione": "这些是罗马乐派的关键词。",
+      "revisione": "bozza"
+    },
+    "rom-07": {
+      "domanda": "在帕莱斯特里纳的《垂怜经》中，各个声部在不同的时刻进入。与佛兰德人不同，他做到了什么？",
+      "opzioni": {
+        "a": "纯净而和谐的整体效果",
+        "b": "两个合唱团之间的回声效果",
+        "c": "带有动物叫声的滑稽场景",
+        "d": "由和弦伴奏的单一旋律"
+      },
+      "spiegazione": "虽然各声部进入的时间都不同，帕莱斯特里纳仍然保持了纯净而和谐的整体效果。其他答案分别让人想到奥兰多·迪·拉索、班基耶里和威尼斯。",
+      "revisione": "bozza"
+    },
+    "rom-08": {
+      "domanda": "帕莱斯特里纳让佛兰德复调音乐变得更加复杂、更加炫技。",
+      "spiegazione": "错误。帕莱斯特里纳正好相反：他去掉了过分炫技的部分，选择了纯净而和谐的风格。",
+      "revisione": "bozza"
+    },
+    "fir-01": {
+      "domanda": "16世纪的佛罗伦萨，哪种音乐占主导地位？",
+      "opzioni": {
+        "a": "复调的声乐世俗音乐",
+        "b": "«a cappella»风格的宗教音乐",
+        "c": "为两个轮流演唱的合唱团写的音乐",
+        "d": "复调弥撒曲和经文歌"
+      },
+      "spiegazione": "在佛罗伦萨，占主导地位的是复调的声乐世俗音乐，也就是和教会无关的音乐。«a cappella»风格属于罗马，两个轮流演唱的合唱团属于威尼斯，弥撒曲和经文歌属于佛兰德人。",
+      "revisione": "bozza"
+    },
+    "fir-02": {
+      "domanda": "在佛罗伦萨，世俗音乐分为“民间的”和“高雅的”两种。",
+      "spiegazione": "正确。除了民间音乐，还有高雅音乐，它的形式就是牧歌。",
+      "revisione": "bozza"
+    },
+    "fir-03": {
+      "domanda": "佛罗伦萨的高雅世俗音乐采用了哪种形式？",
+      "opzioni": {
+        "a": "牧歌",
+        "b": "经文歌",
+        "c": "劳达赞歌",
+        "d": "奥尔加农"
+      },
+      "spiegazione": "牧歌。经文歌是佛兰德人喜爱的宗教形式；劳达赞歌和奥尔加农是中世纪的形式。注意：这里的“牧歌”是宫廷和贵族家中演唱的高雅复调歌曲，不是乡村歌曲。",
+      "revisione": "bozza"
+    },
+    "fir-04": {
+      "domanda": "把佛罗伦萨乐派的每个要素和它的描述连起来。",
+      "coppie_sinistra": [
+        "牧歌",
+        "对话牧歌",
+        "巴尔迪卡梅拉塔",
+        "希腊悲剧"
+      ],
+      "coppie_destra": [
+        "灵活而富有表现力的复调音乐",
+        "故事或滑稽的场景",
+        "佛罗伦萨音乐家和文人的团体",
+        "卡梅拉塔想要复兴的主题"
+      ],
+      "spiegazione": "这些是佛罗伦萨乐派的关键词。",
+      "revisione": "bozza"
+    },
+    "fir-05": {
+      "domanda": "巴尔迪卡梅拉塔是圣马可大教堂的合唱团。",
+      "spiegazione": "错误。巴尔迪卡梅拉塔是佛罗伦萨的一个由音乐家和文人组成的团体，他们聚在一起讨论音乐和文化。圣马可大教堂属于威尼斯乐派。",
+      "revisione": "bozza"
+    },
+    "fir-06": {
+      "domanda": "巴尔迪卡梅拉塔想用有伴奏的音乐叙事来复兴：",
+      "opzioni": {
+        "a": "希腊悲剧",
+        "b": "北欧神话",
+        "c": "宗教经文",
+        "d": "巴黎小贩的叫卖声"
+      },
+      "spiegazione": "希腊悲剧：题材取自古典世界。",
+      "revisione": "bozza"
+    },
+    "fir-07": {
+      "domanda": "对话牧歌讲述故事或滑稽的场景。",
+      "spiegazione": "正确。例如，在班基耶里的«Contrappunto bestiale alla mente»中，讲述了一场有动物叫声的狂欢节聚会。",
+      "revisione": "bozza"
+    },
+    "fir-08": {
+      "domanda": "在班基耶里的«Contrappunto bestiale alla mente»中，有四种动物在唱歌。下面哪一种没有出现？",
+      "opzioni": {
+        "a": "狼",
+        "b": "狗",
+        "c": "小猫头鹰",
+        "d": "布谷鸟"
+      },
+      "spiegazione": "没有狼。动物是一只狗、一只猫、一只布谷鸟和一只小猫头鹰，同时低音声部唱一句严肃的拉丁文。",
+      "revisione": "bozza"
+    },
+    "ven-01": {
+      "domanda": "威尼斯乐派在16世纪初诞生，多亏了一位佛兰德大师。他是谁？",
+      "opzioni": {
+        "a": "维拉尔特",
+        "b": "若斯坎·德普雷",
+        "c": "帕莱斯特里纳",
+        "d": "班基耶里"
+      },
+      "spiegazione": "他是阿德里安·维拉尔特，一位来到威尼斯的佛兰德人：这又一次说明佛兰德大师在意大利非常受欢迎。",
+      "revisione": "bozza"
+    },
+    "ven-02": {
+      "domanda": "把威尼斯乐派的每个要素和它的描述连起来。",
+      "coppie_sinistra": [
+        "维拉尔特",
+        "安德烈亚·加布里埃利",
+        "圣马可的两个唱诗台（«cantorie»）",
+        "管风琴"
+      ],
+      "coppie_destra": [
+        "开创威尼斯乐派的佛兰德大师",
+        "维拉尔特最重要的学生",
+        "为两个轮流演唱的合唱团写的作品",
+        "由和弦伴奏的单一旋律"
+      ],
+      "spiegazione": "这些是威尼斯乐派的关键词。",
+      "revisione": "bozza"
+    },
+    "ven-03": {
+      "domanda": "圣马可大教堂是当时唯一一座有两个面对面唱诗台（«cantorie»）的教堂。",
+      "spiegazione": "正确。因此，威尼斯的宗教音乐变得和罗马的不同。",
+      "revisione": "bozza"
+    },
+    "ven-04": {
+      "domanda": "圣马可的两个唱诗台促使大教堂的管风琴师创作出：",
+      "opzioni": {
+        "a": "为两个轮流演唱的合唱团写的作品",
+        "b": "为一个声部写的作品",
+        "c": "带有动物叫声的对话牧歌",
+        "d": "«a cappella»风格、没有乐器的弥撒曲"
+      },
+      "spiegazione": "为两个轮流演唱的合唱团写的作品：一个合唱团唱，另一个从教堂的对面回答。",
+      "revisione": "bozza"
+    },
+    "ven-05": {
+      "domanda": "在威尼斯，宗教音乐和罗马乐派的一样。",
+      "spiegazione": "错误。正是因为圣马可的两个唱诗台和大量使用管风琴，威尼斯的宗教音乐才和罗马的不同。",
+      "revisione": "bozza"
+    },
+    "ven-06": {
+      "domanda": "威尼斯大量使用管风琴，带来了一个重要的新事物。是什么？",
+      "opzioni": {
+        "a": "由和弦伴奏的单一旋律",
+        "b": "更加复杂、有很多声部的复调音乐",
+        "c": "完全没有乐器的歌唱音乐",
+        "d": "声部之间的卡农式模仿"
+      },
+      "spiegazione": "人们开始不用复调，而用一条单一的旋律线，由乐器的和弦来伴奏。",
+      "revisione": "bozza"
+    },
+    "ven-07": {
+      "domanda": "和弦是乐器同时发出的几个音。",
+      "spiegazione": "正确。一个和弦由同时演奏的几个音组成。",
+      "revisione": "bozza"
+    },
+    "ven-08": {
+      "domanda": "什么是«basso continuo»（通奏低音）？",
+      "opzioni": {
+        "a": "支撑人声的和弦伴奏",
+        "b": "重复另一个声部刚唱过的旋律的声部",
+        "c": "回答另一个合唱团的合唱团",
+        "d": "没有乐器、单独演唱的低沉声部"
+      },
+      "spiegazione": "通奏低音是一种以和弦为基础的伴奏：人声唱旋律，乐器在下面支撑它。",
+      "revisione": "bozza"
     }
   },
   "testi": {
@@ -97,11 +397,77 @@
     "livelli.1.prima_della_battaglia": [
       "我们已经尽力了：您有{colpi}发炮弹。现在就看您怎么用好它们了。",
       "我们的大炮不太准：请仔细瞄准！"
-    ]
+    ],
+    "livelli.2.arrivo": [
+      "您又来了，船长！多亏了您，我才开起了自己的作坊。",
+      "教皇国的舰队正在靠近，下一场战斗您需要更多弹药。"
+    ],
+    "livelli.2.commento_battaglia.forte_retto": "我听说要塞守住了：全岛的人都在谈论您！",
+    "livelli.2.commento_battaglia.forte_caduto": "我听说要塞失守了……但我们不会投降：有您的帮助，我们会把它重建起来。",
+    "livelli.2.grado_attuale": "您现在的军衔是{grado}：您已经有{punti}点战斗积分。",
+    "livelli.2.prima_della_battaglia": [
+      "您有{colpi}发炮弹。我们改进了大炮，但罗马的船更快。祝您战斗顺利！"
+    ],
+    "livelli.3.arrivo": [
+      "真高兴看到您回来，船长！您看，和您做生意，我们的村子和贸易都兴旺起来了！",
+      "托斯卡纳大公国的船只在佛罗伦萨的带领下正在靠近。它们更快了，但我们的人已经练习过更快地给大炮装弹。"
+    ],
+    "livelli.3.commento_battaglia.forte_retto": "罗马的船没能通过：您已经是个传奇了！",
+    "livelli.3.commento_battaglia.forte_caduto": "罗马的船打得很猛，但要塞已经修好了。",
+    "livelli.3.grado_attuale": "您现在的军衔是{grado}：您已经有{punti}点战斗积分。",
+    "livelli.3.prima_della_battaglia": [
+      "您有{colpi}发炮弹。祝您战斗顺利！"
+    ],
+    "livelli.4.arrivo": [
+      "您终于来了，船长！看看我的宫殿：这一切都要归功于您。",
+      "但现在情况变得严峻了。您将面对威尼斯人，他们最擅长海战。他们的船是所有船中最快的，而且会在夜里进攻。"
+    ],
+    "livelli.4.commento_battaglia.forte_retto": "佛罗伦萨人也被击退了：敌人开始怕您了！",
+    "livelli.4.commento_battaglia.forte_caduto": "佛罗伦萨人让我们陷入了困境，但小岛还在坚持。",
+    "livelli.4.grado_attuale": "您现在的军衔是{grado}：您已经有{punti}点战斗积分。",
+    "livelli.4.prima_della_battaglia": [
+      "您有{colpi}发炮弹。这是最后一战，敌人非常凶猛。防御已经加强到最大：现在就看您的了！"
+    ],
+    "domande.giusta": [
+      "太好了！",
+      "正确！",
+      "就是这样！"
+    ],
+    "domande.sbagliata": [
+      "不太对……",
+      "嗯，不是这样的。",
+      "差一点，但不对。"
+    ],
+    "domande.fine": "4道题中您答对了{giuste}道。",
+    "aiuti_sparo.colpi_di_prova": "训练：海上有三个木桶。点击大海开炮，把三个木桶都打中！",
+    "aiuti_sparo.barili_in_movimento": "打中了！现在水流在推动其他木桶：瞄准时稍微往前一点，就像以后打船时那样。",
+    "aiuti_sparo.barile_mancano": "打中了！剩下的木桶：{barili}个。",
+    "aiuti_sparo.barile_colpito": "太好了，三个都打中了！现在准备好：舰队来了。",
+    "aiuti_sparo.inizio_battaglia": "点击大海开炮！",
+    "aiuti_sparo.inattivo_5_secondi": "船只正在靠近：点击大海开炮！",
+    "aiuti_sparo.pulsante_aiuto": "点击您想打中的海面位置，大炮会立刻开火。每一艘越过防线的船都会损坏要塞。炮弹用完时，战斗结束。",
+    "fine_battaglia.vittoria": "要塞守住了！您击沉了{navi}艘船。",
+    "fine_battaglia.sconfitta": "要塞失守了……但战争还没有结束：继续迎战下一个乐派！",
+    "finale.apertura": "向您致敬，{nome}船长。我是请您来保卫这座岛的国王。",
+    "finale.esiti.0": "16道题中您答对了{giuste}道：这还不足以拯救我们的小岛。请多收集一些关于敌人的信息，然后回来再战。我焦急地等着您！",
+    "finale.esiti.1": "16道题中您答对了{giuste}道：您把我的小岛守得还不错。复习一下关于敌人的信息，您会做得更好。",
+    "finale.esiti.2": "16道题中您答对了{giuste}道：您把我的小岛守得非常好！如果16道题全部答对，您就会成为我们的“小岛冠军”。",
+    "finale.esiti.3": "向您致敬，小岛冠军！16道题您全部答对了：敌人对您来说已经没有秘密了。请早日再来看我们，这里永远是您的家！",
+    "finale.commento_battaglia": "在战斗中，您获得了{punti}点积分：您的军衔是{grado}！",
+    "finale.chiusura": "想重新开始吗？每一局都有新的题目。",
+    "interfaccia.mappa_indicazione": "点击{torre}塔去保卫它。",
+    "interfaccia.abbinamento_istruzioni": "先点击左边的一项，再点击右边正确的一项。",
+    "interfaccia.abbinamenti_giusti": "正确的配对是："
   },
   "interfaccia": {
     "vero": "正确",
     "falso": "错误",
     "avviso": "辅助翻译：如有疑问，以意大利语为准。"
+  },
+  "torri": {
+    "Fiandre": "佛兰德",
+    "Roma": "罗马",
+    "Firenze": "佛罗伦萨",
+    "Venezia": "威尼斯"
   }
 }

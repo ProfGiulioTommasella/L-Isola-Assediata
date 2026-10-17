@@ -9,7 +9,7 @@ Per provarlo sul proprio computer: `python3 -m http.server` nella cartella del g
 ## Dove sono le cose
 - `data/domande.json`: le domande, con risposte e spiegazioni.
 - `data/testi.json`: tutti i testi del gioco.
-- `data/lingue/`: le traduzioni d'aiuto (albanese `sq`, spagnolo `es`, cinese `zh`), scelte nella schermata iniziale. Compaiono sotto l'italiano; se una frase non è tradotta si vede solo l'italiano. Per ora sono tradotti le domande delle Fiandre, l'introduzione e il livello 1.
+- `data/lingue/`: le traduzioni d'aiuto (albanese `sq`, spagnolo `es`, cinese `zh`), scelte nella schermata iniziale. Compaiono sotto l'italiano; se una frase non è tradotta si vede solo l'italiano. Sono tradotte tutte le domande e tutti i testi del gioco; restano solo in italiano i pulsanti e l'area docente. Le traduzioni sono bozze da verificare con gli alunni (`"revisione": "bozza"`).
 - `docs/regole.md`: le regole decise con il docente.
 - `js/config.js`: i numeri del gioco (munizioni, velocità delle navi, resistenza del forte, soglie dei gradi, musica).
 - `immagini/`: le immagini definitive. `immagini/elenco.json` dice quali sono già pronte; quelle che mancano il gioco le disegna da sé con forme semplici.

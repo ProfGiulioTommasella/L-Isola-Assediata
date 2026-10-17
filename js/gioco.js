@@ -235,7 +235,9 @@ function mappa() {
       if (chiusa) Audio_.lucchetto();
     },
   };
-  ui.append(el('div', { class: 'indicazione' }, adatta(Utili.riempi(I().mappa_indicazione, { torre: prossima.torre }))));
+  ui.append(el('div', { class: 'indicazione' }, adatta(Utili.riempi(I().mappa_indicazione, { torre: prossima.torre })),
+    traduzione(tr('interfaccia.mappa_indicazione') &&
+      Utili.riempi(tr('interfaccia.mappa_indicazione'), { torre: G.lingua.dati.torri?.[prossima.nome] || prossima.nome }))));
   if (P.esiti.length) ui.append(el('div', { class: 'stato-partita' }, Utili.riempi(I().mappa_stato, valori())));
 }
 
@@ -363,11 +365,15 @@ function mostraDomanda(q, risultato, poi) {
         lang: G.lingua?.lang, tr: { domanda: t.domanda, risposta: testoRispostaTradotta(q), spiegazione: t.spiegazione },
       });
     }
-    const frasi = G.testi.domande[giusta ? 'giusta' : 'sbagliata'];
+    const tipo = giusta ? 'giusta' : 'sbagliata';
+    const n = Utili.intero(0, G.testi.domande[tipo].length - 1);
+    const frase = trLista('domande.' + tipo)[n];
     const fb = el('div', { class: 'riscontro ' + (giusta ? 'ok' : 'no') },
-      el('p', {}, el('strong', {}, Utili.mescola(frasi)[0] + ' '), q.spiegazione, traduzione(t.spiegazione)));
+      el('p', {}, el('strong', {}, G.testi.domande[tipo][n] + ' '), q.spiegazione,
+        traduzione(t.spiegazione && (frase ? frase + ' ' : '') + t.spiegazione)));
     if (!giusta && q.tipo === 'abbinamento') {
-      fb.append(el('p', { class: 'piccolo' }, I().abbinamenti_giusti + ' ' + testoRisposta(q)));
+      fb.append(el('p', { class: 'piccolo' }, I().abbinamenti_giusti + ' ' + testoRisposta(q),
+        traduzione(tr('interfaccia.abbinamenti_giusti'))));
     }
     fb.append(el('div', { class: 'riga-pulsanti' }, el('button', { class: 'pulsante', onclick: () => { Audio_.clic(); poi(); } }, I().avanti)));
     box.append(fb);
@@ -397,7 +403,7 @@ function mostraDomanda(q, risultato, poi) {
   }
 
   // Abbinamento: si tocca una voce a sinistra e poi una a destra.
-  box.append(el('p', { class: 'piccolo' }, adatta(I().abbinamento_istruzioni)));
+  box.append(el('p', { class: 'piccolo' }, adatta(I().abbinamento_istruzioni), traduzione(tr('interfaccia.abbinamento_istruzioni'))));
   const destra = Utili.mescola(q.coppie.map((c) => c.destra));
   const scelta = new Array(q.coppie.length).fill(null);     // indice a destra scelto per ogni voce a sinistra
   let attiva = null;
@@ -451,6 +457,7 @@ function battaglia(i) {
   P.provaFatta = true;
   const b = new Battaglia({
     livello: cfg, colpi: P.colpi, prova, primaBattaglia: i === 0, testi: G.testi, adatta, ui,
+    traduci: (chiave, v) => traduzione(tr(chiave) && Utili.riempi(tr(chiave), v || {})),
     alTermine: (esito) => {
       b.chiudi();
       P.esiti[i] = esito;
