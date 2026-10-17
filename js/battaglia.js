@@ -197,11 +197,13 @@ class Battaglia {
   // I barili oscillano avanti e indietro, con un'ampiezza che cresce piano piano.
   bariliALaDeriva() {
     const dt = this.t - this.corrente;
-    const ampiezza = 130 * Math.min(1, dt / 1.5);
+    // deriva lenta e ampia, che parte da ferma e cambia verso con calma, come una corrente di marea
+    const avvio = Math.min(1, dt / 3);
+    const ampiezza = 120 * avvio * avvio * (3 - 2 * avvio);
     const restanti = this.barili.filter((r) => !r.colpito);
     for (const r of restanti) {
-      r.x = r.x0 + ampiezza * Math.sin(dt * 1.4 + r.fase) - ampiezza * Math.sin(r.fase) * Math.max(0, 1 - dt / 1.5);
-      r.y = r.y0 + ampiezza * 0.2 * Math.sin(dt * 0.9 + r.fase);
+      r.x = r.x0 + ampiezza * (Math.sin(dt * 0.45 + r.fase) - Math.sin(r.fase));
+      r.y = r.y0 + ampiezza * 0.22 * (Math.sin(dt * 0.3 + r.fase * 1.7) - Math.sin(r.fase * 1.7));
     }
     if (restanti.length && this.stato === 'prova') this.manoPos = [restanti[0].x, restanti[0].y - 20];
   }
@@ -307,7 +309,7 @@ class Battaglia {
     const t = this.t;
     Grafica.sfondoBattaglia(ctx, this.liv.scuola, t);
     Grafica.lineaDifesa(ctx, t);
-    for (const b of this.barili) if (!b.colpito) Grafica.barile(ctx, b.x, b.y, b.s, t);
+    for (const b of this.barili) if (!b.colpito) Grafica.barile(ctx, b.x, b.y, b.s, t, b.fase || 0);
     const ordinate = this.navi.slice().sort((a, b) => a.y - b.y);
     for (const n of ordinate) {
       ctx.save();

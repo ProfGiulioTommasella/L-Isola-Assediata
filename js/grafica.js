@@ -592,9 +592,10 @@ const Grafica = {
     ctx.restore();
   },
 
-  barile(ctx, x, y, s, t) {
+  barile(ctx, x, y, s, t, fase = 0) {
     ctx.save();
-    ctx.translate(x, y + Math.sin(t * 2 + x) * 4);
+    // il dondolio usa una fase fissa del barile, non la sua posizione: così non trema mentre la corrente lo sposta
+    ctx.translate(x, y + Math.sin(t * 2 + fase * 3) * 4);
     ctx.scale(s, s);
     if (Utili.immagini['effetto-barile']) {
       // il barile galleggia: la parte sotto il pelo dell'acqua non si vede, attorno c'è un po' di schiuma
@@ -603,7 +604,7 @@ const Grafica = {
       ctx.beginPath(); ctx.moveTo(-60, -60);
       for (let u = -60; u <= 60; u += 6) ctx.lineTo(u, onda(u));
       ctx.lineTo(60, -60); ctx.closePath(); ctx.clip();
-      ctx.rotate(Math.sin(t * 1.7 + x) * 0.04);
+      ctx.rotate(Math.sin(t * 1.7 + fase * 5) * 0.04);
       this.effetto(ctx, 'barile', 0, -10, 96);
       ctx.restore();
       // velo d'acqua sul bordo immerso e anello di schiuma
