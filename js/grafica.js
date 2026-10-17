@@ -164,6 +164,8 @@ const Grafica = {
       const s = 0.6 + 0.4 * (y - MARE_ALTO) / (MARE_BASSO - MARE_ALTO);
       punti.push([LINEA_DIFESA + Math.sin(t * 1.3 + y * 0.05) * 3, y + Math.sin(t * 2 + y) * 3, s]);
     }
+    const tronco = Utili.immagini['tronco-sbarramento'];
+    if (tronco) { this.catenaSbarramento(ctx, tronco, t); return; }
     ctx.save();
     ctx.lineCap = 'round';
     // la cima, che pesca un poco tra un galleggiante e l'altro
@@ -184,6 +186,44 @@ const Grafica = {
       ctx.beginPath(); ctx.ellipse(x, y, 12 * s, 7 * s, 0, 0, Math.PI * 2); ctx.stroke();
       ctx.strokeStyle = 'rgba(240,250,255,0.6)'; ctx.lineWidth = 1.6 * s;
       ctx.beginPath(); ctx.ellipse(x, y + 3 * s, 15 * s, 4 * s, 0, 0.15, Math.PI - 0.15); ctx.stroke();
+    }
+    ctx.restore();
+  },
+
+  // Catena di sbarramento: tronchi galleggianti, un po' sfalsati come una catena vista in prospettiva,
+  // uniti da maglie di ferro che passano dietro i tronchi.
+  catenaSbarramento(ctx, tronco, t) {
+    // punti della linea dall'orizzonte verso chi guarda, con un leggero serpeggiare
+    const punti = [];
+    for (let i = 0, y = MARE_ALTO - 30; y < H + 80; i++) {
+      const s = 0.55 + 0.45 * (y - MARE_ALTO) / (MARE_BASSO - MARE_ALTO);
+      punti.push({ x: LINEA_DIFESA + Math.sin(i * 1.9) * 10 * s + Math.sin(t * 1.1 + i) * 2, y: y + Math.sin(t * 1.8 + i * 1.3) * 2, s });
+      y += 92 * s;
+    }
+    ctx.save();
+    ctx.lineCap = 'round';
+    for (let i = 1; i < punti.length; i++) {
+      const a = punti[i - 1], b = punti[i];
+      const dx = b.x - a.x, dy = b.y - a.y, lungo = Math.hypot(dx, dy), ang = Math.atan2(dy, dx);
+      const s = (a.s + b.s) / 2, maglia = 8 * s, buco = maglia * 2.2;   // spazio per due maglie tra un tronco e l'altro
+      ctx.save();
+      ctx.translate(a.x, a.y); ctx.rotate(ang);
+      // maglie di ferro all'inizio del tratto (collegano al tronco precedente)
+      for (let k = 0; k < 2; k++) {
+        const mx = maglia * (0.5 + k * 1.05);
+        ctx.strokeStyle = '#2e2420'; ctx.lineWidth = 3 * s;
+        ctx.beginPath();
+        if (k % 2) { ctx.moveTo(mx - maglia * 0.55, 0); ctx.lineTo(mx + maglia * 0.55, 0); }
+        else ctx.ellipse(mx, 0, maglia * 0.6, maglia * 0.36, 0, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+      // il tronco, accorciato dalla prospettiva: lungo quanto il tratto, spesso in proporzione alla distanza
+      const lt = lungo - buco, spesso = 17 * s;
+      // ombra e schiuma sull'acqua lungo il tronco
+      ctx.fillStyle = 'rgba(10,40,70,0.22)';
+      ctx.beginPath(); ctx.ellipse(buco + lt / 2, spesso * 0.15, lt / 2 + 2 * s, spesso * 0.7, 0, 0, Math.PI * 2); ctx.fill();
+      ctx.drawImage(tronco, buco, -spesso / 2, lt, spesso);
+      ctx.restore();
     }
     ctx.restore();
   },
@@ -552,9 +592,10 @@ const Grafica = {
     ctx.restore();
   },
 
-  barile(ctx, x, y, s, t) {
+  barile(ctx, x, y, s, t, fase = 0) {
     ctx.save();
-    ctx.translate(x, y + Math.sin(t * 2 + x) * 4);
+    // il dondolio usa una fase fissa del barile, non la sua posizione: così non trema mentre la corrente lo sposta
+    ctx.translate(x, y + Math.sin(t * 2 + fase * 3) * 4);
     ctx.scale(s, s);
     if (Utili.immagini['effetto-barile']) {
       // il barile galleggia: la parte sotto il pelo dell'acqua non si vede, attorno c'è un po' di schiuma
@@ -563,7 +604,7 @@ const Grafica = {
       ctx.beginPath(); ctx.moveTo(-60, -60);
       for (let u = -60; u <= 60; u += 6) ctx.lineTo(u, onda(u));
       ctx.lineTo(60, -60); ctx.closePath(); ctx.clip();
-      ctx.rotate(Math.sin(t * 1.7 + x) * 0.04);
+      ctx.rotate(Math.sin(t * 1.7 + fase * 5) * 0.04);
       this.effetto(ctx, 'barile', 0, -10, 96);
       ctx.restore();
       // velo d'acqua sul bordo immerso e anello di schiuma
