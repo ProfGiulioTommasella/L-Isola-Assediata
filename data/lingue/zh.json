@@ -1,0 +1,107 @@
+{
+  "_lingua": "zh",
+  "_nome": "中文（简体）",
+  "_nota": "Prova di traduzione d'aiuto (bozza automatica, da rivedere con un madrelingua). L'italiano resta sempre visibile sopra; i termini tecnici restano in italiano tra «». Chiavi = id di data/domande.json e percorsi di data/testi.json. Ci si rivolge al giocatore con la forma di cortesia singolare (usted / ju / 您), come il 'voi' italiano. Negli abbinamenti 'coppie' traduce la colonna 'destra' nello stesso ordine; 'sinistra' (nomi) resta com'è salvo trascrizione cinese.",
+  "scuole": {
+    "Fiandre": "佛兰德",
+    "Roma": "罗马",
+    "Firenze": "佛罗伦萨",
+    "Venezia": "威尼斯"
+  },
+  "domande": {
+    "fia-01": {
+      "domanda": "佛兰德乐派最典型的音乐特点是什么？",
+      "opzioni": {
+        "a": "复杂的复调音乐，运用«imitazione a canone»（卡农式模仿）",
+        "b": "两个合唱团面对面，轮流演唱",
+        "c": "«madrigale»（牧歌）：灵活而富有表现力的复调音乐",
+        "d": "«a cappella»（无伴奏合唱）风格，纯净而和谐"
+      },
+      "spiegazione": "佛兰德作曲家把许多声部交织在一起，写出非常复杂的作品，他们特别喜欢卡农式模仿。其他答案分别属于威尼斯、佛罗伦萨和罗马。",
+      "revisione": "bozza"
+    },
+    "fia-02": {
+      "domanda": "在复调音乐中，几个声部同时演唱，每个声部唱不同的旋律。",
+      "spiegazione": "正确。这就是复调音乐，也叫«contrappunto»（对位法）：在佛兰德，复调音乐达到了极高的复杂程度，有些作品有很多个声部。",
+      "revisione": "bozza"
+    },
+    "fia-03": {
+      "domanda": "一个音乐动机（«proposta»，“提出”）从一个声部传到另一个声部（«risposta»，“回答”）。这种佛兰德作曲家最常用的形式叫什么？",
+      "opzioni": {
+        "a": "«imitazione a canone»（卡农式模仿）",
+        "b": "«basso continuo»（通奏低音）",
+        "c": "两个合唱团轮流演唱",
+        "d": "«madrigale»（牧歌）"
+      },
+      "spiegazione": "这是卡农式模仿：一个声部提出一个音乐动机，其他声部依次重复它，就像在回答。",
+      "revisione": "bozza"
+    },
+    "fia-04": {
+      "domanda": "下面哪位作曲家属于佛兰德乐派？",
+      "opzioni": {
+        "a": "若斯坎·德普雷",
+        "b": "帕莱斯特里纳",
+        "c": "安德烈亚·加布里埃利"
+      },
+      "spiegazione": "若斯坎·德普雷是最著名的佛兰德作曲家。帕莱斯特里纳属于罗马乐派，安德烈亚·加布里埃利属于威尼斯乐派。",
+      "revisione": "bozza"
+    },
+    "fia-05": {
+      "domanda": "把每位佛兰德作曲家和正确的句子连起来。",
+      "coppie_sinistra": [
+        "迪费",
+        "若斯坎",
+        "雅内坎"
+      ],
+      "coppie_destra": [
+        "以弥撒曲和经文歌闻名",
+        "也曾在米兰、罗马和费拉拉工作",
+        "在世俗音乐方面取得了成功"
+      ],
+      "spiegazione": "佛兰德乐派的三位大师，每个人都有自己的故事。",
+      "revisione": "bozza"
+    },
+    "fia-06": {
+      "domanda": "哪位佛兰德乐派作曲家在世俗音乐（«profana»）方面取得了巨大成功？他是«Le cris de Paris»（《巴黎的叫卖声》）的作者。",
+      "opzioni": {
+        "a": "雅内坎",
+        "b": "迪费",
+        "c": "帕莱斯特里纳",
+        "d": "安德烈亚·加布里埃利"
+      },
+      "spiegazione": "克莱芒·雅内坎写了充满活力的世俗音乐：在«Le cris de Paris»中，各个声部模仿巴黎街头小贩的叫卖声。",
+      "revisione": "bozza"
+    },
+    "fia-07": {
+      "domanda": "佛兰德音乐家只在佛兰德工作。",
+      "spiegazione": "错误。他们在整个欧洲的教堂和宫廷里工作：比如若斯坎，也曾在米兰、罗马和费拉拉工作。",
+      "revisione": "bozza"
+    },
+    "fia-09": {
+      "domanda": "佛兰德大师们更喜欢宗教音乐（«sacra»）：复调弥撒曲和经文歌。",
+      "spiegazione": "正确。他们最喜欢的形式是宗教音乐：复调弥撒曲和经文歌，在教堂里演唱。",
+      "revisione": "bozza"
+    }
+  },
+  "testi": {
+    "inizio.intro": [
+      "小岛被包围了！文艺复兴时期四大音乐乐派的舰队正在逼近：佛兰德、罗马、佛罗伦萨和威尼斯。",
+      "国王请您来保卫要塞。岛上的居民会为您提供弹药，但前提是您要证明自己了解这些敌人。"
+    ],
+    "inizio.chiedi_nome": "请输入您的名字：",
+    "livelli.1.arrivo": [
+      "向您致敬，{nome}船长！能由您来指挥我们的防御，我们深感荣幸。",
+      "我知道您在为即将到来的战斗寻找弹药。弹药很珍贵，我们乡下也不多。但如果您答得好，我们会尽力为您筹集。",
+      "佛兰德舰队已经出现在地平线上了。让我们看看您对我们的第一批对手了解多少。"
+    ],
+    "livelli.1.prima_della_battaglia": [
+      "我们已经尽力了：您有{colpi}发炮弹。现在就看您怎么用好它们了。",
+      "我们的大炮不太准：请仔细瞄准！"
+    ]
+  },
+  "interfaccia": {
+    "vero": "正确",
+    "falso": "错误",
+    "avviso": "辅助翻译：如有疑问，以意大利语为准。"
+  }
+}

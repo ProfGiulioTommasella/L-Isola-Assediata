@@ -197,6 +197,10 @@
     "abbinamenti_giusti": "Gli abbinamenti giusti erano:",
     "come_si_gioca": "Come si gioca",
     "riprendi": "Riprendi",
-    "ruota": "Ruotate il tablet in orizzontale per giocare."
+    "ruota": "Ruotate il tablet in orizzontale per giocare.",
+    "lingua": "Lingua:",
+    "solo_italiano": "Solo italiano",
+    "italiano_e": "Italiano + {lingua}",
+    "avviso_traduzione": "Traduzione d'aiuto: in caso di dubbio vale l'italiano."
   }
 }

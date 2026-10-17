@@ -7,7 +7,8 @@ const el = Utili.el;
 
 const G = {
   domande: [], testi: null,
-  scena: null,              // { disegna(ctx, t), aggiorna?(dt), tocco?(x, y) }
+  lingua: null,             // lingua d'aiuto scelta nella Home: { codice, lang, dati } oppure null (solo italiano)
+  scena: null,             // { disegna(ctx, t), aggiorna?(dt), tocco?(x, y) }
   mouse: null,              // true se il primo comando è stato col mouse
   t: 0,
 };
@@ -31,6 +32,7 @@ async function avvia() {
   G.domande = d.domande;
   G.testi = t;
   document.getElementById('ruota-testo').textContent = t.interfaccia.ruota;
+  await scegliLingua(Utili.leggi('lingua', null));
 
   // Immagini definitive: immagini/elenco.json dice quali ci sono già.
   // Quelle che mancano vengono disegnate dal gioco.
@@ -82,6 +84,37 @@ function adatta(testo) {
 }
 
 const I = () => G.testi.interfaccia;
+
+// ---------- Lingua d'aiuto ----------
+// Le traduzioni stanno in data/lingue/<codice>.json; se una frase manca si vede solo l'italiano.
+const fileLingue = {};
+async function scegliLingua(codice) {
+  const l = CONFIG.lingue.find((x) => x.codice === codice);
+  if (l && !fileLingue[codice]) {
+    fileLingue[codice] = await fetch(`data/lingue/${codice}.json`).then((r) => r.json()).catch(() => null);
+  }
+  G.lingua = l && fileLingue[codice] ? { codice, lang: l.lang, dati: fileLingue[codice] } : null;
+  Utili.scrivi('lingua', G.lingua ? codice : null);
+}
+
+// Testo tradotto per una chiave come 'livelli.1.arrivo' (stringa o lista di battute).
+function tr(chiave) {
+  return G.lingua ? G.lingua.dati.testi?.[chiave] : undefined;
+}
+const trLista = (chiave) => tr(chiave) || [];
+const trDomanda = (q) => (G.lingua ? G.lingua.dati.domande?.[q.id] : undefined) || {};
+const trI = (chiave) => (G.lingua ? G.lingua.dati.interfaccia?.[chiave] : undefined);
+
+// Riga tradotta da mettere sotto l'italiano (null se non c'è traduzione).
+function traduzione(testo, lang) {
+  lang = lang || G.lingua?.lang;
+  return testo && lang ? el('span', { class: 'traduzione', lang }, testo) : null;
+}
+
+// Una battuta è una stringa oppure [italiano, traduzione].
+function riempiBattuta(b, v) {
+  return Array.isArray(b) ? b.map((x) => (x ? Utili.riempi(x, v) : x)) : Utili.riempi(b, v);
+}
 
 function pulisci() {
   ui.replaceChildren();
@@ -140,13 +173,30 @@ function titolo() {
     el('h1', {}, "L'Isola Assediata"),
     el('p', { class: 'sottotitolo' }, I().sottotitolo),
     el('button', { class: 'pulsante grande', onclick: () => { Audio_.clic(); intro(); } }, I().inizia),
+    sceltaLingua(),
+    G.lingua ? el('p', { class: 'avviso-traduzione' }, I().avviso_traduzione, traduzione(trI('avviso'))) : null,
+    G.lingua ? el('br') : null,
     stat ? el('p', { class: 'record' }, Utili.riempi(I().record, stat)) : null,
   ));
   ui.append(el('button', { class: 'pulsante piccolo angolo', onclick: () => docenteAccesso() }, I().area_docente));
 }
 
+// Nella Home: solo italiano, oppure italiano con la traduzione sotto in una delle lingue.
+function sceltaLingua() {
+  const voce = (codice, testo) => el('button', {
+    class: 'pulsante piccolo' + ((G.lingua?.codice || null) === codice ? '' : ' secondario'),
+    'aria-pressed': (G.lingua?.codice || null) === codice ? 'true' : 'false',
+    onclick: async () => { Audio_.clic(); await scegliLingua(codice); titolo(); },
+  }, testo);
+  return el('div', { class: 'scelta-lingua' },
+    el('span', { class: 'etichetta' }, I().lingua),
+    voce(null, I().solo_italiano),
+    ...CONFIG.lingue.map((l) => voce(l.codice, Utili.riempi(I().italiano_e, { lingua: l.nome }))));
+}
+
 function intro() {
-  dialogo(G.testi.inizio.intro, { sfondo: (c, t) => Grafica.inizio(c, t), poi: chiediNome });
+  const t = trLista('inizio.intro');
+  dialogo(G.testi.inizio.intro.map((r, j) => [r, t[j]]), { sfondo: (c, t) => Grafica.inizio(c, t), poi: chiediNome });
 }
 
 function chiediNome() {
@@ -163,7 +213,7 @@ function chiediNome() {
   }
   campo.addEventListener('keydown', (e) => { if (e.key === 'Enter') conferma(); });
   ui.append(el('div', { class: 'pergamena centrata' },
-    el('label', { class: 'grande' }, G.testi.inizio.chiedi_nome), campo, ok));
+    el('label', { class: 'grande' }, G.testi.inizio.chiedi_nome, traduzione(tr('inizio.chiedi_nome'))), campo, ok));
   setTimeout(() => campo.focus(), 50);
 }
 
@@ -194,15 +244,18 @@ function livello(i) {
   const cfg = CONFIG.livelli[i];
   const testi = G.testi.livelli[i];
   Audio_.suona(cfg.scuola);
-  const righe = [testi.arrivo[0]];
+  const k = `livelli.${i + 1}.`;
+  const arrivo = trLista(k + 'arrivo');
+  const righe = [[testi.arrivo[0], arrivo[0]]];
   const ultimo = P.esiti[i - 1];
   if (testi.commento_battaglia && ultimo) {
-    righe.push(ultimo.vittoria ? testi.commento_battaglia.forte_retto : testi.commento_battaglia.forte_caduto);
-    righe.push(testi.grado_attuale);
+    const esito = ultimo.vittoria ? 'forte_retto' : 'forte_caduto';
+    righe.push([testi.commento_battaglia[esito], tr(k + 'commento_battaglia.' + esito)]);
+    righe.push([testi.grado_attuale, tr(k + 'grado_attuale')]);
   }
-  righe.push(...testi.arrivo.slice(1));
+  righe.push(...testi.arrivo.slice(1).map((r, j) => [r, arrivo[j + 1]]));
   P.colpi = cfg.base;
-  dialogo(righe.map((r) => Utili.riempi(r, valori())), {
+  dialogo(righe.map((r) => riempiBattuta(r, valori())), {
     sfondo: (c) => Grafica.scena(c, cfg.scuola),
     poi: () => quiz(i),
     colpi: true,
@@ -219,7 +272,9 @@ function dialogo(righe, o) {
   const avanti = el('button', { class: 'pulsante' }, I().avanti);
   const salta = el('button', { class: 'pulsante piccolo secondario' }, I().salta);
   const box = el('div', { class: 'pergamena dialogo' }, testo, el('div', { class: 'riga-pulsanti' }, salta, avanti));
-  const mostra = () => { testo.textContent = righe[k]; salta.style.visibility = k < righe.length - 1 ? 'visible' : 'hidden'; };
+  const mostra = () => {
+    const [it, trad] = Array.isArray(righe[k]) ? righe[k] : [righe[k]];
+    testo.replaceChildren(it, traduzione(trad) || ''); salta.style.visibility = k < righe.length - 1 ? 'visible' : 'hidden'; };
   const fine = () => { Audio_.clic(); o.poi(); };
   avanti.onclick = (e) => {
     e.stopPropagation();
@@ -264,7 +319,9 @@ function quiz(i) {
       P.giuste[i] = giuste;
       const t = G.testi.livelli[i];
       const v = valori({ giuste, colpi: P.colpi });
-      dialogo([Utili.riempi(G.testi.domande.fine, v), ...t.prima_della_battaglia.map((r) => Utili.riempi(r, v))], {
+      const prima = trLista(`livelli.${i + 1}.prima_della_battaglia`);
+      dialogo([[G.testi.domande.fine, tr('domande.fine')], ...t.prima_della_battaglia.map((r, j) => [r, prima[j]])]
+        .map((r) => riempiBattuta(r, v)), {
         sfondo: (c) => Grafica.scena(c, cfg.scuola), poi: () => battaglia(i), colpi: true,
       });
       return;
@@ -282,27 +339,40 @@ function testoRisposta(q) {
   return q.coppie.map((c) => `${c.sinistra} → ${c.destra}`).join('; ');
 }
 
+function testoRispostaTradotta(q) {
+  const t = trDomanda(q);
+  if (q.tipo === 'multipla') return t.opzioni?.[q.risposte_accettate[0]];
+  if (q.tipo === 'vero_falso') return trI(q.risposte_accettate[0]);
+  return undefined;
+}
+
 function mostraDomanda(q, risultato, poi) {
   pulisci();
   mostraColpi();
+  const t = trDomanda(q);
   const box = el('div', { class: 'pergamena quiz' });
-  box.append(el('p', { class: 'domanda' }, q.domanda));
+  box.append(el('p', { class: 'domanda' }, q.domanda, traduzione(t.domanda)));
   ui.append(box);
 
   const rispondi = (giusta, pulsanti) => {
     Audio_[giusta ? 'giusta' : 'sbagliata']();
     risultato(giusta);
     if (!giusta && !P.allenamento) {
-      P.sbagliate.push({ scuola: q.scuola, domanda: q.domanda, risposta: testoRisposta(q), spiegazione: q.spiegazione });
+      P.sbagliate.push({
+        scuola: q.scuola, domanda: q.domanda, risposta: testoRisposta(q), spiegazione: q.spiegazione,
+        lang: G.lingua?.lang, tr: { domanda: t.domanda, risposta: testoRispostaTradotta(q), spiegazione: t.spiegazione },
+      });
     }
     const frasi = G.testi.domande[giusta ? 'giusta' : 'sbagliata'];
     const fb = el('div', { class: 'riscontro ' + (giusta ? 'ok' : 'no') },
-      el('p', {}, el('strong', {}, Utili.mescola(frasi)[0] + ' '), q.spiegazione));
+      el('p', {}, el('strong', {}, Utili.mescola(frasi)[0] + ' '), q.spiegazione, traduzione(t.spiegazione)));
     if (!giusta && q.tipo === 'abbinamento') {
       fb.append(el('p', { class: 'piccolo' }, I().abbinamenti_giusti + ' ' + testoRisposta(q)));
     }
     fb.append(el('div', { class: 'riga-pulsanti' }, el('button', { class: 'pulsante', onclick: () => { Audio_.clic(); poi(); } }, I().avanti)));
     box.append(fb);
+    // con la traduzione la pergamena si allunga: si scorre fino alla spiegazione
+    box.scrollTo({ top: box.scrollHeight, behavior: 'smooth' });
     if (pulsanti) pulsanti.forEach((p) => { p.disabled = true; });
   };
 
@@ -310,6 +380,7 @@ function mostraDomanda(q, risultato, poi) {
     const scelte = q.tipo === 'multipla'
       ? Utili.mescola(Object.keys(q.opzioni)).map((k) => [k, q.opzioni[k]])
       : [['vero', I().vero], ['falso', I().falso]];
+    const tradotta = (k) => (q.tipo === 'multipla' ? t.opzioni?.[k] : trI(k));
     const griglia = el('div', { class: q.tipo === 'multipla' ? 'opzioni' : 'opzioni due' });
     const pulsanti = scelte.map(([k, testo]) => el('button', {
       class: 'opzione',
@@ -319,7 +390,7 @@ function mostraDomanda(q, risultato, poi) {
         if (!giusta) pulsanti[scelte.findIndex((s) => s[0] === k)].classList.add('sbagliata');
         rispondi(giusta, pulsanti);
       },
-    }, testo));
+    }, testo, traduzione(tradotta(k))));
     griglia.append(...pulsanti);
     box.append(griglia);
     return;
@@ -331,7 +402,9 @@ function mostraDomanda(q, risultato, poi) {
   const scelta = new Array(q.coppie.length).fill(null);     // indice a destra scelto per ogni voce a sinistra
   let attiva = null;
   const colori = ['c0', 'c1', 'c2', 'c3'];
-  const sx = q.coppie.map((c, i) => el('button', { class: 'opzione', onclick: () => { attiva = i; aggiorna(); } }, c.sinistra));
+  const sx = q.coppie.map((c, i) => el('button', { class: 'opzione', onclick: () => { attiva = i; aggiorna(); } },
+    c.sinistra, traduzione(t.coppie_sinistra?.[i])));
+  const destraTradotta = (testo) => t.coppie_destra?.[q.coppie.findIndex((c) => c.destra === testo)];
   const dx = destra.map((testo, j) => el('button', {
     class: 'opzione',
     onclick: () => {
@@ -343,7 +416,7 @@ function mostraDomanda(q, risultato, poi) {
       Audio_.clic();
       aggiorna();
     },
-  }, testo));
+  }, testo, traduzione(destraTradotta(testo))));
   const conferma = el('button', {
     class: 'pulsante', disabled: true,
     onclick: () => {
@@ -396,7 +469,10 @@ function finale() {
   const v = valori();
   const esito = f.esiti.find((e) => v.giuste >= e.da && v.giuste <= e.a);
   Audio_.trombe();
-  dialogo([f.apertura, esito.testo, f.commento_battaglia, f.chiusura].map((r) => Utili.riempi(r, v)), {
+  const n = f.esiti.indexOf(esito);
+  dialogo([[f.apertura, tr('finale.apertura')], [esito.testo, tr(`finale.esiti.${n}`)],
+    [f.commento_battaglia, tr('finale.commento_battaglia')], [f.chiusura, tr('finale.chiusura')]]
+    .map((r) => riempiBattuta(r, v)), {
     sfondo: (c, t) => Grafica.salaDelRe(c, t), poi: diario,
   });
 }
@@ -427,9 +503,9 @@ function diario() {
       el('h2', {}, r.da_ripassare),
       P.sbagliate.length ? null : el('p', {}, '—'),
       ...P.sbagliate.map((s) => el('div', { class: 'ripasso' },
-        el('p', {}, el('strong', {}, r.voce_ripasso.domanda + ' '), `(${s.scuola}) ${s.domanda}`),
-        el('p', {}, el('strong', {}, r.voce_ripasso.risposta_giusta + ': '), s.risposta),
-        el('p', {}, el('strong', {}, r.voce_ripasso.spiegazione + ': '), s.spiegazione))),
+        el('p', {}, el('strong', {}, r.voce_ripasso.domanda + ' '), `(${s.scuola}) ${s.domanda}`, traduzione(s.tr?.domanda, s.lang)),
+        el('p', {}, el('strong', {}, r.voce_ripasso.risposta_giusta + ': '), s.risposta, traduzione(s.tr?.risposta, s.lang)),
+        el('p', {}, el('strong', {}, r.voce_ripasso.spiegazione + ': '), s.spiegazione, traduzione(s.tr?.spiegazione, s.lang)))),
       // la firma va anche nel diario scaricato e stampato, che non usa il foglio di stile del gioco
       el('p', { style: 'font-style: italic; font-size: 0.8em; text-align: right; margin-top: 1.5em;' },
         "L'Isola Assediata · by prof. Giulio Tommasella"),
@@ -440,7 +516,8 @@ function diario() {
   const scarica = () => {
     const html = `<!doctype html><html lang="it"><head><meta charset="utf-8"><title>${r.titolo} - ${P.nome}</title>
 <style>body{font-family:Georgia,serif;max-width:800px;margin:2em auto;padding:0 1em;line-height:1.4;color:#222}
-th{text-align:left;padding-right:1em}td,th{padding:4px 0}.ripasso{border-top:1px solid #ccc;padding:.4em 0}</style></head>
+th{text-align:left;padding-right:1em}td,th{padding:4px 0}.ripasso{border-top:1px solid #ccc;padding:.4em 0}
+.traduzione{display:block;font-style:italic;color:#555;margin-top:2px}.traduzione:lang(zh){font-style:normal}</style></head>
 <body>${contenuto().outerHTML}</body></html>`;
     const a = el('a', { href: URL.createObjectURL(new Blob([html], { type: 'text/html' })), download: `diario-di-bordo-${P.nome}.html` });
     document.body.append(a);

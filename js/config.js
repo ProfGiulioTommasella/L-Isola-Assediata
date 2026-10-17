@@ -29,6 +29,13 @@ const CONFIG = {
 
   domandePerLivello: 3,   // domande sulla scuola, più 1 generale
 
+  // Lingue d'aiuto: la traduzione compare sotto l'italiano. File in data/lingue/<codice>.json.
+  lingue: [
+    { codice: 'sq', nome: 'Shqip', lang: 'sq' },
+    { codice: 'es', nome: 'Español', lang: 'es' },
+    { codice: 'zh', nome: '中文', lang: 'zh-Hans' },
+  ],
+
   // Tre navi per scuola: piccola e veloce, media, grande e lenta.
   // "attraversamento" = secondi per arrivare alla linea di difesa nel livello 1.
   navi: [

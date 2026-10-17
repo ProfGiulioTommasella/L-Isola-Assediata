@@ -1,0 +1,91 @@
+{
+  "_lingua": "es",
+  "_nome": "Español",
+  "_nota": "Prova di traduzione d'aiuto (bozza automatica, da rivedere con un madrelingua). L'italiano resta sempre visibile sopra; i termini tecnici restano in italiano tra «». Chiavi = id di data/domande.json e percorsi di data/testi.json. Ci si rivolge al giocatore con la forma di cortesia singolare (usted / ju / 您), come il 'voi' italiano. Negli abbinamenti 'coppie' traduce la colonna 'destra' nello stesso ordine; 'sinistra' (nomi) resta com'è salvo trascrizione cinese.",
+  "scuole": {
+    "Fiandre": "Flandes",
+    "Roma": "Roma",
+    "Firenze": "Florencia",
+    "Venezia": "Venecia"
+  },
+  "domande": {
+    "fia-01": {
+      "domanda": "¿Cuál es la característica musical más típica de la escuela franco-flamenca?",
+      "opzioni": {
+        "a": "una polifonía compleja, con la «imitazione a canone» (imitación en canon)",
+        "b": "dos coros que se alternan, uno frente al otro",
+        "c": "el «madrigale» (madrigal), una polifonía ágil y expresiva",
+        "d": "el estilo «a cappella», puro y armonioso"
+      },
+      "spiegazione": "Los compositores flamencos entrelazaban muchas voces en obras muy complejas y les gustaba mucho la imitación en canon. Las otras respuestas corresponden a Venecia, Florencia y Roma.",
+      "revisione": "bozza"
+    },
+    "fia-02": {
+      "domanda": "En la polifonía varias voces cantan juntas, cada una con una melodía diferente.",
+      "spiegazione": "Verdadero. Es la polifonía, también llamada «contrappunto» (contrapunto): en Flandes alcanzó niveles altísimos de complejidad, con obras para muchas voces.",
+      "revisione": "bozza"
+    },
+    "fia-03": {
+      "domanda": "Un diseño musical (la «proposta», propuesta) pasa de una voz a otra (la «risposta», respuesta). ¿Cómo se llama esta forma, la más usada por los compositores flamencos?",
+      "opzioni": {
+        "a": "«imitazione a canone» (imitación en canon)",
+        "b": "«basso continuo» (bajo continuo)",
+        "c": "dos coros que se alternan",
+        "d": "«madrigale» (madrigal)"
+      },
+      "spiegazione": "Es la imitación en canon: una voz propone un diseño musical y las otras lo repiten, como una respuesta.",
+      "revisione": "bozza"
+    },
+    "fia-04": {
+      "domanda": "¿Cuál de estos compositores pertenecía a la escuela franco-flamenca?",
+      "spiegazione": "Josquin Desprès es el más famoso de los compositores flamencos. Palestrina pertenece a la escuela romana; Andrea Gabrieli, a la veneciana.",
+      "revisione": "bozza"
+    },
+    "fia-05": {
+      "domanda": "Relacione cada compositor flamenco con la frase correcta.",
+      "coppie_destra": [
+        "famoso por sus misas y sus motetes",
+        "trabajó también en Milán, Roma y Ferrara",
+        "tuvo éxito con la música profana"
+      ],
+      "spiegazione": "Tres grandes nombres de la escuela franco-flamenca, cada uno con su historia.",
+      "revisione": "bozza"
+    },
+    "fia-06": {
+      "domanda": "¿Qué compositor de la escuela franco-flamenca tuvo gran éxito con la música profana? Es el autor de «Le cris de Paris».",
+      "spiegazione": "Clément Janequin escribió música profana llena de vida: en «Le cris de Paris» («Los gritos de París») las voces imitan los gritos de los vendedores por las calles de París.",
+      "revisione": "bozza"
+    },
+    "fia-07": {
+      "domanda": "Los músicos flamencos trabajaban solo en Flandes.",
+      "spiegazione": "Falso. Trabajaban en las iglesias y en las cortes de toda Europa: Josquin, por ejemplo, trabajó también en Milán, Roma y Ferrara.",
+      "revisione": "bozza"
+    },
+    "fia-09": {
+      "domanda": "Los maestros flamencos preferían el género sacro: misas polifónicas y motetes.",
+      "spiegazione": "Verdadero. Sus formas preferidas eran sacras: misas polifónicas y motetes, cantados en las iglesias.",
+      "revisione": "bozza"
+    }
+  },
+  "testi": {
+    "inizio.intro": [
+      "¡La Isla está asediada! Se acercan las flotas de cuatro grandes escuelas musicales del Renacimiento: Flandes, Roma, Florencia y Venecia.",
+      "El Rey ha pedido su ayuda para defender el fuerte. Los habitantes de la isla le conseguirán municiones, pero solo si demuestra que conoce a sus enemigos."
+    ],
+    "inizio.chiedi_nome": "Escriba su nombre:",
+    "livelli.1.arrivo": [
+      "¡Saludos, Capitán {nome}! Es un honor que esté usted al mando de nuestras defensas.",
+      "Sé que busca municiones para la batalla que le espera. Son una mercancía valiosa y aquí en el campo tenemos pocas. Pero si responde bien, haremos lo posible por conseguírselas.",
+      "La flota de Flandes ya está en el horizonte. Veamos cuánto conoce a nuestros primeros adversarios."
+    ],
+    "livelli.1.prima_della_battaglia": [
+      "Hemos hecho lo posible: tiene {colpi} disparos. Ahora le toca a usted usarlos bien.",
+      "Nuestro cañón no es muy preciso: ¡apunte con cuidado!"
+    ]
+  },
+  "interfaccia": {
+    "vero": "Verdadero",
+    "falso": "Falso",
+    "avviso": "Traducción de ayuda: en caso de duda, vale el italiano."
+  }
+}
