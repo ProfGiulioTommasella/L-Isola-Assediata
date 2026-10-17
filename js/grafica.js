@@ -16,6 +16,9 @@ const RUPI_DIPINTE = {
   firenze: { forte: [1720, 406], cannone: [1562, 367] },
   venezia: { forte: [1720, 410], cannone: [1565, 368] },
 };
+// batteria: la canna intera ruota attorno ai perni (px, py) e sta tra gli artiglieri (dietro) e il muro (davanti);
+// (bx, by) è il punto del muro, nelle sue immagini, dove stanno i perni
+const BATTERIA = { px: 204, py: 43, scala: BOCCA / 203, bx: 148, by: 154, scalaMuro: 0.5 };
 const CANNONE_IMMAGINE = { px: 320, py: 265, scala: BOCCA / 295, inclinazione: 0.2633 };   // vedi cannone()
 
 const PALETTE = {
@@ -155,15 +158,34 @@ const Grafica = {
   },
 
   lineaDifesa(ctx, t) {
-    // Boe che segnano la linea di difesa.
-    for (let y = MARE_ALTO - 30; y < H; y += 70) {
+    // Una cima con galleggianti di sughero segna il limite oltre il quale le navi colpiscono il forte.
+    const punti = [];
+    for (let y = MARE_ALTO - 30; y < H + 40; y += 70) {
       const s = 0.6 + 0.4 * (y - MARE_ALTO) / (MARE_BASSO - MARE_ALTO);
-      const dy = Math.sin(t * 2 + y) * 3;
-      ctx.fillStyle = '#c8372d';
-      ctx.beginPath(); ctx.arc(LINEA_DIFESA, y + dy, 9 * s, 0, Math.PI * 2); ctx.fill();
-      ctx.fillStyle = '#fff';
-      ctx.fillRect(LINEA_DIFESA - 9 * s, y + dy - 2, 18 * s, 4);
+      punti.push([LINEA_DIFESA + Math.sin(t * 1.3 + y * 0.05) * 3, y + Math.sin(t * 2 + y) * 3, s]);
     }
+    ctx.save();
+    ctx.lineCap = 'round';
+    // la cima, che pesca un poco tra un galleggiante e l'altro
+    for (let i = 1; i < punti.length; i++) {
+      const [x0, y0, s0] = punti[i - 1], [x1, y1, s1] = punti[i];
+      ctx.strokeStyle = 'rgba(60,40,22,0.75)'; ctx.lineWidth = 2.2 * s1;
+      ctx.beginPath(); ctx.moveTo(x0, y0); ctx.quadraticCurveTo((x0 + x1) / 2 + 7 * s1, (y0 + y1) / 2, x1, y1); ctx.stroke();
+    }
+    for (const [x, y, s] of punti) {
+      // riflesso scuro nell'acqua, galleggiante di sughero, luce in alto e schiuma ai lati
+      ctx.fillStyle = 'rgba(10,40,70,0.25)';
+      ctx.beginPath(); ctx.ellipse(x, y + 4 * s, 15 * s, 4 * s, 0, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = '#9a6a38';
+      ctx.beginPath(); ctx.ellipse(x, y, 12 * s, 7 * s, 0, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = '#c99a5e';
+      ctx.beginPath(); ctx.ellipse(x - 2 * s, y - 2.5 * s, 7 * s, 3 * s, 0, 0, Math.PI * 2); ctx.fill();
+      ctx.strokeStyle = 'rgba(50,32,16,0.8)'; ctx.lineWidth = 1.5 * s;
+      ctx.beginPath(); ctx.ellipse(x, y, 12 * s, 7 * s, 0, 0, Math.PI * 2); ctx.stroke();
+      ctx.strokeStyle = 'rgba(240,250,255,0.6)'; ctx.lineWidth = 1.6 * s;
+      ctx.beginPath(); ctx.ellipse(x, y + 3 * s, 15 * s, 4 * s, 0, 0.15, Math.PI - 0.15); ctx.stroke();
+    }
+    ctx.restore();
   },
 
   forte(ctx, stato, scossa) {
@@ -232,8 +254,22 @@ const Grafica = {
 
   cannone(ctx, angolo, rinculo) {
     const canna = Utili.immagini['cannone-canna'], affusto = Utili.immagini['cannone-affusto'];
+    const intera = Utili.immagini['cannone-canna-intera'], muro = Utili.immagini['batteria-muro'], artiglieri = Utili.immagini['batteria-artiglieri'];
     ctx.save();
     ctx.translate(CANNONE.x, CANNONE.y);
+    if (intera && muro && artiglieri) {
+      const B = BATTERIA, k = B.scalaMuro;
+      const fondo = (img) => ctx.drawImage(img, -B.bx * k, -B.by * k, img.width * k, img.height * k);
+      fondo(artiglieri);
+      ctx.save();
+      ctx.rotate(angolo);
+      ctx.translate(rinculo * 18, 0);
+      ctx.drawImage(intera, -B.px * B.scala, -B.py * B.scala, intera.width * B.scala, intera.height * B.scala);
+      ctx.restore();
+      fondo(muro);
+      ctx.restore();
+      return;
+    }
     if (canna && affusto) {
       // le due immagini hanno la stessa tela: il perno della canna è in (px, py),
       // la bocca è a BOCCA px dal perno e nel disegno la canna è già alzata di 'inclinazione'
@@ -291,8 +327,15 @@ const Grafica = {
       this.naveDisegnata(ctx, scuola, ARMAMENTO[scuola][tipo], larghezza, t);
     }
     ctx.restore();
-    if (stato === 'fuoco' || stato === 'affonda') {
-      this.fiamme(ctx, x, y - larghezza * 0.25, larghezza * 0.45, t, stato === 'affonda' ? 1 - progresso : 1);
+    if (stato === 'fuoco') this.fiamme(ctx, x, y - larghezza * 0.25, larghezza * 0.45, t, 1);
+    else if (stato === 'affonda') {
+      // le fiamme si inclinano e scendono con il ponte, e spariscono sotto il pelo dell'acqua
+      ctx.save();
+      ctx.beginPath(); ctx.rect(x - larghezza * 2, y - larghezza * 3, larghezza * 4, larghezza * 3 + 4); ctx.clip();
+      ctx.translate(x, y + progresso * larghezza * 0.55);
+      ctx.rotate(progresso * 0.35);
+      this.fiamme(ctx, 0, -larghezza * 0.25, larghezza * 0.45, t, 1 - progresso * 0.6);
+      ctx.restore();
     }
   },
 
@@ -501,7 +544,7 @@ const Grafica = {
     ctx.globalAlpha = 1 - p;
     const largo = 150 + 50 * p;
     // la vampata dipinta ha la bocca del cannone sul lato destro
-    if (this.effetto(ctx, 'vampata', -BOCCA - largo / 2 + 6, -16, largo)) { ctx.restore(); return; }
+    if (this.effetto(ctx, 'vampata', -BOCCA - largo / 2 + 6, Utili.immagini['cannone-canna-intera'] ? 0 : -16, largo)) { ctx.restore(); return; }
     ctx.fillStyle = '#ffd25a';
     ctx.beginPath(); ctx.arc(-BOCCA, 0, 26 + 20 * p, 0, Math.PI * 2); ctx.fill();
     ctx.fillStyle = 'rgba(230,230,230,0.7)';

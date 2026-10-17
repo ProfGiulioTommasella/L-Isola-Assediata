@@ -106,7 +106,9 @@ class Battaglia {
   mira(x, y) {
     let a = Math.atan2(y - CANNONE.y, x - CANNONE.x) - Math.PI;
     if (a < -Math.PI) a += Math.PI * 2;
-    return Math.max(a, -0.6);   // la canna non si abbassa oltre: la palla arriva comunque al bersaglio
+    // verso il basso la canna si abbassa poco (oltre urterebbe l'affusto): la palla arriva comunque al bersaglio
+    if (a < -0.12) a = -0.12 + (a + 0.12) * 0.2;
+    return Math.max(a, -0.3);
   }
 
   punta(x, y) {
