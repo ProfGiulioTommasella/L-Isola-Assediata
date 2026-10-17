@@ -129,6 +129,15 @@ input {
 }
 .sottotitolo { display: inline-block; font-size: 44px; color: #fff4d6; background: rgba(40, 25, 10, 0.55); border-radius: 40px; padding: 6px 40px; margin: 10px 0 60px; }
 .titolo .pulsante { display: block; margin: 0 auto 30px; }
+.scelta-lingua { display: flex; gap: 14px; justify-content: center; align-items: center; flex-wrap: wrap; margin: 0 0 24px; }
+.titolo .scelta-lingua .pulsante { display: inline-block; margin: 0; }
+.scelta-lingua .etichetta { font-size: 30px; color: #fff4d6; background: rgba(40, 25, 10, 0.55); border-radius: 30px; padding: 6px 24px; }
+.avviso-traduzione { font-size: 24px; color: #fff4d6; background: rgba(40, 25, 10, 0.55); border-radius: 20px; padding: 6px 24px; display: inline-block; margin: 0 0 24px; }
+.avviso-traduzione .traduzione { color: #f0dfb8; }
+
+/* Traduzione d'aiuto, sotto il testo italiano */
+.traduzione { display: block; font-size: 0.8em; font-weight: 400; font-style: italic; color: #6b5435; margin-top: 4px; }
+.traduzione:lang(zh) { font-style: normal; font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', 'Noto Sans CJK SC', sans-serif; }
 .record { display: inline-block; font-size: 30px; color: #fff4d6; background: rgba(40, 25, 10, 0.55); border-radius: 30px; padding: 6px 30px; }
 
 /* Domande */

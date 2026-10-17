@@ -1,0 +1,440 @@
+{
+  "_lingua": "sq",
+  "_nome": "Shqip",
+  "_nota": "Prova di traduzione d'aiuto (bozza automatica, da rivedere con un madrelingua). L'italiano resta sempre visibile sopra; i termini tecnici restano in italiano tra «». Chiavi = id di data/domande.json e percorsi di data/testi.json. Ci si rivolge al giocatore con la forma di cortesia singolare (usted / ju / 您), come il 'voi' italiano. Negli abbinamenti 'coppie' traduce la colonna 'destra' nello stesso ordine; 'sinistra' (nomi) resta com'è salvo trascrizione cinese.",
+  "scuole": {
+    "Fiandre": "Flandra",
+    "Roma": "Roma",
+    "Firenze": "Firenca",
+    "Venezia": "Venecia"
+  },
+  "domande": {
+    "gen-01": {
+      "domanda": "Në cilën periudhë vendoset Rilindja muzikore?",
+      "opzioni": {
+        "a": "rreth 1450–1600",
+        "b": "rreth 1000–1300",
+        "c": "rreth 1600–1750",
+        "d": "rreth 1750–1820"
+      },
+      "spiegazione": "Rilindja muzikore shkon afërsisht nga viti 1450 deri në vitin 1600. Para saj është Mesjeta, pas saj Baroku.",
+      "revisione": "bozza"
+    },
+    "gen-02": {
+      "domanda": "Cilat ishin vendet kryesore ku bëhej muzikë gjatë Rilindjes?",
+      "opzioni": {
+        "a": "kishat dhe oborret e fisnikëve",
+        "b": "sallat publike të koncerteve",
+        "c": "teatrot e operës",
+        "d": "shkollat e muzikës"
+      },
+      "spiegazione": "Në kisha, ku mbizotëronte polifonia fetare, dhe në oborret e zotërinjve, ku lindnin forma të reja laike. Teatrot e operës dhe sallat publike të koncerteve do të vijnë më vonë.",
+      "revisione": "bozza"
+    },
+    "gen-03": {
+      "domanda": "Katër shkollat e mëdha muzikore të Rilindjes janë ajo flamande, ajo romake, ajo veneciane dhe ajo fiorentine.",
+      "spiegazione": "E vërtetë: Flandra, Roma, Venecia dhe Firenca, katër flotat që sulmojnë ishullin!",
+      "revisione": "bozza"
+    },
+    "gen-04": {
+      "domanda": "Lidhni secilën shkollë me një kompozitor ose grup që e përfaqëson.",
+      "coppie_sinistra": [
+        "Flandra",
+        null,
+        "Venecia",
+        "Firenca"
+      ],
+      "coppie_destra": [
+        null,
+        null,
+        "Adriano Willaert dhe Andrea Gabrieli",
+        null
+      ],
+      "spiegazione": "Këta janë emrat që duhen mbajtur mend për secilën shkollë.",
+      "revisione": "bozza"
+    },
+    "gen-05": {
+      "domanda": "Lidhni secilën shkollë me veçorinë e saj muzikore.",
+      "coppie_sinistra": [
+        "Flandra",
+        null,
+        "Venecia",
+        "Firenca"
+      ],
+      "coppie_destra": [
+        "polifoni e ndërlikuar dhe «imitazione a canone» (imitim në kanon)",
+        "stili «a cappella», i pastër dhe harmonik",
+        "dy kore që alternohen",
+        "«madrigale» (madrigal)"
+      ],
+      "spiegazione": "Çdo shkollë ka «nënshkrimin» e saj muzikor.",
+      "revisione": "bozza"
+    },
+    "gen-06": {
+      "domanda": "Cila nga këto është një formë muzikore e Rilindjes?",
+      "opzioni": {
+        "a": "madrigali"
+      },
+      "spiegazione": "Madrigali është një formë e Rilindjes. «Lauda», «organum» dhe «discantus» janë forma të Mesjetës.",
+      "revisione": "bozza"
+    },
+    "fia-01": {
+      "domanda": "Cila është veçoria muzikore më tipike e shkollës flamande?",
+      "opzioni": {
+        "a": "një polifoni e ndërlikuar, me «imitazione a canone» (imitim në kanon)",
+        "b": "dy kore që alternohen, njëri përballë tjetrit",
+        "c": "«madrigale» (madrigal), një polifoni e shkathët dhe shprehëse",
+        "d": "stili «a cappella», i pastër dhe harmonik"
+      },
+      "spiegazione": "Kompozitorët flamandë gërshetonin shumë zëra në vepra shumë të ndërlikuara dhe e donin shumë imitimin në kanon. Përgjigjet e tjera u përkasin Venecias, Firences dhe Romës.",
+      "revisione": "bozza"
+    },
+    "fia-02": {
+      "domanda": "Në polifoni disa zëra këndojnë së bashku, secili me një melodi të ndryshme.",
+      "spiegazione": "E vërtetë. Kjo është polifonia, e quajtur edhe «contrappunto» (kundërpikë): në Flandër ajo arriti një ndërlikim shumë të lartë, me vepra për shumë zëra.",
+      "revisione": "bozza"
+    },
+    "fia-03": {
+      "domanda": "Një motiv muzikor («proposta», propozimi) kalon nga një zë te tjetri («risposta», përgjigjja). Si quhet kjo formë, më e përdorura nga kompozitorët flamandë?",
+      "opzioni": {
+        "a": "«imitazione a canone» (imitim në kanon)",
+        "b": "«basso continuo»",
+        "c": "dy kore që alternohen",
+        "d": "«madrigale» (madrigal)"
+      },
+      "spiegazione": "Është imitimi në kanon: një zë propozon një motiv muzikor dhe zërat e tjerë e përsërisin, si një përgjigje.",
+      "revisione": "bozza"
+    },
+    "fia-04": {
+      "domanda": "Cili nga këta kompozitorë i përkiste shkollës flamande?",
+      "spiegazione": "Josquin Desprès është më i famshmi ndër kompozitorët flamandë. Palestrina i përket shkollës romake, Andrea Gabrieli asaj veneciane.",
+      "revisione": "bozza"
+    },
+    "fia-05": {
+      "domanda": "Lidhni secilin kompozitor flamand me fjalinë e duhur.",
+      "coppie_destra": [
+        "i famshëm për meshët dhe motetet e tij",
+        "punoi edhe në Milano, Romë dhe Ferrara",
+        "pati sukses me muzikën laike"
+      ],
+      "spiegazione": "Tre emra të mëdhenj të shkollës flamande, secili me historinë e vet.",
+      "revisione": "bozza"
+    },
+    "fia-06": {
+      "domanda": "Cili kompozitor i shkollës flamande pati sukses të madh me muzikën laike («profana»)? Është autori i «Le cris de Paris».",
+      "spiegazione": "Clément Janequin shkroi muzikë laike plot jetë: në «Le cris de Paris» («Thirrjet e Parisit») zërat imitojnë thirrjet e shitësve nëpër rrugët e Parisit.",
+      "revisione": "bozza"
+    },
+    "fia-07": {
+      "domanda": "Muzikantët flamandë punonin vetëm në Flandër.",
+      "spiegazione": "E gabuar. Ata punonin në kishat dhe në oborret e gjithë Evropës: Josquin, për shembull, punoi edhe në Milano, Romë dhe Ferrara.",
+      "revisione": "bozza"
+    },
+    "fia-09": {
+      "domanda": "Mjeshtrit flamandë preferonin muzikën fetare («sacra»): meshët polifonike dhe motetet.",
+      "spiegazione": "E vërtetë. Format e tyre të preferuara ishin fetare: mesha polifonike dhe motete, që këndoheshin në kisha.",
+      "revisione": "bozza"
+    },
+    "rom-01": {
+      "domanda": "Kush ishte përfaqësuesi më i madh i shkollës romake?",
+      "spiegazione": "Giovanni Pierluigi da Palestrina është emri i madh i shkollës romake. Josquin dhe Janequin janë flamandë, Andrea Gabrieli është venecian.",
+      "revisione": "bozza"
+    },
+    "rom-02": {
+      "domanda": "Palestrinën e quanin «imperator musicae», perandori i muzikës.",
+      "spiegazione": "E gabuar. E quanin «princeps musicae», domethënë princi i muzikës.",
+      "revisione": "bozza"
+    },
+    "rom-03": {
+      "domanda": "Palestrina u nis nga polifonia flamande. Çfarë bëri me të?",
+      "opzioni": {
+        "a": "e përshtati me stilin «a cappella», pa teprime virtuoziteti",
+        "b": "e bëri edhe më të ndërlikuar dhe virtuoze, me shumë e shumë zëra",
+        "c": "e ndau mes dy koreve që alternohen, njëri përballë tjetrit",
+        "d": "e braktisi plotësisht, për të shkruar vetëm muzikë laike"
+      },
+      "spiegazione": "Palestrina përdori polifoninë e flamandëve, por e përshtati me stilin «a cappella» dhe hoqi teprimet e virtuozitetit. Dy koret që alternohen janë, përkundrazi, të Venecias.",
+      "revisione": "bozza"
+    },
+    "rom-04": {
+      "domanda": "Në mënyrën e tij të kompozimit, Palestrina ndoqi këshillat:",
+      "opzioni": {
+        "a": "e Koncilit të Trentos",
+        "b": "e Camerata de' Bardi",
+        "c": "e mjeshtrave të San Markut",
+        "d": "e shtypshkronjësit Ottaviano Petrucci"
+      },
+      "spiegazione": "Palestrina ndoqi këshillat e Koncilit të Trentos: muzika fetare duhej të ishte e pastër, pa teprime.",
+      "revisione": "bozza"
+    },
+    "rom-05": {
+      "domanda": "Mesha më e famshme e Palestrinës është «Missa Papae Marcelli», Mesha për papën Marcelli II.",
+      "spiegazione": "E vërtetë. Ndër meshët e Palestrinës, «Missa Papae Marcelli» është më e famshmja. Në klasë është dëgjuar Kyrie-ja e saj.",
+      "revisione": "bozza"
+    },
+    "rom-06": {
+      "domanda": "Lidhni secilin element të shkollës romake me përshkrimin e tij.",
+      "coppie_sinistra": [
+        null,
+        "Koncili i Trentos",
+        null,
+        "stili «a cappella»"
+      ],
+      "coppie_destra": [
+        "i quajtur «princeps musicae» (princi i muzikës)",
+        "këshillat e tij e udhëhoqën Palestrinën",
+        "mesha më e famshme e Palestrinës",
+        "polifoni pa teprime virtuoziteti"
+      ],
+      "spiegazione": "Këto janë fjalët kyçe të shkollës romake.",
+      "revisione": "bozza"
+    },
+    "rom-07": {
+      "domanda": "Në Kyrie-në e Palestrinës, zërat hyjnë të gjithë në momente të ndryshme. Çfarë arrin ai, ndryshe nga flamandët?",
+      "opzioni": {
+        "a": "një tërësi të pastër dhe harmonike",
+        "b": "një efekt jehone mes dy koreve",
+        "c": "një skenë komike me zëra kafshësh",
+        "d": "një melodi të vetme të shoqëruar nga akorde"
+      },
+      "spiegazione": "Edhe pse hyrjet e zërave janë të gjitha të ndryshme, Palestrina ruan një tërësi të pastër dhe harmonike. Përgjigjet e tjera të kujtojnë Orlando di Lasson, Banchierin dhe Venecian.",
+      "revisione": "bozza"
+    },
+    "rom-08": {
+      "domanda": "Palestrina e bëri polifoninë flamande edhe më të ndërlikuar dhe virtuoze.",
+      "spiegazione": "E gabuar. Palestrina bëri të kundërtën: hoqi teprimet e virtuozitetit dhe zgjodhi një stil të pastër dhe harmonik.",
+      "revisione": "bozza"
+    },
+    "fir-01": {
+      "domanda": "Çfarë lloj muzike mbizotëron në Firence në shekullin XVI?",
+      "opzioni": {
+        "a": "muzika polifonike vokale dhe laike",
+        "b": "muzika fetare në stilin «a cappella»",
+        "c": "muzika për dy kore që alternohen",
+        "d": "meshët polifonike dhe motetet"
+      },
+      "spiegazione": "Në Firence mbizotëron muzika polifonike vokale dhe laike, domethënë jo e lidhur me Kishën. Stili «a cappella» është i Romës, dy koret që alternohen të Venecias, meshët dhe motetet të flamandëve.",
+      "revisione": "bozza"
+    },
+    "fir-02": {
+      "domanda": "Në Firence muzika laike ndahej në «popullore» dhe «e kultivuar».",
+      "spiegazione": "E vërtetë. Pranë muzikës popullore ishte edhe ajo e kultivuar, që e gjeti formën e saj te madrigali.",
+      "revisione": "bozza"
+    },
+    "fir-03": {
+      "domanda": "Në cilën formë merr trajtë muzika laike e kultivuar e Firences?",
+      "opzioni": {
+        "a": "madrigali",
+        "b": "moteti"
+      },
+      "spiegazione": "Te madrigali. Moteti është një formë fetare e dashur nga flamandët; «lauda» dhe «organum» janë forma të Mesjetës.",
+      "revisione": "bozza"
+    },
+    "fir-04": {
+      "domanda": "Lidhni secilin element të shkollës fiorentine me përshkrimin e tij.",
+      "coppie_sinistra": [
+        "madrigali",
+        "madrigali dialogik",
+        null,
+        "tragjeditë greke"
+      ],
+      "coppie_destra": [
+        "polifoni e shkathët dhe shprehëse",
+        "histori ose situata komike",
+        "grup muzikantësh dhe letrarësh fiorentinë",
+        "temat që Camerata donte të ringjallte"
+      ],
+      "spiegazione": "Këto janë fjalët kyçe të shkollës fiorentine.",
+      "revisione": "bozza"
+    },
+    "fir-05": {
+      "domanda": "Camerata de' Bardi ishte kori i Bazilikës së San Markut.",
+      "spiegazione": "E gabuar. Camerata de' Bardi ishte një grup muzikantësh dhe letrarësh të Firences, që mblidhej për të diskutuar për muzikën dhe kulturën. San Marku është bazilika e shkollës veneciane.",
+      "revisione": "bozza"
+    },
+    "fir-06": {
+      "domanda": "Camerata de' Bardi donte të ringjallte, me rrëfime muzikore të shoqëruara:",
+      "opzioni": {
+        "a": "tragjeditë greke",
+        "b": "mitologjinë nordike",
+        "c": "tekstet e shenjta",
+        "d": "thirrjet e shitësve të Parisit"
+      },
+      "spiegazione": "Tragjeditë greke: temat merreshin nga bota klasike.",
+      "revisione": "bozza"
+    },
+    "fir-07": {
+      "domanda": "Madrigali dialogik tregonte histori ose situata komike.",
+      "spiegazione": "E vërtetë. Për shembull, në «Contrappunto bestiale alla mente» të Banchierit tregohet një festë karnavali me zëra kafshësh.",
+      "revisione": "bozza"
+    },
+    "fir-08": {
+      "domanda": "Në «Contrappunto bestiale alla mente» të Banchierit këndojnë katër kafshë. Cila nga këto NUK është?",
+      "opzioni": {
+        "a": "ujku",
+        "b": "qeni",
+        "c": "kukuvajka",
+        "d": "qyqja"
+      },
+      "spiegazione": "Ujku nuk është. Kafshët janë një qen, një mace, një qyqe dhe një kukuvajkë, ndërsa basi këndon një frazë serioze në latinisht.",
+      "revisione": "bozza"
+    },
+    "ven-01": {
+      "domanda": "Shkolla veneciane lind në fillim të shekullit XVI falë një mjeshtri flamand. Kush ishte ai?",
+      "spiegazione": "Ishte Adriano Willaert, një flamand që erdhi në Venecia: një shenjë tjetër se sa shumë kërkoheshin në Itali mjeshtrit e Flandrës.",
+      "revisione": "bozza"
+    },
+    "ven-02": {
+      "domanda": "Lidhni secilin element të shkollës veneciane me përshkrimin e tij.",
+      "coppie_sinistra": [
+        null,
+        null,
+        "dy «cantorie» (ballkonet e korit) të San Markut",
+        "organoja"
+      ],
+      "coppie_destra": [
+        "mjeshtri flamand prej të cilit lind shkolla",
+        "dishepulli më i rëndësishëm i Willaert-it",
+        "kompozime për dy kore që alternohen",
+        "një melodi e vetme e shoqëruar nga akorde"
+      ],
+      "spiegazione": "Këto janë fjalët kyçe të shkollës veneciane.",
+      "revisione": "bozza"
+    },
+    "ven-03": {
+      "domanda": "Bazilika e San Markut ishte e vetmja kishë e kohës me dy «cantorie» (ballkone për korin), njëra përballë tjetrës.",
+      "spiegazione": "E vërtetë. Prandaj muzika fetare e Venecias u bë e ndryshme nga ajo e Romës.",
+      "revisione": "bozza"
+    },
+    "ven-04": {
+      "domanda": "Dy «cantorie» të San Markut i shtynë organistët e bazilikës të krijonin:",
+      "opzioni": {
+        "a": "kompozime për dy kore që alternohen",
+        "b": "kompozime për një zë të vetëm",
+        "c": "madrigale dialogikë me zëra kafshësh",
+        "d": "mesha në stilin «a cappella», pa instrumente"
+      },
+      "spiegazione": "Kompozime për dy kore që alternohen: një kor këndon, tjetri i përgjigjet nga ana e kundërt e kishës.",
+      "revisione": "bozza"
+    },
+    "ven-05": {
+      "domanda": "Në Venecia muzika fetare ishte e njëjtë me atë të shkollës romake.",
+      "spiegazione": "E gabuar. Në Venecia muzika fetare u dallua nga ajo romake pikërisht falë dy «cantorie» të San Markut dhe përdorimit të madh të organos.",
+      "revisione": "bozza"
+    },
+    "ven-06": {
+      "domanda": "Përdorimi i madh i organos në Venecia solli një risi themelore. Cilën?",
+      "opzioni": {
+        "a": "një melodi e vetme e shoqëruar nga akorde",
+        "b": "një polifoni edhe më e ndërlikuar, me shumë zëra",
+        "c": "muzika e kënduar pa asnjë instrument",
+        "d": "imitimi në kanon mes zërave"
+      },
+      "spiegazione": "Në vend të polifonisë fillon të përdoret një linjë e vetme melodike, e shoqëruar nga akordet e instrumenteve.",
+      "revisione": "bozza"
+    },
+    "ven-07": {
+      "domanda": "Akordet janë disa tinguj që instrumentet i nxjerrin në të njëjtën kohë.",
+      "spiegazione": "E vërtetë. Një akord përbëhet nga disa tinguj që luhen në të njëjtin çast.",
+      "revisione": "bozza"
+    },
+    "ven-08": {
+      "domanda": "Çfarë është «basso continuo»?",
+      "opzioni": {
+        "a": "një shoqërim me akorde që mbështet zërin",
+        "b": "një zë që përsërit melodinë që sapo këndoi një tjetër",
+        "c": "një kor që i përgjigjet një kori tjetër",
+        "d": "një zë i ulët që këndon i vetëm, pa instrumente"
+      },
+      "spiegazione": "«Basso continuo» është një shoqërim i bërë me akorde: melodinë e këndon zëri, instrumentet e mbështesin.",
+      "revisione": "bozza"
+    }
+  },
+  "testi": {
+    "inizio.intro": [
+      "Ishulli është i rrethuar! Po vijnë flotat e katër shkollave të mëdha muzikore të Rilindjes: Flandra, Roma, Firenca dhe Venecia.",
+      "Mbreti ju ka thirrur të mbroni kështjellën. Banorët e ishullit do t'ju sigurojnë municion, por vetëm nëse tregoni se i njihni armiqtë."
+    ],
+    "inizio.chiedi_nome": "Shkruani emrin tuaj:",
+    "livelli.1.arrivo": [
+      "Ju përshëndesim, Kapiten {nome}! Jemi të nderuar që jeni në krye të mbrojtjes sonë.",
+      "E di që kërkoni municion për betejën që ju pret. Është mall i çmuar dhe këtu në fshat kemi pak. Por nëse përgjigjeni mirë, do të bëjmë çmos t'jua sigurojmë.",
+      "Flota e Flandrës duket tashmë në horizont. Le të shohim sa i njihni kundërshtarët tanë të parë."
+    ],
+    "livelli.1.prima_della_battaglia": [
+      "Bëmë çmos: keni {colpi} të shtëna. Tani varet nga ju t'i përdorni mirë.",
+      "Topi ynë nuk është shumë i saktë: synoni me kujdes!"
+    ],
+    "livelli.2.arrivo": [
+      "Ja ku jeni përsëri, Kapiten! Falë jush munda të hap punishten time.",
+      "Flota e Shtetit Papnor po afrohet, dhe do t'ju duhet më shumë municion për përleshjen e ardhshme."
+    ],
+    "livelli.2.commento_battaglia.forte_retto": "Dëgjova se kështjella qëndroi: në gjithë ishullin flitet për ju!",
+    "livelli.2.commento_battaglia.forte_caduto": "Dëgjova se kështjella ra… Por nuk dorëzohemi: me ndihmën tuaj do ta rindërtojmë.",
+    "livelli.2.grado_attuale": "Grada juaj tani është {grado}: keni tashmë {punti} pikë beteje.",
+    "livelli.2.prima_della_battaglia": [
+      "Keni {colpi} të shtëna. E kemi përmirësuar topin, por anijet romake janë më të shpejta. Betejë të mbarë!"
+    ],
+    "livelli.3.arrivo": [
+      "Sa gëzim që ju shoh të ktheheni, Kapiten! Siç e shihni, duke bërë tregti me ju, vendi dhe tregtia po lulëzojnë!",
+      "Po afrohen anijet e Dukatit të Madh të Toskanës, të udhëhequra nga Firenca. Janë edhe më të shpejta, por njerëzit tanë janë stërvitur ta mbushin topin më shpejt."
+    ],
+    "livelli.3.commento_battaglia.forte_retto": "Anijet romake nuk kaluan: tani jeni një legjendë!",
+    "livelli.3.commento_battaglia.forte_caduto": "Anijet romake goditën fort, por kështjella është riparuar tashmë.",
+    "livelli.3.grado_attuale": "Grada juaj tani është {grado}: keni tashmë {punti} pikë beteje.",
+    "livelli.3.prima_della_battaglia": [
+      "Keni {colpi} të shtëna. Betejë të mbarë!"
+    ],
+    "livelli.4.arrivo": [
+      "Më në fund jeni këtu, Kapiten! Shikoni pallatin tim: të gjitha këto jua kemi borxh juve.",
+      "Por tani gjërat bëhen serioze. Do të përballeni me venecianët, më të aftët në luftën detare. Kanë anijet më të shpejta nga të gjithë dhe do të sulmojnë natën."
+    ],
+    "livelli.4.commento_battaglia.forte_retto": "Edhe fiorentinët u zmbrapsën: armiku po fillon të ketë frikë prej jush!",
+    "livelli.4.commento_battaglia.forte_caduto": "Fiorentinët na vunë në vështirësi, por ishulli ende reziston.",
+    "livelli.4.grado_attuale": "Grada juaj tani është {grado}: keni tashmë {punti} pikë beteje.",
+    "livelli.4.prima_della_battaglia": [
+      "Keni {colpi} të shtëna. Është beteja e fundit dhe armiku është i egër. Mbrojtja është në maksimum: tani është radha juaj!"
+    ],
+    "domande.giusta": [
+      "Shkëlqyeshëm!",
+      "Saktë!",
+      "Pikërisht kështu!"
+    ],
+    "domande.sbagliata": [
+      "Jo tamam…",
+      "Hmm, nuk ishte kështu.",
+      "Gati, por jo."
+    ],
+    "domande.fine": "Iu përgjigjët saktë {giuste} pyetjeve nga 4.",
+    "aiuti_sparo.colpi_di_prova": "Stërvitje: ja tre fuçi në det. Prekni ose klikoni detin për të qëlluar dhe godituni të treja!",
+    "aiuti_sparo.barili_in_movimento": "E goditët! Tani rryma po i lëviz fuçitë e tjera: synoni pak më përpara, siç do të bëni me anijet.",
+    "aiuti_sparo.barile_mancano": "E goditët! Fuçi të mbetura: {barili}.",
+    "aiuti_sparo.barile_colpito": "Shkëlqyeshëm, të treja! Tani përgatituni: po vjen flota.",
+    "aiuti_sparo.inizio_battaglia": "Prekni ose klikoni detin për të qëlluar!",
+    "aiuti_sparo.inattivo_5_secondi": "Anijet po afrohen: prekni ose klikoni detin për të qëlluar!",
+    "aiuti_sparo.pulsante_aiuto": "Prekni ose klikoni pikën e detit ku doni të qëlloni. Topi qëllon menjëherë. Çdo anije që kalon vijën e mbrojtjes e dëmton kështjellën. Beteja mbaron kur mbarojnë të shtënat.",
+    "fine_battaglia.vittoria": "Kështjella qëndroi! Fundosët {navi} anije.",
+    "fine_battaglia.sconfitta": "Kështjella ra… Por lufta nuk ka mbaruar: përpara me shkollën tjetër!",
+    "finale.apertura": "Ju përshëndes, Kapiten {nome}. Jam Mbreti i Ishullit që ju ka punësuar.",
+    "finale.esiti.0": "Iu përgjigjët saktë {giuste} pyetjeve nga 16: nuk mjafton për të shpëtuar ishullin tonë. Mblidhni më shumë informacion për armiqtë tanë dhe kthehuni t'i përballoni. Ju pres me padurim!",
+    "finale.esiti.1": "Iu përgjigjët saktë {giuste} pyetjeve nga 16: e mbrojtët mjaft mirë ishullin tim. Përsëritni informacionet për armiqtë tanë dhe do t'ia dilni edhe më mirë.",
+    "finale.esiti.2": "Iu përgjigjët saktë {giuste} pyetjeve nga 16: e mbrojtët shkëlqyeshëm ishullin tim! Nëse u përgjigjeni saktë të 16 pyetjeve, do të bëheni Kampioni ynë i Ishullit.",
+    "finale.esiti.3": "Nder për ju, Kampion i Ishullit! Iu përgjigjët saktë të 16 pyetjeve: armiqtë nuk kanë sekrete për ju. Ejani përsëri së shpejti të na vizitoni: këtu do të jeni gjithmonë si në shtëpinë tuaj!",
+    "finale.commento_battaglia": "Dhe në betejë fituat {punti} pikë: grada juaj është {grado}!",
+    "finale.chiusura": "Doni të filloni përsëri? Çdo lojë ka pyetje të reja.",
+    "interfaccia.mappa_indicazione": "Prekni ose klikoni kullën {torre} për ta mbrojtur.",
+    "interfaccia.abbinamento_istruzioni": "Prekni një fjalë majtas dhe pastaj atë të saktën djathtas.",
+    "interfaccia.abbinamenti_giusti": "Çiftet e sakta ishin:"
+  },
+  "interfaccia": {
+    "vero": "E vërtetë",
+    "falso": "E gabuar",
+    "avviso": "Përkthim ndihmës: në rast dyshimi, vlen italishtja."
+  },
+  "torri": {
+    "Fiandre": "e Flandrës",
+    "Roma": "e Romës",
+    "Firenze": "e Firences",
+    "Venezia": "e Venecias"
+  }
+}

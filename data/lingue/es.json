@@ -1,0 +1,442 @@
+{
+  "_lingua": "es",
+  "_nome": "Español",
+  "_nota": "Prova di traduzione d'aiuto (bozza automatica, da rivedere con un madrelingua). L'italiano resta sempre visibile sopra; i termini tecnici restano in italiano tra «». Chiavi = id di data/domande.json e percorsi di data/testi.json. Ci si rivolge al giocatore con la forma di cortesia singolare (usted / ju / 您), come il 'voi' italiano. Negli abbinamenti 'coppie' traduce la colonna 'destra' nello stesso ordine; 'sinistra' (nomi) resta com'è salvo trascrizione cinese.",
+  "scuole": {
+    "Fiandre": "Flandes",
+    "Roma": "Roma",
+    "Firenze": "Florencia",
+    "Venezia": "Venecia"
+  },
+  "domande": {
+    "gen-01": {
+      "domanda": "¿En qué período se sitúa el Renacimiento musical?",
+      "opzioni": {
+        "a": "hacia 1450–1600",
+        "b": "hacia 1000–1300",
+        "c": "hacia 1600–1750",
+        "d": "hacia 1750–1820"
+      },
+      "spiegazione": "El Renacimiento musical va aproximadamente de 1450 a 1600. Antes está la Edad Media; después, el Barroco.",
+      "revisione": "bozza"
+    },
+    "gen-02": {
+      "domanda": "¿Cuáles eran los principales lugares donde se hacía música en el Renacimiento?",
+      "opzioni": {
+        "a": "las iglesias y las cortes de los nobles",
+        "b": "las salas de conciertos públicas",
+        "c": "los teatros de ópera",
+        "d": "las escuelas de música"
+      },
+      "spiegazione": "En las iglesias, donde predominaba la polifonía sacra, y en las cortes de los señores, donde nacían nuevas formas profanas. Los teatros de ópera y las salas de conciertos públicas llegarán después.",
+      "revisione": "bozza"
+    },
+    "gen-03": {
+      "domanda": "Las cuatro grandes escuelas musicales del Renacimiento son la franco-flamenca, la romana, la veneciana y la florentina.",
+      "spiegazione": "Verdadero: Flandes, Roma, Venecia y Florencia, ¡las cuatro flotas que atacan la isla!",
+      "revisione": "bozza"
+    },
+    "gen-04": {
+      "domanda": "Relacione cada escuela con un compositor o grupo que la representa.",
+      "coppie_sinistra": [
+        "Flandes",
+        null,
+        "Venecia",
+        "Florencia"
+      ],
+      "coppie_destra": [
+        null,
+        null,
+        "Adriano Willaert y Andrea Gabrieli",
+        null
+      ],
+      "spiegazione": "Son los nombres que hay que recordar para cada escuela.",
+      "revisione": "bozza"
+    },
+    "gen-05": {
+      "domanda": "Relacione cada escuela con su característica musical.",
+      "coppie_sinistra": [
+        "Flandes",
+        null,
+        "Venecia",
+        "Florencia"
+      ],
+      "coppie_destra": [
+        "polifonía compleja e «imitazione a canone» (imitación en canon)",
+        "estilo «a cappella», puro y armonioso",
+        "dos coros que se alternan",
+        "«madrigale» (madrigal)"
+      ],
+      "spiegazione": "Cada escuela tiene su «firma» musical.",
+      "revisione": "bozza"
+    },
+    "gen-06": {
+      "domanda": "¿Cuál de estas es una forma musical del Renacimiento?",
+      "opzioni": {
+        "a": "madrigal"
+      },
+      "spiegazione": "El madrigal es una forma del Renacimiento. La lauda, el organum y el discantus son formas de la Edad Media.",
+      "revisione": "bozza"
+    },
+    "fia-01": {
+      "domanda": "¿Cuál es la característica musical más típica de la escuela franco-flamenca?",
+      "opzioni": {
+        "a": "una polifonía compleja, con la «imitazione a canone» (imitación en canon)",
+        "b": "dos coros que se alternan, uno frente al otro",
+        "c": "el «madrigale» (madrigal), una polifonía ágil y expresiva",
+        "d": "el estilo «a cappella», puro y armonioso"
+      },
+      "spiegazione": "Los compositores flamencos entrelazaban muchas voces en obras muy complejas y les gustaba mucho la imitación en canon. Las otras respuestas corresponden a Venecia, Florencia y Roma.",
+      "revisione": "bozza"
+    },
+    "fia-02": {
+      "domanda": "En la polifonía varias voces cantan juntas, cada una con una melodía diferente.",
+      "spiegazione": "Verdadero. Es la polifonía, también llamada «contrappunto» (contrapunto): en Flandes alcanzó niveles altísimos de complejidad, con obras para muchas voces.",
+      "revisione": "bozza"
+    },
+    "fia-03": {
+      "domanda": "Un diseño musical (la «proposta», propuesta) pasa de una voz a otra (la «risposta», respuesta). ¿Cómo se llama esta forma, la más usada por los compositores flamencos?",
+      "opzioni": {
+        "a": "«imitazione a canone» (imitación en canon)",
+        "b": "«basso continuo» (bajo continuo)",
+        "c": "dos coros que se alternan",
+        "d": "«madrigale» (madrigal)"
+      },
+      "spiegazione": "Es la imitación en canon: una voz propone un diseño musical y las otras lo repiten, como una respuesta.",
+      "revisione": "bozza"
+    },
+    "fia-04": {
+      "domanda": "¿Cuál de estos compositores pertenecía a la escuela franco-flamenca?",
+      "spiegazione": "Josquin Desprès es el más famoso de los compositores flamencos. Palestrina pertenece a la escuela romana; Andrea Gabrieli, a la veneciana.",
+      "revisione": "bozza"
+    },
+    "fia-05": {
+      "domanda": "Relacione cada compositor flamenco con la frase correcta.",
+      "coppie_destra": [
+        "famoso por sus misas y sus motetes",
+        "trabajó también en Milán, Roma y Ferrara",
+        "tuvo éxito con la música profana"
+      ],
+      "spiegazione": "Tres grandes nombres de la escuela franco-flamenca, cada uno con su historia.",
+      "revisione": "bozza"
+    },
+    "fia-06": {
+      "domanda": "¿Qué compositor de la escuela franco-flamenca tuvo gran éxito con la música profana? Es el autor de «Le cris de Paris».",
+      "spiegazione": "Clément Janequin escribió música profana llena de vida: en «Le cris de Paris» («Los gritos de París») las voces imitan los gritos de los vendedores por las calles de París.",
+      "revisione": "bozza"
+    },
+    "fia-07": {
+      "domanda": "Los músicos flamencos trabajaban solo en Flandes.",
+      "spiegazione": "Falso. Trabajaban en las iglesias y en las cortes de toda Europa: Josquin, por ejemplo, trabajó también en Milán, Roma y Ferrara.",
+      "revisione": "bozza"
+    },
+    "fia-09": {
+      "domanda": "Los maestros flamencos preferían el género sacro: misas polifónicas y motetes.",
+      "spiegazione": "Verdadero. Sus formas preferidas eran sacras: misas polifónicas y motetes, cantados en las iglesias.",
+      "revisione": "bozza"
+    },
+    "rom-01": {
+      "domanda": "¿Quién fue el máximo representante de la escuela romana?",
+      "spiegazione": "Giovanni Pierluigi da Palestrina es el gran nombre de la escuela romana. Josquin y Janequin son flamencos; Andrea Gabrieli es veneciano.",
+      "revisione": "bozza"
+    },
+    "rom-02": {
+      "domanda": "A Palestrina lo llamaban «imperator musicae», emperador de la música.",
+      "spiegazione": "Falso. Lo llamaban «princeps musicae», es decir, príncipe de la música.",
+      "revisione": "bozza"
+    },
+    "rom-03": {
+      "domanda": "Palestrina partió de la polifonía flamenca. ¿Qué hizo con ella?",
+      "opzioni": {
+        "a": "la adaptó al estilo «a cappella», sin excesos de virtuosismo",
+        "b": "la hizo todavía más compleja y virtuosa, con muchísimas voces",
+        "c": "la dividió entre dos coros que se alternan, uno frente al otro",
+        "d": "la abandonó por completo, para escribir solo música profana"
+      },
+      "spiegazione": "Palestrina usó la polifonía de los flamencos, pero la adaptó al estilo «a cappella» y quitó los excesos de virtuosismo. Los dos coros que se alternan son, en cambio, de Venecia.",
+      "revisione": "bozza"
+    },
+    "rom-04": {
+      "domanda": "En su manera de componer, Palestrina siguió las indicaciones:",
+      "opzioni": {
+        "a": "del Concilio de Trento",
+        "b": "de la Camerata de' Bardi",
+        "c": "de los maestros de San Marcos",
+        "d": "del impresor Ottaviano Petrucci"
+      },
+      "spiegazione": "Palestrina siguió las indicaciones del Concilio de Trento: la música sacra debía ser pura, sin excesos.",
+      "revisione": "bozza"
+    },
+    "rom-05": {
+      "domanda": "La misa más famosa de Palestrina es la «Missa Papae Marcelli», la Misa para el papa Marcelo II.",
+      "spiegazione": "Verdadero. Entre las misas de Palestrina, la «Missa Papae Marcelli» es la más famosa. En clase se escuchó su Kyrie.",
+      "revisione": "bozza"
+    },
+    "rom-06": {
+      "domanda": "Relacione cada elemento de la escuela romana con su descripción.",
+      "coppie_sinistra": [
+        null,
+        "Concilio de Trento",
+        null,
+        "estilo «a cappella»"
+      ],
+      "coppie_destra": [
+        "llamado «princeps musicae» (príncipe de la música)",
+        "sus indicaciones guiaron a Palestrina",
+        "la misa más famosa de Palestrina",
+        "polifonía sin excesos de virtuosismo"
+      ],
+      "spiegazione": "Son las palabras clave de la escuela romana.",
+      "revisione": "bozza"
+    },
+    "rom-07": {
+      "domanda": "En el Kyrie de Palestrina todas las voces entran en momentos distintos. ¿Qué consigue, a diferencia de los flamencos?",
+      "opzioni": {
+        "a": "un conjunto puro y armonioso",
+        "b": "un efecto de eco entre dos coros",
+        "c": "una escena cómica con sonidos de animales",
+        "d": "una sola melodía acompañada por acordes"
+      },
+      "spiegazione": "Aunque las entradas de las voces son todas distintas, Palestrina mantiene un conjunto puro y armonioso. Las otras respuestas recuerdan a Orlando di Lasso, a Banchieri y a Venecia.",
+      "revisione": "bozza"
+    },
+    "rom-08": {
+      "domanda": "Palestrina hizo la polifonía flamenca todavía más compleja y virtuosa.",
+      "spiegazione": "Falso. Palestrina hizo lo contrario: eliminó los excesos de virtuosismo y eligió un estilo puro y armonioso.",
+      "revisione": "bozza"
+    },
+    "fir-01": {
+      "domanda": "¿Qué tipo de música predomina en Florencia en el siglo XVI?",
+      "opzioni": {
+        "a": "la música polifónica vocal y profana",
+        "b": "la música sacra en estilo «a cappella»",
+        "c": "la música para dos coros que se alternan",
+        "d": "las misas polifónicas y los motetes"
+      },
+      "spiegazione": "En Florencia predomina la música polifónica vocal y profana, es decir, no ligada a la Iglesia. El estilo «a cappella» es de Roma; los dos coros que se alternan, de Venecia; las misas y los motetes, de los flamencos.",
+      "revisione": "bozza"
+    },
+    "fir-02": {
+      "domanda": "En Florencia la música profana se dividía en «popular» y «culta».",
+      "spiegazione": "Verdadero. Junto a la música popular estaba la culta, que encontró su forma en el madrigal.",
+      "revisione": "bozza"
+    },
+    "fir-03": {
+      "domanda": "¿En qué forma se concreta la música profana culta de Florencia?",
+      "opzioni": {
+        "a": "el madrigal",
+        "b": "el motete",
+        "c": "la lauda",
+        "d": "el organum"
+      },
+      "spiegazione": "En el madrigal. El motete es una forma sacra preferida por los flamencos; la lauda y el organum son formas de la Edad Media.",
+      "revisione": "bozza"
+    },
+    "fir-04": {
+      "domanda": "Relacione cada elemento de la escuela florentina con su descripción.",
+      "coppie_sinistra": [
+        "madrigal",
+        "madrigal dialógico",
+        null,
+        "tragedias griegas"
+      ],
+      "coppie_destra": [
+        "polifonía ágil y expresiva",
+        "historias o situaciones cómicas",
+        "grupo de músicos y literatos florentinos",
+        "los temas que la Camerata quería hacer revivir"
+      ],
+      "spiegazione": "Son las palabras clave de la escuela florentina.",
+      "revisione": "bozza"
+    },
+    "fir-05": {
+      "domanda": "La Camerata de' Bardi era el coro de la Basílica de San Marcos.",
+      "spiegazione": "Falso. La Camerata de' Bardi era un grupo de músicos y literatos de Florencia que se reunía para hablar de música y cultura. San Marcos es la basílica de la escuela veneciana.",
+      "revisione": "bozza"
+    },
+    "fir-06": {
+      "domanda": "La Camerata de' Bardi quería hacer revivir, con narraciones musicales acompañadas:",
+      "opzioni": {
+        "a": "las tragedias griegas",
+        "b": "la mitología nórdica",
+        "c": "los textos sagrados",
+        "d": "los gritos de los vendedores de París"
+      },
+      "spiegazione": "Las tragedias griegas: los temas se tomaban del mundo clásico.",
+      "revisione": "bozza"
+    },
+    "fir-07": {
+      "domanda": "El madrigal dialógico contaba historias o situaciones cómicas.",
+      "spiegazione": "Verdadero. Por ejemplo, en el «Contrappunto bestiale alla mente» de Banchieri se cuenta una fiesta de carnaval con sonidos de animales.",
+      "revisione": "bozza"
+    },
+    "fir-08": {
+      "domanda": "En el «Contrappunto bestiale alla mente» de Banchieri cantan cuatro animales. ¿Cuál de estos NO aparece?",
+      "opzioni": {
+        "a": "el lobo",
+        "b": "el perro",
+        "c": "el mochuelo",
+        "d": "el cuco"
+      },
+      "spiegazione": "El lobo no aparece. Los animales son un perro, un gato, un cuco y un mochuelo, y mientras tanto el bajo canta una frase seria en latín.",
+      "revisione": "bozza"
+    },
+    "ven-01": {
+      "domanda": "La escuela veneciana nace a comienzos del siglo XVI gracias a un maestro flamenco. ¿Quién era?",
+      "spiegazione": "Era Adriano Willaert, un flamenco que llegó a Venecia: otra señal de lo solicitados que estaban en Italia los maestros de Flandes.",
+      "revisione": "bozza"
+    },
+    "ven-02": {
+      "domanda": "Relacione cada elemento de la escuela veneciana con su descripción.",
+      "coppie_sinistra": [
+        null,
+        null,
+        "las dos «cantorie» (tribunas del coro) de San Marcos",
+        "órgano"
+      ],
+      "coppie_destra": [
+        "maestro flamenco con quien nace la escuela",
+        "el discípulo más importante de Willaert",
+        "composiciones para dos coros que se alternan",
+        "una sola melodía acompañada por acordes"
+      ],
+      "spiegazione": "Son las palabras clave de la escuela veneciana.",
+      "revisione": "bozza"
+    },
+    "ven-03": {
+      "domanda": "La Basílica de San Marcos era la única iglesia de la época con dos «cantorie» (tribunas para el coro), una frente a la otra.",
+      "spiegazione": "Verdadero. Por eso la música sacra de Venecia llegó a ser distinta de la de Roma.",
+      "revisione": "bozza"
+    },
+    "ven-04": {
+      "domanda": "Las dos «cantorie» de San Marcos llevaron a los organistas de la basílica a crear:",
+      "opzioni": {
+        "a": "composiciones para dos coros que se alternan",
+        "b": "composiciones para una sola voz",
+        "c": "madrigales dialógicos con sonidos de animales",
+        "d": "misas en estilo «a cappella», sin instrumentos"
+      },
+      "spiegazione": "Composiciones para dos coros que se alternan: un coro canta y el otro le responde desde el lado opuesto de la iglesia.",
+      "revisione": "bozza"
+    },
+    "ven-05": {
+      "domanda": "En Venecia la música sacra era igual a la de la escuela romana.",
+      "spiegazione": "Falso. En Venecia la música sacra se diferenció de la romana precisamente gracias a las dos «cantorie» de San Marcos y al gran uso del órgano.",
+      "revisione": "bozza"
+    },
+    "ven-06": {
+      "domanda": "El gran uso del órgano en Venecia trajo una novedad fundamental. ¿Cuál?",
+      "opzioni": {
+        "a": "una sola melodía acompañada por acordes",
+        "b": "una polifonía todavía más compleja, con muchas voces",
+        "c": "la música cantada sin ningún instrumento",
+        "d": "la imitación en canon entre las voces"
+      },
+      "spiegazione": "En lugar de la polifonía se empieza a usar una sola línea melódica, acompañada por los acordes de los instrumentos.",
+      "revisione": "bozza"
+    },
+    "ven-07": {
+      "domanda": "Los acordes son varios sonidos producidos al mismo tiempo por los instrumentos.",
+      "spiegazione": "Verdadero. Un acorde está formado por varios sonidos tocados en el mismo momento.",
+      "revisione": "bozza"
+    },
+    "ven-08": {
+      "domanda": "¿Qué es el «basso continuo» (bajo continuo)?",
+      "opzioni": {
+        "a": "un acompañamiento de acordes que sostiene la voz",
+        "b": "una voz que repite la melodía que otra acaba de cantar",
+        "c": "un coro que responde a otro coro",
+        "d": "una voz grave que canta sola, sin instrumentos"
+      },
+      "spiegazione": "El bajo continuo es un acompañamiento hecho de acordes: la voz canta la melodía y los instrumentos la sostienen.",
+      "revisione": "bozza"
+    }
+  },
+  "testi": {
+    "inizio.intro": [
+      "¡La Isla está asediada! Se acercan las flotas de cuatro grandes escuelas musicales del Renacimiento: Flandes, Roma, Florencia y Venecia.",
+      "El Rey ha pedido su ayuda para defender el fuerte. Los habitantes de la isla le conseguirán municiones, pero solo si demuestra que conoce a sus enemigos."
+    ],
+    "inizio.chiedi_nome": "Escriba su nombre:",
+    "livelli.1.arrivo": [
+      "¡Saludos, Capitán {nome}! Es un honor que esté usted al mando de nuestras defensas.",
+      "Sé que busca municiones para la batalla que le espera. Son una mercancía valiosa y aquí en el campo tenemos pocas. Pero si responde bien, haremos lo posible por conseguírselas.",
+      "La flota de Flandes ya está en el horizonte. Veamos cuánto conoce a nuestros primeros adversarios."
+    ],
+    "livelli.1.prima_della_battaglia": [
+      "Hemos hecho lo posible: tiene {colpi} disparos. Ahora le toca a usted usarlos bien.",
+      "Nuestro cañón no es muy preciso: ¡apunte con cuidado!"
+    ],
+    "livelli.2.arrivo": [
+      "¡Aquí está de nuevo, Capitán! Gracias a usted he podido abrir mi taller.",
+      "La flota de los Estados Pontificios se acerca, y necesitará más municiones para el próximo combate."
+    ],
+    "livelli.2.commento_battaglia.forte_retto": "Me he enterado de que el fuerte resistió: ¡en toda la isla se habla de usted!",
+    "livelli.2.commento_battaglia.forte_caduto": "Me he enterado de que el fuerte cayó… Pero no nos rendimos: con su ayuda lo reconstruiremos.",
+    "livelli.2.grado_attuale": "Su grado ahora es {grado}: ya tiene {punti} puntos de batalla.",
+    "livelli.2.prima_della_battaglia": [
+      "Tiene {colpi} disparos. Hemos mejorado el cañón, pero las naves romanas son más rápidas. ¡Buena batalla!"
+    ],
+    "livelli.3.arrivo": [
+      "¡Qué alegría que haya vuelto, Capitán! Como ve, haciendo negocios con usted, el pueblo y el comercio prosperan.",
+      "Se acercan las naves del Gran Ducado de Toscana, guiadas por Florencia. Son todavía más rápidas, pero nuestros hombres han entrenado para recargar el cañón más deprisa."
+    ],
+    "livelli.3.commento_battaglia.forte_retto": "Las naves romanas no pasaron: ¡ya es usted una leyenda!",
+    "livelli.3.commento_battaglia.forte_caduto": "Las naves romanas golpearon fuerte, pero el fuerte ya está reparado.",
+    "livelli.3.grado_attuale": "Su grado ahora es {grado}: ya tiene {punti} puntos de batalla.",
+    "livelli.3.prima_della_battaglia": [
+      "Tiene {colpi} disparos. ¡Buena batalla!"
+    ],
+    "livelli.4.arrivo": [
+      "¡Por fin está aquí, Capitán! Mire mi palacio: todo esto se lo debemos a usted.",
+      "Pero ahora la cosa se pone seria. Se enfrentará a los venecianos, los más hábiles en la guerra en el mar. Tienen las naves más rápidas de todas y atacarán de noche."
+    ],
+    "livelli.4.commento_battaglia.forte_retto": "También los florentinos han sido rechazados: ¡el enemigo empieza a tenerle miedo!",
+    "livelli.4.commento_battaglia.forte_caduto": "Los florentinos nos pusieron en apuros, pero la isla todavía resiste.",
+    "livelli.4.grado_attuale": "Su grado ahora es {grado}: ya tiene {punti} puntos de batalla.",
+    "livelli.4.prima_della_battaglia": [
+      "Tiene {colpi} disparos. Es la última batalla y el enemigo es feroz. Las defensas están al máximo: ¡ahora le toca a usted!"
+    ],
+    "domande.giusta": [
+      "¡Perfecto!",
+      "¡Exacto!",
+      "¡Así es!"
+    ],
+    "domande.sbagliata": [
+      "No exactamente…",
+      "Mmm, no era así.",
+      "Casi, pero no."
+    ],
+    "domande.fine": "Ha respondido bien a {giuste} preguntas de 4.",
+    "aiuti_sparo.colpi_di_prova": "Entrenamiento: aquí hay tres barriles en el mar. ¡Toque o haga clic en el mar para disparar y acierte a los tres!",
+    "aiuti_sparo.barili_in_movimento": "¡Tocado! Ahora la corriente mueve los otros barriles: apunte un poco más adelante, como hará con las naves.",
+    "aiuti_sparo.barile_mancano": "¡Tocado! Barriles que quedan: {barili}.",
+    "aiuti_sparo.barile_colpito": "¡Muy bien, los tres! Ahora prepárese: llega la flota.",
+    "aiuti_sparo.inizio_battaglia": "¡Toque o haga clic en el mar para disparar!",
+    "aiuti_sparo.inattivo_5_secondi": "Las naves se acercan: ¡toque o haga clic en el mar para disparar!",
+    "aiuti_sparo.pulsante_aiuto": "Toque o haga clic en el punto del mar donde quiere disparar. El cañón dispara enseguida. Cada nave que cruza la línea de defensa daña el fuerte. La batalla termina cuando se acaban los disparos.",
+    "fine_battaglia.vittoria": "¡El fuerte ha resistido! Ha hundido {navi} naves.",
+    "fine_battaglia.sconfitta": "El fuerte ha caído… Pero la guerra no ha terminado: ¡adelante con la próxima escuela!",
+    "finale.apertura": "Saludos, Capitán {nome}. Soy el Rey de la Isla, quien contrató sus servicios.",
+    "finale.esiti.0": "Ha respondido bien a {giuste} preguntas de 16: no basta para salvar nuestra isla. Reúna más información sobre nuestros enemigos y vuelva a enfrentarse a ellos. ¡Le espero con impaciencia!",
+    "finale.esiti.1": "Ha respondido bien a {giuste} preguntas de 16: ha defendido bastante bien mi isla. Repase la información sobre nuestros enemigos y lo hará todavía mejor.",
+    "finale.esiti.2": "Ha respondido bien a {giuste} preguntas de 16: ¡ha defendido de maravilla mi isla! Si responde bien a las 16, se convertirá en nuestro Campeón de la Isla.",
+    "finale.esiti.3": "¡Honor a usted, Campeón de la Isla! Ha respondido bien a las 16 preguntas: los enemigos no tienen secretos para usted. Vuelva pronto a visitarnos: ¡aquí siempre estará en casa!",
+    "finale.commento_battaglia": "Y en la batalla ha ganado {punti} puntos: ¡su grado es {grado}!",
+    "finale.chiusura": "¿Quiere empezar de nuevo? Cada partida tiene preguntas nuevas.",
+    "interfaccia.mappa_indicazione": "Toque o haga clic en la torre {torre} para defenderla.",
+    "interfaccia.abbinamento_istruzioni": "Toque una opción a la izquierda y luego la correcta a la derecha.",
+    "interfaccia.abbinamenti_giusti": "Las parejas correctas eran:"
+  },
+  "interfaccia": {
+    "vero": "Verdadero",
+    "falso": "Falso",
+    "avviso": "Traducción de ayuda: en caso de duda, vale el italiano."
+  },
+  "torri": {
+    "Fiandre": "de Flandes",
+    "Roma": "de Roma",
+    "Firenze": "de Florencia",
+    "Venezia": "de Venecia"
+  }
+}

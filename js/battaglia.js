@@ -29,7 +29,7 @@ class Battaglia {
     this.corrente = null;   // istante in cui la corrente comincia a spostare i barili
     this.creaHud();
     if (o.prova) {
-      this.messaggio(this.o.adatta(this.o.testi.aiuti_sparo.colpi_di_prova));
+      this.aiuto('colpi_di_prova');
       this.manoPos = [this.barili[0].x, this.barili[0].y - 20];
       this.manoFino = Infinity;
     } else {
@@ -49,7 +49,7 @@ class Battaglia {
     this.stato = 'battaglia';
     this.timer = CONFIG.navi.map((n) => this.t + n.ritardo);
     this.ultimoSparo = this.t;
-    this.messaggio(this.o.adatta(this.o.testi.aiuti_sparo.inizio_battaglia), 3);
+    this.aiuto('inizio_battaglia', 3);
     // La mano indica il mare solo all'inizio della prima battaglia; poi compare se il giocatore resta fermo.
     if (this.o.primaBattaglia) {
       this.manoPos = [650, 720];
@@ -91,8 +91,18 @@ class Battaglia {
     this.hudRicarica.classList.toggle('visibile', !this.finita);
   }
 
-  messaggio(testo, secondi) {
-    this.fumetto.textContent = testo;
+  // Messaggio degli aiuti per sparare, con la traduzione d'aiuto sotto se c'è.
+  aiuto(chiave, secondi, valori) {
+    const testo = Utili.riempi(this.o.adatta(this.o.testi.aiuti_sparo[chiave]), valori || {});
+    this.messaggio(testo, secondi, this.traduci('aiuti_sparo.' + chiave, valori));
+  }
+
+  traduci(chiave, valori) {
+    return this.o.traduci ? this.o.traduci(chiave, valori) : null;
+  }
+
+  messaggio(testo, secondi, traduzione) {
+    this.fumetto.replaceChildren(testo, traduzione || '');
     this.fumetto.classList.remove('nascosto');
     clearTimeout(this._timerFumetto);
     if (secondi) this._timerFumetto = setTimeout(() => this.fumetto.classList.add('nascosto'), secondi * 1000);
@@ -105,7 +115,7 @@ class Battaglia {
     const box = el('div', { class: 'velo' },
       el('div', { class: 'pergamena centrata' },
         el('h2', {}, 'Come si gioca'),
-        el('p', {}, this.o.testi.aiuti_sparo.pulsante_aiuto),
+        el('p', {}, this.o.testi.aiuti_sparo.pulsante_aiuto, this.traduci('aiuti_sparo.pulsante_aiuto')),
         el('button', { class: 'pulsante', onclick: () => { box.remove(); this.pausa = false; this.ultimoSparo = this.t; } }, 'Riprendi'),
       ));
     this.o.ui.append(box);
@@ -191,7 +201,7 @@ class Battaglia {
       const n = this.navi.filter((v) => v.stato === 'naviga').sort((a, b) => b.x - a.x)[0];
       this.manoPos = [Math.min(n.x + n.w * 0.6, LINEA_DIFESA - 60), n.y - n.w * 0.15];
       this.manoFino = this.t + 3;
-      this.messaggio(this.o.adatta(this.o.testi.aiuti_sparo.inattivo_5_secondi), 3);
+      this.aiuto('inattivo_5_secondi', 3);
     }
 
     // fine della battaglia
@@ -259,12 +269,12 @@ class Battaglia {
             this.corrente = this.t;
             restanti.forEach((r) => { r.x0 = r.x; r.y0 = r.y; });
           }
-          const testi = this.o.testi.aiuti_sparo;
-          this.messaggio(primo ? testi.barili_in_movimento : Utili.riempi(testi.barile_mancano, { barili: restanti.length }));
+          if (primo) this.aiuto('barili_in_movimento');
+          else this.aiuto('barile_mancano', 0, { barili: restanti.length });
           this.manoPos = [restanti[0].x, restanti[0].y - 20];
           return;
         }
-        this.messaggio(this.o.testi.aiuti_sparo.barile_colpito);
+        this.aiuto('barile_colpito');
         this.stato = 'attesa';
         setTimeout(() => { if (!this.finita) this.iniziaFlotta(); }, 2200);
         return;
@@ -302,7 +312,7 @@ class Battaglia {
     const testo = Utili.riempi(vittoria ? testi.vittoria : testi.sconfitta, { navi: this.affondate });
     const el = Utili.el;
     const righe = [
-      el('p', { class: 'grande' }, testo),
+      el('p', { class: 'grande' }, testo, this.traduci('fine_battaglia.' + (vittoria ? 'vittoria' : 'sconfitta'), { navi: this.affondate })),
       el('p', {}, `Navi affondate: ${this.punti} punti · Forte: +${bonus} · Totale: ${esito.punti} punti`),
     ];
     const box = el('div', { class: 'velo' },
